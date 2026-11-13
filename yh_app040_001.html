@@ -1,0 +1,2230 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="apple-mobile-web-app-title" content="" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=yes" />
+		<meta name="title" content="청년창업사관학교, 글로벌창업사관학교, 청창사, 글창사" />
+		<meta name="keywords" content="청년창업사관학교, 글로벌창업사관학교, 청창사, 글창사" />
+		<meta name="description" content="청년창업사관학교, 글로벌창업사관학교, 청창사, 글창사" />
+		<meta name="naver-site-verification" content="청년창업사관학교, 글로벌창업사관학교, 청창사, 글창사 " />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="청년창업사관학교, 글로벌창업사관학교, 청창사, 글창사" />
+		<link rel="canonical" href="https://start.kosmes.or.kr" />
+
+		<title>신청하기 &lt; 성실경영평가 | KOSME 청년창업사관학교, 글로벌창업사관학교</title>
+
+		<!-- 공통스타일  -->
+		<link href="/startkosmes-preview/css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/swiper.min.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/ui.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/contents.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/main02.css" rel="stylesheet" type="text/css" />
+
+		<!-- 공통 jquery plugins  -->
+		<script src="/startkosmes-preview/js/libs/jquery-3.5.1.min.js"></script><script src="/startkosmes-preview/__preview/pages.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery-ui.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/swiper.min.js"></script>
+		<script src="/startkosmes-preview/js/common.js"></script>
+		<script src="/startkosmes-preview/js/contents.js"></script>
+
+		<!-- kakao talk 공유 -->
+		<script src="/startkosmes-preview/js/libs/kakao.min.js"></script>
+
+		<!-- 개발공통 -->
+		<script src="/startkosmes-preview/js/libs/jquery.validate.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery.form.js"></script>
+		<script src="/startkosmes-preview/js/commUtil.js"></script>
+
+		<script>
+			// pc,mobile 분기체크
+			function isMobile(){
+			    var UserAgent = navigator.userAgent;
+			    if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson|Mobile|Tablet/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+			    {
+			        return true;
+			    }else{
+			        return false;
+			    }
+			}
+
+
+			$(document).ready(function() {
+				/* 2026.11.04 수정(UI 미러) - 로그인 토큰 갱신 타이머 삭제 (9분마다 /login/refreshTokenReal.do 호출) */
+
+
+
+					 $('.quickBtn').show();
+				     $('.menu_setting').show();
+				     $('.quickBtn').css('display', 'flex');
+
+
+				 $('.menu_setting').hide();
+			});
+
+
+			function alertPopup(){
+
+				alert("서비스 준비 중입니다.");
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" id="resultMsg" value="" />
+		<input type="hidden" id="actionUrl" value="/startkosmes-preview/yh_bsm400_024.html" />
+
+		<!-- SkipNav -->
+		<div class="skipNav">
+			<a href="#content" class="roboto">본문으로 바로가기</a>
+		</div>
+		<!-- // SkipNav -->
+
+		<div id="wrapper">
+			<!-- header -->
+
+			<script>
+				//<-timer start
+				/* 2026.11.04 수정(UI 미러) - 세션 만료 카운트다운 · 강제 로그아웃 삭제, 남은 시간은 고정 표시 */
+				function counter_init(){
+					if(document.getElementById("counter")) document.getElementById("counter").innerText = "59:59";
+					if(document.getElementById("counterMo")) document.getElementById("counterMo").innerText = "59:59";
+				}
+				//<-timer end
+
+
+				/* 2026.11.04 수정(UI 미러) - ajax 401 응답 시 로그인 페이지 이동 삭제 */
+
+
+
+				$(document).ajaxSend(function(event, request, setting){
+
+					//console.log("::::::::::::::::: ajaxSend :::::::::::::::::::::");
+
+				});
+
+				var countAlert = true;
+
+				$(document).ajaxStart(function(){
+
+					//console.log("::::::::::::::::: countAlert :" + countAlert);
+					//console.log("::::::::::::::::: ajaxStart :::::::::::::::::::::");
+				/*
+					var xhr = $.ajax({
+					        type:"post",
+					        url:"/startkosmes-preview/checkAjaxSession.do",
+					        dataType:'json',
+					        async:false,
+					        error : function(xhr, status, error){
+					        	console.log("ajaxPrehandle 실패 : " + status + "//" + xhr.message + "//" + xhr.responseText + "//" + error);
+					        	//alert(xhr.status);
+
+					        	if(xhr.status == 901 ){
+
+					            	if(countAlert == true ){
+					            		//alert(text);
+
+					            		countAlert = false;
+					            		location.href="/startkosmes-preview/login/loginPage.html";
+					            		return false;
+					            	}
+					            	return false;
+					            }
+					        },
+					    });
+					//kill.abort
+					xhr.abort();
+				*/
+				});
+
+				$(document).ready(function(){
+					//모바일 화면 제어
+					$('.moOneDepth li').first().addClass('on');
+					$('.level2Content').first().addClass('on');
+					$('.moTwoDepth').show();
+
+					$('.level1Btn').on('click', function(){
+						var menuid = $(this).data('menuid');
+
+						$('.level2Content').hide();
+						$('.level2Content[data-menuid="' + menuid + '"]').show();
+
+						$('.levelBtn').removeClass('on');
+						$(this).parent().siblings('li').removeClass('on');
+						$(this).parent().addClass('on');
+
+					})
+				});
+
+
+
+
+				   // menu link
+				   function fn_main_headPageMove(menuId, url){
+				    document.goLink.menuId.value=menuId;
+				    document.goLink.action = url;
+				    document.goLink.submit();
+				   }
+
+				    $(document).ready(function(){
+				        var serNm = "start.kosmes.or.kr";
+				        //alert(serNm);
+
+				    });
+
+				    function goLogOut() {
+				    	document.location.href="/startkosmes-preview/yh_mai001_001.html"; /* 2026.11.04 수정(UI 미러) - 로그아웃 처리(/startkosmes-preview/login/actionLogout.do) 대신 메인으로 이동 */
+				    }
+
+				    function goLogIn() {
+				    	document.location.href="/startkosmes-preview/login/loginPage.html";
+				    }
+
+				    function goSignUp(){
+				    	document.location.href="/startkosmes-preview/yh_meb010_001.html";
+				    }
+
+				    function goMyPage(){
+				    	document.location.href="/startkosmes-preview/yh_myp010_001.html";
+				    }
+
+				    function actionMtacPedLogin(searchAcssAuthDvCd, searchYmFdtnMtacPed){
+				    	$("#searchYmFdtnMtacPed").val(searchYmFdtnMtacPed);
+				    	$("#searchAcssAuthDvCd").val(searchAcssAuthDvCd);
+				    	$("#loginFrm").attr("action", "/startkosmes-preview/login/actionMtacPedLogin.do");
+				    	/* 2026.11.04 수정(UI 미러) - 권한 전환 로그인(/startkosmes-preview/login/actionMtacPedLogin.do) 전송 안 함 */
+				    }
+
+
+				    function actionAcssAuthDvCdLogin(searchAcssAuthDvCd){
+				        $("#searchYmFdtnMtacPed").val("");
+				        $("#searchAcssAuthDvCd").val(searchAcssAuthDvCd);
+				        $("#loginFrm").attr("action", "/startkosmes-preview/login/actionMtacPedLogin.do");
+				        /* 2026.11.04 수정(UI 미러) - 권한 전환 로그인(/startkosmes-preview/login/actionMtacPedLogin.do) 전송 안 함 */
+				    }
+
+				    function topMenuClick(topUrl) {
+						alert("topClick");
+				    	document.location.href=topUrl;
+				    }
+
+
+				    function goLogInForward() {
+				    	var url = "/startkosmes-preview/login/loginPage.html";
+				    	//alert(url);
+				        document.location.href= url;
+				    }
+
+				    //중기 통합회원 로그인
+				    function goSSOLogin(){
+				    	//location.href = "/startkosmes-preview/login/onePassSsoLoginDev.do";
+				    	return; /* 2026.11.04 수정(UI 미러) - 통합회원(onePass) 연동 안 함 : /login/onePassSsoLoginReal.do */
+				    }
+
+				    //중기 통합회원 로그아웃
+				    function goSSOLogout(){
+				    	//location.href = "/startkosmes-preview/login/onePassSsoLogoutDev.do";
+				    	return; /* 2026.11.04 수정(UI 미러) - 통합회원(onePass) 연동 안 함 : /login/onePassSsoLogoutReal.do */
+				    }
+
+				    //중기 통합회원 마이페이지
+				    function goOnepassMypage(){
+				    	//location.href = "/startkosmes-preview/login/onePassMypageDev.do";
+				    	return; /* 2026.11.04 수정(UI 미러) - 통합회원(onePass) 연동 안 함 : /login/onePassMypageReal.do */
+				    }
+
+				  //중기 통합회원 전환
+				    function goOnepassConversion(){
+				    	//location.href = "/startkosmes-preview/login/onePassConversionDev.do";
+				    	return; /* 2026.11.04 수정(UI 미러) - 통합회원(onePass) 연동 안 함 : /login/onePassConversionReal.do */
+				    }
+			</script>
+
+			<!-- topmenu start -->
+			<form name="goLink" method="post">
+				<input name="menuId" type="hidden" />
+			</form>
+
+			<div class="headerWrap">
+				<div class="tMenuWrap">
+					<ul class="tMenu">
+						<li>
+							<a href="javascript:goOnepassConversion();" class="onIntegLoginBtn"><img src="/startkosmes-preview/images/common/icon_integLogin.png" alt="" height="17px" />통합회원 전환</a>
+						</li>
+						<li>
+							<a href="javascript:goSSOLogin();" class="onIntegLoginBtn"><img src="/startkosmes-preview/images/common/icon_integLogin.png" alt="" height="17px" />통합회원 로그인</a>
+						</li>
+
+						<li>
+							<span class="loginTimer" id="counter"></span>
+							<button class="onLoginBtn" onclick="goLogOut();" name="w3c_fix_id_8" id="w3c_fix_id_8">
+								<span>로그아웃</span>
+							</button>
+						</li>
+					</ul>
+				</div>
+				<div class="realGnbBg">
+					<img class="realGnbImg" src="/startkosmes-preview/images/common/pcGnbImg01.svg" alt="image" />
+				</div>
+				<div class="header" id="gnbHead" aria-expanded="false" role="menu">
+					<div class="logoArea">
+						<h1 class="KOSMElogo findent"><a href="/startkosmes-preview/">KOSME 청년창업사관학교</a></h1>
+
+						<!-- 모바일 전용 
+			<a href="/startkosmes-preview/yh_mai001_001.html" title="메인페이지로 이동" class="btn_home"></a>
+			-->
+						<!-- //모바일 전용 -->
+
+						<button type="button" name="w3c_fix_id_0" id="w3c_fix_id_0" aria-haspopup="true" aria-controls="gnbHead" class="mobileGnbHandle onMobile"><span class="findent">메뉴 열림</span></button>
+					</div>
+
+					<!-- //logoArea -->
+					<div class="headerin">
+						<div class="gnbArea">
+							<ul class="fakegnb  onPC" role="menu">
+								<li>
+									<button type="button" name="w3c_fix_id_1_1" id="w3c_fix_id_1_1" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">사업소개</button>
+									<div id="gnbpc_700_1">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_2" id="w3c_fix_id_1_2" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">사업신청</button>
+									<div id="gnbpc_700_2">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_3" id="w3c_fix_id_1_3" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">사업관리</button>
+									<div id="gnbpc_700_3">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_4" id="w3c_fix_id_1_4" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">위탁기관</button>
+									<div id="gnbpc_700_4">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_5" id="w3c_fix_id_1_5" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">성실경영평가</button>
+									<div id="gnbpc_700_5">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_6" id="w3c_fix_id_1_6" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">재도전진단</button>
+									<div id="gnbpc_700_6">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_7" id="w3c_fix_id_1_7" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">디자인팩토리</button>
+									<div id="gnbpc_700_7">
+										<ul></ul>
+									</div>
+								</li>
+								<li>
+									<button type="button" name="w3c_fix_id_1_8" id="w3c_fix_id_1_8" aria-haspopup="true" aria-controls="gnbtrue" title="메뉴열림">알림마당</button>
+									<div id="gnbpc_700_8">
+										<ul></ul>
+									</div>
+								</li>
+							</ul>
+							<!-- //fakegnb -->
+							<!-- 이전 메뉴 주석처리2021-01-22(이태호) -->
+
+							<!-- 호버 메뉴 -->
+							<div class="realgnbWrap" id="gnbtrue" aria-expanded="false" role="menu">
+								<div class="innerFix">
+									<ul class="gnbMenu" role="menu">
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_1" id="w3c_fix_id_2_1"><span>사업소개</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_int010_001.html"><span>사업소개</span></a>
+												</h2>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_int010_001.html"><span>도전성공학교란?</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_int020_001.html"><span>도전성공패키지란?</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_int030_001.html"><span>도전응원프로젝트란?</span></a>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_2" id="w3c_fix_id_2_2"><span>사업신청</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_app010_001.html"><span>사업신청</span></a>
+												</h2>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_1" id="w3c_fix_id_3_1" class="subtoggle"><span>수요기업 신청</span></button>
+												<a href="/startkosmes-preview/yh_app010_001.html"><span>수요기업 신청</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_app010_001.html"><span>도전성공학교 신청하기</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_app010_002.html"><span>도전성공학교 신청조회</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_app020_001.html"><span>도전성공패키지 신청하기</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_app020_002.html"><span>도전성공패키지 신청조회</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_app030_001.html"><span>도전응원프로젝트 신청하기</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_app030_002.html"><span>도전응원프로젝트 신청조회</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_3" id="w3c_fix_id_3_3" class="subtoggle"><span>협약관리</span></button>
+												<a href="/startkosmes-preview/yh_apm100_001.html"><span>협약관리</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_apm100_001.html"><span>협약신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm100_001.html"><span>과제변경요청</span></a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_3" id="w3c_fix_id_2_3"><span>사업관리</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_bsm204_001.html"><span>사업관리</span></a>
+												</h2>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_4" id="w3c_fix_id_3_4" class="subtoggle"><span>교육코칭</span></button>
+												<a href="/startkosmes-preview/yh_bsm204_001.html"><span>교육코칭</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm204_001.html"><span>내 강의실</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm201_001.html"><span>내부교육 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm205_001.html"><span>외부교육 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm203_001.html"><span>코칭 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm202_001.html"><span>학점 이수 현황</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_5" id="w3c_fix_id_3_5" class="subtoggle"><span>사업비 정산</span></button>
+												<a href="/startkosmes-preview/yh_bsm101_001.html"><span>사업비 정산</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm101_001.html"><span>사업비 집행계획 승인요청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm104_001.html"><span>구매/계약 승인요청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm103_001.html"><span>사업비 지급 요청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm105_001.html"><span>사업비 집행현황</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm109_001.html"><span>사업비 반납요청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm700_001.html"><span>사후증빙제출</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_6" id="w3c_fix_id_3_6" class="subtoggle"><span>기자재</span></button>
+												<a href="/startkosmes-preview/yh_bsm102_001.html"><span>기자재</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm102_001.html"><span>기자재 등록</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_7" id="w3c_fix_id_3_7" class="subtoggle"><span>보고서 제출</span></button>
+												<a href="/startkosmes-preview/yh_bsm500_001.html"><span>보고서 제출</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm500_001.html"><span>월간창업보고서 제출</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm501_001.html"><span>평가보고서 제출</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_8" id="w3c_fix_id_3_8" class="subtoggle"><span>바우처 관리</span></button>
+												<a href="/startkosmes-preview/yh_vch010_001.html"><span>바우처 관리</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_vch010_001.html"><span>바우처 (사전)승인요청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_vch020_001.html"><span>바우처 정산요청</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_9" id="w3c_fix_id_3_9" class="subtoggle"><span>공통</span></button>
+												<a href="/startkosmes-preview/yh_bsm206_001.html"><span>공통</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm206_001.html"><span>설문응답</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm110_001.html"><span>월간 일정</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm107_001.html"><span>출퇴근 현황</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm108_001.html"><span>출장신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm300_001.html"><span>시설(장비) 이용 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm502_001.html"><span>기숙사 이용 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm503_001.html"><span>기숙사 비용 결제</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_10" id="w3c_fix_id_3_10" class="subtoggle"><span>사후관리</span></button>
+												<a href="/startkosmes-preview/yh_bsm600_001.html"><span>사후관리</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm600_001.html"><span>사후관리 조사</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm600_019.html"><span>사후관리 결과확인</span></a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_4" id="w3c_fix_id_2_4"><span>위탁기관</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_bsm400_024.html"><span>위탁기관</span></a>
+												</h2>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_024.html"><span>위탁기관 등록 안내</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_001.html"><span>위탁기관 검색</span></a>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_11" id="w3c_fix_id_3_11" class="subtoggle"><span>위탁기관 등록</span></button>
+												<a href="/startkosmes-preview/yh_bsm400_011.html"><span>위탁기관 등록</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_bsm400_011.html"><span>위탁기관 등록 신청</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_bsm400_026.html"><span>위탁기관 등록 여부 확인</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_016.html"><span>위탁기관 등록요청(입교자용)</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_016_agency.html"><span>위탁기관 관리</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_006.html"><span>견적서 요청</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm400_008.html"><span>견적서 제출</span></a>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_5" id="w3c_fix_id_2_5"><span>성실경영평가</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_app040_001.html"><span>성실경영평가</span></a>
+												</h2>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_app040_001.html"><span>신청하기</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_app040_002.html"><span>결과확인</span></a>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_6" id="w3c_fix_id_2_6"><span>재도전진단</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_rcd010_001.html"><span>재도전진단</span></a>
+												</h2>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_rcd010_001.html"><span>재도전 진단</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_rcd020_001.html"><span>진단결과 조회</span></a>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_7" id="w3c_fix_id_2_7"><span>디자인팩토리</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_dfi060_001.html"><span>디자인팩토리</span></a>
+												</h2>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_12" id="w3c_fix_id_3_12" class="subtoggle"><span>디자인팩토리</span></button>
+												<a href="/startkosmes-preview/yh_dfi060_001.html"><span>디자인팩토리</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_dfi060_001.html"><span>디자인팩토리 소개</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi010_001.html"><span>디자인랩</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi020_001.html"><span>MVP스테이션</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi030_001.html"><span>스타트업스튜디오</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi040_001.html"><span>디자인톡</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi050_001.html"><span>3D프린팅룸</span></a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<button type="button" name="w3c_fix_id_3_13" id="w3c_fix_id_3_13" class="subtoggle"><span>제품개발지원</span></button>
+												<a href="/startkosmes-preview/yh_dfi001_001.html"><span>제품개발지원</span></a>
+												<ul class="depthLast" aria-expanded="false">
+													<li>
+														<a href="/startkosmes-preview/yh_dfi001_001.html"><span>제품개발지원</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi002_001.html"><span>견적서 수수료 관리</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi002_002.html"><span>견적서 단가 관리</span></a>
+													</li>
+													<li>
+														<a href="/startkosmes-preview/yh_dfi003_001.html"><span>목표관리</span></a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul class="depthIn" aria-expanded="false">
+											<li class="depthFirst">
+												<button type="button" name="w3c_fix_id_2_8" id="w3c_fix_id_2_8"><span>알림마당</span></button>
+												<h2 class="onPC">
+													<a href="/startkosmes-preview/yh_bsm080_001.html"><span>알림마당</span></a>
+												</h2>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm080_001.html"><span>공지사항</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_cus010_001.html"><span>자주하는 질문</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_cus500_001.html"><span>온라인 매뉴얼</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_bsm081_001.html"><span>자료실</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_cus200_001.html"><span>청렴신고센터</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_not002_046.html"
+													><span>Post-Care(후속<br />연계지원)</span></a
+												>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_stu010_003.html"><span>타기관지원사업</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_not020_001.html"><span>행사.보도</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_ysi080_001.html"><span>문의처</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_cus100_001.html"><span>증명서 진위확인</span></a>
+											</li>
+											<li>
+												<a href="/startkosmes-preview/yh_cus300_001.html"><span>사전코칭센터</span></a>
+											</li>
+										</ul>
+										<!-- //2026.11.03 수정 - 메뉴 -->
+									</ul>
+									<!-- 닫기 버튼 임시 숨김 처리 2024.09.03 김지안 -->
+									<!-- 
+						<button type="button" name="w3c_fix_id_4" id="w3c_fix_id_4" class="realgnbClose all_close onPC"><span class="findent">메뉴 닫힘</span></button>
+					 -->
+								</div>
+							</div>
+
+							<!-- //realgnbWrap -->
+						</div>
+					</div>
+
+					<div class="onHeaderR">
+						<!-- 
+					<spsn class="loginTimer" id = "counter"></spsn>
+					<button class="onLoginBtn" onclick="goLogOut();" name="w3c_fix_id_8" id="w3c_fix_id_8" >
+						<span>로그아웃</span>
+					</button>
+					 -->
+
+						<div class="qrBtn onMobile">
+							<a href="/startkosmes-preview/yh_mhp001_001.html" class="btn skyblue line"><span>QR코드 생성</span></a>
+						</div>
+
+						<button class="onSignup" onclick="goMyPage();">
+							<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+								<path
+									d="M20.0217 10.5455C20.0217 13.8714 17.3257 16.5676 14 16.5676C10.6743 16.5676 7.97826 13.8714 7.97826 10.5455C7.97826 7.21954 10.6743 4.52335 14 4.52335C17.3257 4.52335 20.0217 7.21954 20.0217 10.5455Z"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									d="M4.5 23.4766C4.69428 21.6051 5.76908 19.8585 7.5132 18.5801C9.25731 17.3017 11.5446 16.5839 13.9257 16.5678C16.3067 16.5518 18.6093 17.2385 20.3809 18.4932C22.1525 19.7478 23.2651 21.4796 23.5 23.3483"
+									stroke="black"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+						<button class="onMenu mobileGnbHandle"></button>
+					</div>
+
+					<div class="memberInfoBox">
+						<div class="memberInfoIn">
+							<!--  기수  toggle -->
+
+							<div class="personal">
+								<span>테스트</span>
+
+								<div class="numSelect">
+									<span>13기</span>
+								</div>
+							</div>
+
+							<!--  권한  toggle -->
+
+							<div class="position select">
+								<button type="button" class="">입교자</button>
+								<ul class="selectList">
+									<li>
+										<button type="button" onclick="actionAcssAuthDvCdLogin('02');" name="w3c_fix_id_6_1" id="w3c_fix_id_6_1">입교자</button>
+									</li>
+
+									<li>
+										<button type="button" onclick="actionAcssAuthDvCdLogin('06');" name="w3c_fix_id_6_2" id="w3c_fix_id_6_2">내부직원</button>
+									</li>
+								</ul>
+							</div>
+
+							<!-- 주요메뉴  toggle -->
+							<div class="position select last">
+								<button type="button" class="">사업관리</button>
+								<ul class="selectList">
+									<li>
+										<button type="button" onclick="location.href='/startkosmes-preview/yh_bsm103_001.html';">사업관리</button>
+									</li>
+
+									<li>
+										<button type="button" onclick="location.href='/startkosmes-preview/yh_bsm080_001.html';">알림마당</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- //gnbArea -->
+				</div>
+
+				<div class="onMobileGnb">
+					<div class="moGnbTop">
+						<div class="moGnbIcons">
+							<a href="/startkosmes-preview/yh_mai001_001.html" title="메인페이지로 이동" class="btn_home"></a>
+							<button type="button" name="w3c_fix_id_9" id="w3c_fix_id_9" class="mobileGnbClose onMobile allMenuClose"><span class="findent">모바일 메뉴 닫기</span></button>
+						</div>
+						<div class="moGnbLogin">
+							<!-- 로그인 후 -->
+							<div class="moLoginBox on">
+								<p class="login">테스트</p>
+								<button type="button" class="signup" onclick="">통합회원 전환</button>
+								<button type="button" class="signup" onclick="goLogOut();">로그아웃</button>
+								<span class="loginTimer" id="counterMo" style="filter:brightness(0) invert(1);"></span>
+							</div>
+							<div class="moMemberInfoBox">
+								<div class="memberInfoIn">
+									<!--  권한  toggle -->
+
+									<div class="position select first">
+										<button type="button" class="">입교자</button>
+										<ul class="selectList">
+											<li>
+												<button type="button" onclick="actionAcssAuthDvCdLogin('02');" name="w3c_fix_id_6_1" id="w3c_fix_id_6_1">입교자</button>
+											</li>
+
+											<li>
+												<button type="button" onclick="actionAcssAuthDvCdLogin('06');" name="w3c_fix_id_6_2" id="w3c_fix_id_6_2">내부직원</button>
+											</li>
+										</ul>
+									</div>
+
+									<!--  기수  toggle -->
+
+									<div class="position middle">
+										<span>13기</span>
+									</div>
+
+									<!-- 주요메뉴  toggle -->
+									<div class="position select last">
+										<button type="button" class="">사업관리</button>
+										<ul class="selectList">
+											<li>
+												<button type="button" onclick="location.href='/startkosmes-preview/yh_bsm103_001.html';">사업관리</button>
+											</li>
+
+											<li>
+												<button type="button" onclick="location.href='/startkosmes-preview/yh_bsm080_001.html';">알림마당</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<ul class="moGnbBtns">
+							<li>
+								<a href="/startkosmes-preview/yh_mhp001_001.html">
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29" height="29" viewBox="0 0 29 29" fill="none">
+										<rect x="6.08167" width="23.4979" height="23.4979" transform="rotate(15 6.08167 0)" fill="url(#pattern0_14696_2)"></rect>
+										<defs>
+											<pattern id="pattern0_14696_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+												<use xlink:href="#image0_14696_2" transform="scale(0.0108696)"></use>
+											</pattern>
+											<image
+												id="image0_14696_2"
+												width="92"
+												height="92"
+												xlink:href="data:image/png;base64,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"
+											></image>
+										</defs>
+									</svg>
+									QR코드 생성
+								</a>
+							</li>
+							<li>
+								<a href="/startkosmes-preview/yh_myp010_001.html"> <img src="/startkosmes-preview/images/common/icon_moMypage.svg" alt="image" />마이페이지 </a>
+							</li>
+						</ul>
+					</div>
+					<div class="moGnbBtm">
+						<div class="moGnbBtmL">
+							<ul class="moOneDepth">
+								<li class=""><button type="button" class="level1Btn " data-menuid="TMP_GNB1">사업소개</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="TMP_GNB2">사업신청</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="YHMN000019">사업관리</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="YHMN000173">위탁기관</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="TMP_GNB5">성실경영평가</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="TMP_GNB6">재도전진단</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="YHMN000017">디자인팩토리</button></li>
+
+								<li class=""><button type="button" class="level1Btn " data-menuid="YHMN000129">알림마당</button></li>
+							</ul>
+						</div>
+						<div class="moGnbBtmR">
+							<div class="level2Content" data-menuid="TMP_GNB1" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_int010_001.html" class="moTwoTitle">
+											<span>도전성공학교란?</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_int020_001.html" class="moTwoTitle">
+											<span>도전성공패키지란?</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_int030_001.html" class="moTwoTitle">
+											<span>도전응원프로젝트란?</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="TMP_GNB2" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>수요기업 신청</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_app010_001.html">도전성공학교 신청하기</a></li>
+
+											<li><a href="/startkosmes-preview/yh_app010_002.html">도전성공학교 신청조회</a></li>
+
+											<li><a href="/startkosmes-preview/yh_app020_001.html">도전성공패키지 신청하기</a></li>
+
+											<li><a href="/startkosmes-preview/yh_app020_002.html">도전성공패키지 신청조회</a></li>
+
+											<li><a href="/startkosmes-preview/yh_app030_001.html">도전응원프로젝트 신청하기</a></li>
+
+											<li><a href="/startkosmes-preview/yh_app030_002.html">도전응원프로젝트 신청조회</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>협약관리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_apm100_001.html">협약신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm100_001.html">과제변경요청</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000019" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>교육코칭</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm204_001.html">내 강의실</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm201_001.html">내부교육 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm205_001.html">외부교육 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm203_001.html">코칭 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm202_001.html">학점 이수 현황</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>사업비 정산</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm101_001.html">사업비 집행계획 승인요청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm104_001.html">구매/계약 승인요청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm103_001.html">사업비 지급 요청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm105_001.html">사업비 집행현황</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm109_001.html">사업비 반납요청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm700_001.html">사후증빙제출</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>기자재</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm102_001.html">기자재 등록</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>보고서 제출</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm500_001.html">월간창업보고서 제출</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm501_001.html">평가보고서 제출</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>바우처 관리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_vch010_001.html">바우처 (사전)승인요청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_vch020_001.html">바우처 정산요청</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>공통</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm206_001.html">설문응답</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm110_001.html">월간 일정</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm107_001.html">출퇴근 현황</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm108_001.html">출장신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm300_001.html">시설(장비) 이용 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm502_001.html">기숙사 이용 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm503_001.html">기숙사 비용 결제</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>사후관리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm600_001.html">사후관리 조사</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm600_019.html">사후관리 결과확인</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000173" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_024.html" class="moTwoTitle">
+											<span>위탁기관 등록 안내</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_001.html" class="moTwoTitle">
+											<span>위탁기관 검색</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>위탁기관 등록</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_bsm400_011.html">위탁기관 등록 신청</a></li>
+
+											<li><a href="/startkosmes-preview/yh_bsm400_026.html">위탁기관 등록 여부 확인</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_016.html" class="moTwoTitle">
+											<span>위탁기관 등록요청(입교자용)</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_016_agency.html" class="moTwoTitle">
+											<span>위탁기관 관리</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_006.html" class="moTwoTitle">
+											<span>견적서 요청</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm400_008.html" class="moTwoTitle">
+											<span>견적서 제출</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="TMP_GNB5" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_app040_001.html" class="moTwoTitle">
+											<span>신청하기</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_app040_002.html" class="moTwoTitle">
+											<span>결과확인</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="TMP_GNB6" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_rcd010_001.html" class="moTwoTitle">
+											<span>재도전 진단</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_rcd020_001.html" class="moTwoTitle">
+											<span>진단결과 조회</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000017" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>디자인팩토리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_dfi060_001.html">디자인팩토리 소개</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi010_001.html">디자인랩</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi020_001.html">MVP스테이션</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi030_001.html">스타트업스튜디오</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi040_001.html">디자인톡</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi050_001.html">3D프린팅룸</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>제품개발지원</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_dfi001_001.html">제품개발지원</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi002_001.html">견적서 수수료 관리</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi002_002.html">견적서 단가 관리</a></li>
+
+											<li><a href="/startkosmes-preview/yh_dfi003_001.html">목표관리</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000129" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm080_001.html" class="moTwoTitle">
+											<span>공지사항</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_cus010_001.html" class="moTwoTitle">
+											<span>자주하는 질문</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_cus500_001.html" class="moTwoTitle">
+											<span>온라인 매뉴얼</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_bsm081_001.html" class="moTwoTitle">
+											<span>자료실</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_cus200_001.html" class="moTwoTitle">
+											<span>청렴신고센터</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_not002_046.html" class="moTwoTitle">
+											<span>Post-Care(후속연계지원)</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_stu010_003.html" class="moTwoTitle">
+											<span>타기관지원사업</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_not020_001.html" class="moTwoTitle">
+											<span>행사.보도</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_ysi080_001.html" class="moTwoTitle">
+											<span>문의처</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_cus100_001.html" class="moTwoTitle">
+											<span>증명서 진위확인</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_cus300_001.html" class="moTwoTitle">
+											<span>사전코칭센터</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000081" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_myp010_001.html" class="moTwoTitle">
+											<span>대시보드</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>기업정보관리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_meb080_001.html">기업정보 변경</a></li>
+
+											<li><a href="/startkosmes-preview/yh_not040_003.html">홍보자료 등록</a></li>
+
+											<li><a href="/startkosmes-preview/yh_meb090_001.html">직원관리</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_myp030_001.html" class="moTwoTitle">
+											<span>Post-Care(후속연계지원) 신청관리</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<!-- three depth 있으면 해당 아이콘 추가 -->
+										<a href="javascript:void(0)" class="moTwoTitle">
+											<span>회원정보 관리</span>
+											<svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+												<path d="M11.0859 1L6.31665 5.76929L1.54736 1" stroke="#888888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</a>
+
+										<ul class="moThreeDepth">
+											<li><a href="/startkosmes-preview/yh_meb020_001.do">회원정보수정</a></li>
+
+											<li><a href="/startkosmes-preview/yh_meb040_005.html">비밀번호 변경</a></li>
+
+											<li><a href="/startkosmes-preview/yh_meb050_001.do">회원탈퇴</a></li>
+										</ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_meb080_001.html" class="moTwoTitle">
+											<span>제품개발지원 신청</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_meb091_001.html" class="moTwoTitle">
+											<span>증명서 발급 신청</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_myp020_001.html" class="moTwoTitle">
+											<span>즐겨찾기 설정</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_not030_001.html" class="moTwoTitle">
+											<span>스크랩</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_myp010_031.html" class="moTwoTitle">
+											<span>문의하기 이력</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<div class="level2Content" data-menuid="YHMN000084" style="">
+								<ul class="moTwoDepth">
+									<li class="">
+										<a href="/startkosmes-preview/yh_ifu001_001.html" class="moTwoTitle">
+											<span>홈페이지이용안내</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_ifu010_002.html" class="moTwoTitle">
+											<span>개인정보처리방침</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_ifu020_001.html" class="moTwoTitle">
+											<span>회원이용약관</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_ifu040_001.html" class="moTwoTitle">
+											<span>저작권정책</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+
+									<li class="">
+										<a href="/startkosmes-preview/yh_ifu030_001.html" class="moTwoTitle">
+											<span>이메일무단수집거부</span>
+										</a>
+
+										<ul class="moThreeDepth"></ul>
+									</li>
+								</ul>
+							</div>
+
+							<img src="/startkosmes-preview/images/common/moGnbImg.png" alt="image" class="moGnbImg" />
+						</div>
+					</div>
+				</div>
+				<!-- header -->
+
+				<div class="onAllMenu" tabindex="0">
+					<img src="/startkosmes-preview/images/common/allMenuImg01.png" class="allMenuImg01" alt="image" />
+					<img src="/startkosmes-preview/images/common/allMenuImg01.png" class="allMenuImg02" alt="image" />
+					<div class="innerFix">
+						<ul class="allMenuList">
+							<li>
+								<div class="allOneTitle">사업소개</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_int010_001.html">도전성공학교란?</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_int020_001.html">도전성공패키지란?</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_int030_001.html">도전응원프로젝트란?</a></div>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">사업신청</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="#none">수요기업 신청</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app010_001.html">도전성공학교 신청하기</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app010_002.html">도전성공학교 신청조회</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app020_001.html">도전성공패키지 신청하기</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app020_002.html">도전성공패키지 신청조회</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app030_001.html">도전응원프로젝트 신청하기</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_app030_002.html">도전응원프로젝트 신청조회</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">협약관리</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_apm100_001.html">협약신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm100_001.html">과제변경요청</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">사업관리</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="#none">교육코칭</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm204_001.html">내 강의실</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm201_001.html">내부교육 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm205_001.html">외부교육 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm203_001.html">코칭 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm202_001.html">학점 이수 현황</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">사업비 정산</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm101_001.html">사업비 집행계획 승인요청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm104_001.html">구매/계약 승인요청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm103_001.html">사업비 지급 요청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm105_001.html">사업비 집행현황</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm109_001.html">사업비 반납요청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm700_001.html">사후증빙제출</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">기자재</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm102_001.html">기자재 등록</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">보고서 제출</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm500_001.html">월간창업보고서 제출</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm501_001.html">평가보고서 제출</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">바우처 관리</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_vch010_001.html">바우처 (사전)승인요청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_vch020_001.html">바우처 정산요청</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">공통</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm206_001.html">설문응답</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm110_001.html">월간 일정</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm107_001.html">출퇴근 현황</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm108_001.html">출장신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm300_001.html">시설(장비) 이용 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm502_001.html">기숙사 이용 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm503_001.html">기숙사 비용 결제</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">사후관리</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm600_001.html">사후관리 조사</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm600_019.html">사후관리 결과확인</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">위탁기관</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_024.html">위탁기관 등록 안내</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_001.html">위탁기관 검색</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">위탁기관 등록</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm400_011.html">위탁기관 등록 신청</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_bsm400_026.html">위탁기관 등록 여부 확인</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_016.html">위탁기관 등록요청(입교자용)</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_016_agency.html">위탁기관 관리</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_006.html">견적서 요청</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm400_008.html">견적서 제출</a></div>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">성실경영평가</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_app040_001.html">신청하기</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_app040_002.html">결과확인</a></div>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">재도전진단</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_rcd010_001.html">재도전 진단</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_rcd020_001.html">진단결과 조회</a></div>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">디자인팩토리</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="#none">디자인팩토리</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi060_001.html">디자인팩토리 소개</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi010_001.html">디자인랩</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi020_001.html">MVP스테이션</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi030_001.html">스타트업스튜디오</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi040_001.html">디자인톡</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi050_001.html">3D프린팅룸</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="#none">제품개발지원</a></div>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi001_001.html">제품개발지원</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi002_001.html">견적서 수수료 관리</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi002_002.html">견적서 단가 관리</a></li>
+										</ul>
+
+										<ul class="allThreeList">
+											<li><a href="/startkosmes-preview/yh_dfi003_001.html">목표관리</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<div class="allOneTitle">알림마당</div>
+								<ul class="allDepthList">
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm080_001.html">공지사항</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_cus010_001.html">자주하는 질문</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_cus500_001.html">온라인 매뉴얼</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_bsm081_001.html">자료실</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_cus200_001.html">청렴신고센터</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_not002_046.html">Post-Care(후속연계지원)</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_stu010_003.html">타기관지원사업</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_not020_001.html">행사.보도</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_ysi080_001.html">문의처</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_cus100_001.html">증명서 진위확인</a></div>
+									</li>
+
+									<li>
+										<div class="allTwoTitle"><a href="/startkosmes-preview/yh_cus300_001.html">사전코칭센터</a></div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="allMenuTop">
+							<span>전체메뉴</span>
+							<button type="button" class="allMenuClose"></button>
+						</div>
+					</div>
+
+					<div class="allBookmarkList">
+						<div class="innerFix">
+							<div class="bookmarkSetting">
+								즐겨찾는 메뉴
+
+								<a href="/startkosmes-preview/yh_myp020_001.html" class="bookmarkSetBtn">설정</a>
+							</div>
+
+							<ul class="allBookmarkLink">
+								<li>
+									<a href="/startkosmes-preview/yh_ysi090_001.html">우수사례 소개</a>
+								</li>
+
+								<li>
+									<a href="/startkosmes-preview/yh_bsm204_001.html">내 강의실</a>
+								</li>
+
+								<li>
+									<a href="/startkosmes-preview/yh_bsm080_001.html">공지사항</a>
+								</li>
+
+								<li>
+									<a href="/startkosmes-preview/yh_dfi001_001.html">제품개발지원</a>
+								</li>
+
+								<li>
+									<a href="/startkosmes-preview/yh_bsm081_001.html">자료실</a>
+								</li>
+
+								<li>
+									<a href="/startkosmes-preview/yh_meb091_001.html">증명서 발급 신청</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //header -->
+
+			<form id="loginFrm" name="loginFrm" method="post">
+				<input type="hidden" name="searchYmFdtnMtacPed" id="searchYmFdtnMtacPed" value="" />
+				<input type="hidden" name="searchAcssAuthDvCd" id="searchAcssAuthDvCd" value="" />
+			</form>
+
+			<!-- 동의 확인창 -->
+			<div class="lpContainer alertPop" style="display:none;">
+				<div class="lpWrap small">
+					<div class="lpContent">
+						<div class="cellin align_c">
+							<i class="icoSymbol ico_info"></i>
+							<p id="alertMsg"></p>
+							<!-- <p>기존 비밀번호는 사용할 수 없습니다.<br>새로운 비밀번호를 입력하세요.</p>
+                <p>연속된 숫자, 전화번호는 비밀번호로<br>사용할 수 없습니다. 새로운 비밀번호를<br>입력하세요.</p>
+                <p>비밀번호는 영문 대문자, 소문자, 숫자,<br>특수문자 조합 3종류, 8~20자리로 생성하세요.</p> -->
+						</div>
+					</div>
+					<div class="btnWrap center">
+						<button class="btn lightblue" onclick="lpClose('.alertPop');return false"><span>확인</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- //동의 확인창 -->
+
+			<!-- 동의 확인창 -->
+			<div class="lpContainer alertPopBack" style="display:none;">
+				<div class="lpWrap small">
+					<div class="lpContent">
+						<div class="cellin align_c">
+							<i class="icoSymbol ico_info"></i>
+							<p id="alertMsgBack"></p>
+							<!-- <p>기존 비밀번호는 사용할 수 없습니다.<br>새로운 비밀번호를 입력하세요.</p>
+                <p>연속된 숫자, 전화번호는 비밀번호로<br>사용할 수 없습니다. 새로운 비밀번호를<br>입력하세요.</p>
+                <p>비밀번호는 영문 대문자, 소문자, 숫자,<br>특수문자 조합 3종류, 8~20자리로 생성하세요.</p> -->
+						</div>
+					</div>
+					<div class="btnWrap center">
+						<button class="btn lightblue" onclick="lpClose('.alertPopBack');history.back();"><span>확인</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- //동의 확인창 -->
+
+			<!-- //confirm 창 -->
+			<div class="lpContainer confirmMsgPop">
+				<div class="lpWrap small">
+					<div class="lpContent">
+						<div class="cellin align_c">
+							<i class="icoSymbol ico_info"></i>
+							<p id="confirmMsg"></p>
+						</div>
+					</div>
+					<div class="btnWrap">
+						<button type="button" name="idConfirmMsgCancel" id="idConfirmMsgCancel" class="btn lightblue line lpClose" onclick="javascript:lpClose('.confirmMsgPop');"><span>취소</span></button>
+						<button type="button" name="idConfirmMsg" id="idConfirmMsg" class="btn lightblue" onclick=""><span>확인</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- //confirm 창 -->
+
+			<!-- //confirm 창 -->
+			<div class="lpContainer confirmMsgPop">
+				<div class="lpWrap small">
+					<div class="lpContent">
+						<div class="cellin align_c">
+							<i class="icoSymbol ico_info"></i>
+							<p id="confirmMsgforBoard"></p>
+						</div>
+					</div>
+					<div class="btnWrap">
+						<button type="button" name="idConfirmMsgforBoard" id="idConfirmMsgforBoard" class="btn lightblue" onclick="javascript:lpClose('.confirmMsgPop');"><span>확인</span></button>
+					</div>
+				</div>
+			</div>
+			<!-- //confirm 창 -->
+
+			<script>
+
+				counter_init();
+			</script>
+
+			<!-- 컨텐츠 키비쥬얼 영역  -->
+
+			<!-- 2026.11.05 수정 - 즐겨찾는 메뉴 삭제, 챗봇 영역 (Figma 809:6515 : 영역만 잡음) -->
+			<div class="chatbotWrap">
+				<a href="javascript:void(0);" class="chatbotBtn"><img src="/startkosmes-preview/images/common/img_chatbot.png" alt="챗봇" /></a>
+			</div>
+
+			<!-- //keyVisual  -->
+
+			<div class="contentsWrap">
+				<script>
+					$(window).scroll(function () {
+						var scroll = $(this).scrollTop();
+						var vw = $(window).innerWidth();
+						if (vw > 1280 == true) {
+							if (scroll < 94){
+								$(".locationWrap").css({"position":"fixed","top":"94px","z-index":"100"});
+
+							} else {
+								$(".locationWrap").css({"position":"fixed","top":"78px","left":"0","width":"100%","z-index":"100"});
+							}
+						};
+
+						if (vw < 1280 == true) {
+							if (scroll < 64) {
+								$(".locationWrap").css({"position":"fixed","top":"64px","left":"0px","width":"100vw","z-index":"100"});
+							} else {
+								$(".locationWrap").css({"position":"fixed","top":"64px","left":"0px","width":"100vw","z-index":"100"});
+							}
+						};
+
+						if (vw < 768 == true) {
+							if (scroll < 53) {
+								$(".locationWrap").css({"position":"fixed","top":"53px","left":"0px","width":"100vw","z-index":"100"});
+							} else {
+								$(".locationWrap").css({"position":"fixed","top":"53px","left":"0px","width":"100vw","z-index":"100"});
+							}
+						};
+
+						if (matchMedia("screen and (max-width:768px)").matches) {
+							$(".locationWrap").css({"display":"block"});
+						}
+					});
+				</script>
+
+				<!-- 메뉴 depth 메뉴명 가각 가져오기 -->
+
+				<!-- 메뉴 depth 메뉴아이디 가각 가져오기 -->
+
+				<!-- location -->
+				<div class="locationWrap">
+					<div class="innerFix">
+						<div class="localInfo">
+							<!-- 2026.11.06 수정 - 위치 메뉴 (tools/location-menu.mjs 로 생성) -->
+							<a href="/startkosmes-preview/" class="home findent">홈 </a>
+							<p class="category">성실경영평가</p>
+							<div class="localMenu slideToggle deps02">
+								<!-- 1depth 메뉴 클릭 시 3depth 메뉴를 호출 하지 않고 1depth메뉴를 호출 할 경우 2depth명이 조회 가 되지 않아 2depth 메뉴 리스트중에 첫번째 메뉴명을 다시 세팅 한다. -->
+
+								<button type="button" name="lnbDeps02" id="lnbDeps02" class="toggleBtn after_triangle"><span class="valueInit">신청하기</span></button>
+								<ul class="menuList slideTarget">
+									<li><a href="/startkosmes-preview/yh_app040_001.html" class="selectUnit">신청하기</a></li>
+									<li><a href="/startkosmes-preview/yh_app040_002.html" class="selectUnit">결과확인</a></li>
+								</ul>
+							</div>
+
+							<!-- 2depth 메뉴 클릭 시 3depth 메뉴를 호출 하지 않고 2depth메뉴를 호출 할 경우 3depth명이 조회 가 되지 않아 3depth 메뉴 리스트중에 첫번째 메뉴명을 다시 세팅 한다. -->
+
+							<!-- 3depth명이 있을 경우 3depth 영역을 표시 및 보여준다. -->
+						</div>
+						<!-- //localInfo -->
+						<!-- 
+        <div class="pageControle">
+            <button type="button" class="windowPrint findent" onclick="javascript:fn_openPrintPop();"><span>프린트 </span></button>
+            <button type="button" class="zoomIn findent" onclick="javascript:zoomIn();"><span>확대</span></button>
+            <button type="button" class="zoomOut findent" onclick="javascript:zoomOut();"><span>축소</span></button>
+        </div>
+         -->
+					</div>
+				</div>
+				<!-- //location -->
+				<div class="contentBody">
+					<div class="diagramBox" style="filter: url(#blurFilter)">
+						<svg width="1000" height="56" viewBox="0 0 300 56">
+							<defs>
+								<filter id="blurFilter">
+									<feGaussianBlur in="wonSvg" stdDeviation="10" result="blur"></feGaussianBlur>
+									<feColorMatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="wonSvg"></feColorMatrix>
+									<feBlend in="SourceGraphic" in2="wonSvg"></feBlend>
+								</filter>
+							</defs>
+						</svg>
+						<div class="wonBox1">
+							<svg class="won1" width="545" height="545" viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="272.307" cy="272.307" r="272.307" fill="url(#paint1)" />
+								<defs>
+									<linearGradient id="paint1" x1="16" y1="272" x2="545" y2="272" gradientUnits="userSpaceOnUse">
+										<stop offset="0.6" stop-color="#E5F4FF" />
+										<stop offset="1" stop-color="#F1F2F9" />
+									</linearGradient>
+								</defs>
+							</svg>
+							<svg class="won2" width="545" height="545" viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="272.307" cy="272.307" r="272.307" fill="url(#paint2)" />
+								<defs>
+									<linearGradient id="paint2" x1="16" y1="272" x2="545" y2="272" gradientUnits="userSpaceOnUse">
+										<stop offset="0.2" stop-color="#F1F2F9" />
+										<stop offset="0.6" stop-color="#FFF1F3" />
+									</linearGradient>
+								</defs>
+							</svg>
+						</div>
+						<div class="wonBox2">
+							<svg class="won1" width="545" height="545" viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="272.307" cy="272.307" r="272.307" fill="url(#paint3)" />
+								<defs>
+									<linearGradient id="paint3" x1="16" y1="272" x2="545" y2="272" gradientUnits="userSpaceOnUse">
+										<stop offset="0.6" stop-color="#E5F4FF" />
+										<stop offset="1" stop-color="#F1F2F9" />
+									</linearGradient>
+								</defs>
+							</svg>
+							<svg class="won2" width="545" height="545" viewBox="0 0 545 545" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="272.307" cy="272.307" r="272.307" fill="url(#paint4)" />
+								<defs>
+									<linearGradient id="paint4" x1="16" y1="272" x2="545" y2="272" gradientUnits="userSpaceOnUse">
+										<stop offset="0.2" stop-color="#F1F2F9" />
+										<stop offset="0.6" stop-color="#FFF1F3" />
+									</linearGradient>
+								</defs>
+							</svg>
+						</div>
+					</div>
+
+					<script>
+						$(document).ready(function(){
+							gfn_kakaoShare();
+						});
+					</script>
+
+					<div class="innerFix">
+						<div class="headzone line">
+							<h2 class="h2_blind">성실경영평가</h2>
+							<h3 class="contHeading" id="content">신청하기</h3>
+							<ul class="headIconList">
+								<li>
+									<button type="button" class="print" onclick="javascript:window.print();"></button>
+								</li>
+								<li>
+									<button type="button" class="share"></button>
+									<ul class="shareList">
+										<li class="facebook">
+											<a href="javascript:gfn_shareSns('facebook');" title="페이스북 공유"><img src="/startkosmes-preview/images/common/icon_facebook.svg" alt="" /></a>
+										</li>
+										<li class="kakao">
+											<a id="kakao-link-btn" href="javascript:;" title="카카오톡 공유"><img src="/startkosmes-preview/images/common/icon_kakao.svg" alt="" /></a>
+										</li>
+										<li class="snsX">
+											<a href="javascript:gfn_shareSns('twitter');" title="X 공유"><img src="/startkosmes-preview/images/common/icon_x.svg" alt="" /></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<!-- //headzone -->
+						<!-- 2026.11.12 추가 - 빈 페이지 : 운영 화면 · 디자인 없음 (성실경영평가 > 신청하기) -->
+						<div class="contentzone"></div>
+						<!-- //contentzone -->
+					</div>
+				</div>
+			</div>
+			<!--  //contentsWrap  -->
+
+			<!-- footer -->
+
+			<script>
+
+				//history.pushState(null, null, '');
+				//window.onpopstate = function(event) {  //뒤로가기 이벤트를 캐치합니다.
+				//    history.back();
+				//    //console.log('뒤로가기 체크');
+				//};
+
+				function goBack() {
+					history.go(-1);
+
+				}
+			</script>
+			<div class="footerWrap">
+				<a href="javascript:goBack();" data-rel="back" class="historyBack onMobile"><span class="findent">이전 페이지</span></a>
+
+				<div class="siteMenu">
+					<div class="innerFix">
+						<div class="siteGroup">
+							<ul class="insite">
+								<li><a class="personalLink" href="https://kosmes.or.kr/nsh/SH/IFS/SHIFS007M0.do" target="_blank">개인정보처리방침</a></li>
+								<li><a href="/startkosmes-preview/yh_ifu020_001.html">회원이용약관</a></li>
+								<li><a href="/startkosmes-preview/yh_ifu040_001.html">저작권정책</a></li>
+								<li><a href="/startkosmes-preview/yh_ifu030_001.html">이메일무단수집거부</a></li>
+								<!-- <li><a href="/startkosmes-preview/yh_ysi060_001.html">오시는길</a></li> -->
+								<li><a href="/startkosmes-preview/yh_ysi080_001.html">문의처</a></li>
+								<li><a href="/startkosmes-preview/yh_ifu001_001.html">홈페이지 이용안내</a></li>
+							</ul>
+						</div>
+						<div class="familyGroup">
+							<div class="linkList slideUp">
+								<button type="button" name="w3c_fix_id_10" id="w3c_fix_id_10" aria-expanded="false" class="toggleBtn">소속기관 홈페이지</button>
+								<ul class="list">
+									<li><a href="http://hp.kosmes.or.kr" title="새창열림" target="_blank">중소벤처기업진흥공단</a></li>
+									<li><a href="http://ssup.kosmes.or.kr" title="새창열림" target="_blank">중소벤처기업연수원</a></li>
+									<li><a href="https://www.sbcplan.or.kr" title="새창열림" target="_blank">내일채움공제사업</a></li>
+									<li><a href="https://www.exportvoucher.com" title="새창열림" target="_blank">수출바우처사업</a></li>
+									<li><a href="http://nara.kosmes.or.kr/newshome/mtnmain.php" title="새창열림" target="_blank">기업나라</a></li>
+									<li><a href="https://cyber.kosmes.or.kr/cyber_new/index_new.jsp" title="새창열림" target="_blank">이러닝연수</a></li>
+									<li><a href="https://kr.gobizkorea.com/kruser/main.do" title="새창열림" target="_blank">고비즈코리아</a></li>
+									<li><a href="https://bigdata.kosmes.or.kr" title="새창열림" target="_blank">비즈패스파인더</a></li>
+								</ul>
+							</div>
+
+							<div class="linkList slideUp">
+								<button type="button" name="w3c_fix_id_11" id="w3c_fix_id_11" aria-expanded="false" class="toggleBtn">유관기관 홈페이지</button>
+								<ul class="list">
+									<li><a href="https://www.mss.go.kr" title="새창열림" target="_blank">중소벤처기업부</a></li>
+									<li><a href="https://www.k-startup.go.kr" title="새창열림" target="_blank">K-스타트업</a></li>
+									<li><a href="https://www.tipa.or.kr" title="새창열림" target="_blank">중소기업기술정보진흥원</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer">
+					<div class="innerFix">
+						<div class="footerImgBox">
+							<a href="/startkosmes-preview/" class="logo">재도전 통합지원 플랫폼</a>
+							<a class="awardLogo" href="https://www.i-award.or.kr/web/prize/2024/Awarded01.aspx" target="_blank">
+								<img src="/startkosmes-preview/images/common/webAwardLogo.png" alt="WEB AWARD 24 WINNER" />
+							</a>
+						</div>
+						<div class="address">
+							<p>15432 경기도 안산시 단원구 연수원로87 중소벤처기업연수원 內 (원곡동 931)</p>
+							<p class="copyright">COPYRIGHTS© 2024 KOSME. ALL RIGHTS RESERVED.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //#wrapper -->
+	</body>
+</html>

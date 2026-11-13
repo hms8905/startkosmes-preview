@@ -1,0 +1,529 @@
+@charset 'utf-8';
+/*--------------------------------------------------------------------------------------------------------------------------
+	File : base.css
+	Company : The Webstyle co.,ltd
+    CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+    CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+    CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------
+    ## Reset
+-------------------------------------------------------------------*/
+html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tfoot, tr, th, td, caption, address, article, aside,
+canvas, details, figure, figcaption, footer, header, menu, nav, section, main,
+label, button, select, textarea, input, fieldset, legend, a, span, strong, em, address, dfn, small, i, b, xmp, code {margin:0; padding:0; border:0; color:inherit; list-style:none; font-style:inherit; font-size:inherit; font-weight:inherit; font-family:inherit; line-height:inherit; word-break:inherit; word-wrap:inherit; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;}
+:before, :after {box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;}
+article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section, main {display:block;}
+html {font-size:10px;}
+body {font-family:'Pretendard', sans-serif; font-style:normal; font-size:16px; line-height:1.4; color:#222; word-break:keep-all; word-wrap:break-word; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;}
+html, body {min-width:320px;}
+html[lang=ja] body, html[lang=zh] body {word-break:normal;}
+
+img {vertical-align:middle;}
+textarea {resize:none;}
+fieldset, iframe {width:100%;}
+button, img, a, frame, iframe, fieldset {border:0;}
+a {text-decoration:none;}
+table {width:100%; border-spacing:0; border-collapse:collapse;}
+caption {line-height:0; text-indent:-9999px;}
+legend {position:absolute; left:-9999em; top:-9999em;}
+button {overflow:hidden; background-color:transparent; cursor:pointer;}
+button::-moz-focus-inner {border:0px; padding:0px;}
+.dv-android [tabindex='0']:focus,
+.dv-android a:focus,
+.dv-android button:focus,
+.dv-android input:focus,
+.dv-android textarea:focus,
+.dv-android select:focus {outline:0;}
+.dv-ios [tabindex='0'],
+.dv-ios a,
+.dv-ios button,
+.dv-ios input,
+.dv-ios textarea,
+.dv-ios select {-webkit-tap-highlight-color:transparent;}
+
+.roboto {font-family:'Roboto'; font-weight:400;}
+.bar {display:inline-block; position:relative; padding-left:10px; padding-right:10px;}
+.ellipsis {overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+
+/* Only works in IE10 이상 (IE11도 포함)*/
+_:-ms-input-placeholder, :root br {font-family:dotum;}
+_:-ms-input-placeholder, :root textarea {font-family:dotum;}
+
+input[type=text]::-ms-clear{
+	display:none;
+}
+
+
+/*-------------------------------------------------------------------
+    ## Fonts
+-------------------------------------------------------------------*/
+/* NanumGothic */
+/* @font-face {
+	font-family:"NanumGothic"; font-weight:100;
+	src: url("/startkosmes-preview/fonts/NanumGothicLight.otf");
+	src: local("※"), url("/startkosmes-preview/fonts/NanumGothicLight.otf?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/NanumGothicLight.woff") format("woff"); } */
+
+/* @font-face {
+	font-family:"NanumGothic"; font-weight:100;
+	src: url("/startkosmes-preview/fonts/NanumGothic.otf");
+	src: local("※"), url("/startkosmes-preview/fonts/NanumGothic.otf?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/NanumGothic.woff") format("woff"); }
+
+@font-face {
+	font-family:"NanumGothic"; font-weight:400;
+	src: url("/startkosmes-preview/fonts/NanumGothicBold.otf");
+	src: local("※"), url("/startkosmes-preview/fonts/NanumGothicBold.otf?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/NanumGothicBold.woff") format("woff"); }
+
+@font-face {
+	font-family:"NanumGothic"; font-weight:800;
+	src: url("/startkosmes-preview/fonts/NanumGothicExtraBold.otf");
+	src: local("※"), url("/startkosmes-preview/fonts/NanumGothicExtraBold.otf?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/NanumGothicExtraBold.woff") format("woff"); } */
+
+/* Pretendard */
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Regular.subset.woff2') format('woff2'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Regular.subset.woff') format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Medium.subset.woff2') format('woff2'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Medium.subset.woff') format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url('/startkosmes-preview/fonts/pretendard/Pretendard-SemiBold.subset.woff2') format('woff2'), url('/startkosmes-preview/fonts/pretendard/Pretendard-SemiBold.subset.woff') format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Bold.subset.woff2') format('woff2'), url('/startkosmes-preview/fonts/pretendard/Pretendard-Bold.subset.woff') format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url('/startkosmes-preview/fonts/pretendard/Pretendard-ExtraBold.subset.woff2') format('woff2'), url('/startkosmes-preview/fonts/pretendard/Pretendard-ExtraBold.subset.woff') format('woff');
+}
+
+
+/* Roboto */
+/* @font-face {
+	font-family:"Roboto"; font-weight:100;
+	src: url("/startkosmes-preview/fonts/Roboto-Thin.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Thin.woff") format("woff"); }
+
+@font-face {
+	font-family:"Roboto"; font-weight:300;
+	src: url("/startkosmes-preview/fonts/Roboto-Light.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Light.woff") format("woff"); }
+
+@font-face {
+	font-family:"Roboto"; font-weight:400;
+	src: url("/startkosmes-preview/fonts/Roboto-Regular.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Regular.woff") format("woff"); }
+
+@font-face {
+	font-family:"Roboto"; font-weight:500;
+	src: url("/startkosmes-preview/fonts/Roboto-Medium.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Medium.woff") format("woff"); }
+
+@font-face {
+	font-family:"Roboto"; font-weight:700;
+	src: url("/startkosmes-preview/fonts/Roboto-Bold.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Bold.woff") format("woff"); }
+
+@font-face {
+	font-family:"Roboto"; font-weight:900;
+	src: url("/startkosmes-preview/fonts/Roboto-Bold.eot");
+	src: local("※"), url("/startkosmes-preview/fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("/startkosmes-preview/fonts/Roboto-Bold.woff") format("woff"); } */
+
+/* SkipNav */
+.skipNav {display:block; position:absolute; left:0; top:0; width:100%; height:0; z-index:100;}
+.skipNav a {display:block; position:absolute; left:0; bottom:0; width:100%; line-height:40px; background-color:#000; color:#fff; text-align:center; transform:translateY(0);}
+.skipNav a:focus {transform:translateY(100%);}
+.skip {position: fixed; top: 0; left: 0; width: 0; height: 0; overflow: hidden;}
+
+/* Display */
+.d_block {display:block !important;}
+.i_block {display:inline-block !important;}
+.pcbr {display:block;}
+
+/* color */
+.prime_txt01 {color:#003894;}
+.prime_txt02 {color:#3b3b3b;}
+.secon_txt01 {color:#4380e0;}
+.secon_txt02 {color:#e60020;}
+.secon_txt03 {color:#F5F9FF ;}
+.darkgray_txt01 {color:#222;}
+.darkgray_txt02 {color:#666;}
+.darkgray_txt03 {color:#999;}
+.gray_txt01 {color:#d0d0d0;}
+.gray_txt02 {color:#c7c7c7;}
+.lightgray_txt01 {color:#ececec;}
+.lightgray_txt02 {color:#f7f7f7;}
+
+.prime_bg01 {background-color:#003894;}
+.prime_bg02 {background-color:#3b3b3b;}
+.secon_bg01 {background-color:#4380e0;}
+.secon_bg02 {background-color:#e60020;}
+/* .secon_bg03 {background-color:#F5F9FF !important;} */
+.secon_bg03 {background-color:#F5F9FF;} /* 2026.11.05 수정 - !important 제거 */ /* 표 안 합계 칸은 contents.css .tableWrap01 table .secon_bg03 에서 #FAFAFA */
+.darkgray_bg01 {background-color:#222;}
+.darkgray_bg02 {background-color:#666;}
+.darkgray_bg03 {background-color:#999;}
+.gray_bg01 {background-color:#d0d0d0;}
+.gray_bg02 {background-color:#c7c7c7;}
+.lightgray_bg01 {background-color:#ececec;}
+.lightgray_bg02 {background-color:#f7f7f7;}
+.white_bg {background-color:#fff !important;}
+
+/* 2021.01.06 곽현준 추가 */
+.nowrap {white-space:nowrap;}
+.border_top_none {border-top:none !important;}
+.border_right_none {border-right:none !important;}
+.border_bottom_none {border-bottom:none !important;}
+.border_left_none {border-left:none !important;}
+.tleft {text-align:left !important;}
+.tcenter {text-align:center !important;}
+.tright {text-align:right !important;}
+.pt_0 {padding-top:0 !important;}
+.pt_20 {padding-top:20px !important;}
+.pt_38 {padding-top:38px !important;}
+.pt_50 {padding-top:50px !important;}
+.pr_0 {padding-right:0 !important;}
+.pb_0 {padding-bottom:0 !important;}
+.pb_15 {padding-bottom:15px !important;}
+.pb_20 {padding-bottom:20px !important;}
+.pl_0 {padding-left:0 !important;}
+.pl_5 {padding-left:5px !important;}
+.pl_10 {padding-left:10px !important;}
+.pl_15 {padding-left:15px !important;}
+.pl_20 {padding-left:20px !important;}
+.mt_0 {margin-top:0 !important;}
+.mt_5 {margin-top:5px !important;}
+.mt_10 {margin-top:10px !important;}
+.mt_12 {margin-top:12px !important;}
+.mt_15 {margin-top:15px !important;}
+.mt_20 {margin-top:20px !important;}
+.mt_22 {margin-top:22px !important;}
+.mt_30 {margin-top:30px !important;}
+.mt_35 {margin-top:35px !important;}
+.mt_38 {margin-top:38px !important;}
+.mt_40 {margin-top:40px !important;}
+.mt_45 {margin-top:45px !important;}
+.mt_50 {margin-top:50px !important;}
+.mb_8 {margin-bottom:8px !important;}
+.mb_15 {margin-bottom:15px !important;}
+.mb_20 {margin-bottom:20px !important;}
+.mb_30 {margin-bottom:30px !important;}
+
+.ml_0 {margin-left:0px !important;}
+.ml_5 {margin-left:5px !important;}
+.ml_10 {margin-left:10px !important;}
+.ml_15 {margin-left:15px !important;}
+.ml_16 {margin-left:16px !important;}
+.ml_20 {margin-left:20px !important;}
+.ml_22 {margin-left:22px !important;}
+.ml_25 {margin-left:25px !important;}
+.ml_30 {margin-left:30px !important;}
+.ml_35 {margin-left:35px !important;}
+.ml_38 {margin-left:38px !important;}
+.ml_40 {margin-left:40px !important;}
+
+.bb_2 {border-bottom:2px solid #535353 !important;}
+.red {color:#e60020 !important;}
+.black {color:#000 !important;}
+.gray {color:#666 !important;}
+.img_border {border:1px solid #ccc;}
+.inner_title_border {border-bottom:1px solid #ececec;}
+.none {display:none;}
+.block {display:block;}
+.bold {font-weight:bold !important;}
+.fl {float:left;}
+.fr {float:right;}
+.cb {clear:both;}
+.ulblue {text-decoration:underline !important; color:blue !important;}
+
+.font_12 {font-size:12px;}
+.font_13 {font-size:13px;}
+.font_14 {font-size:14px;}
+.font_15 {font-size:15px;}
+.normal {font-weight:normal;}
+
+/* 2026.10.30 추가 - 타이포그래피 (Figma 26_재도전 종합 지원 플랫폼 620:1711) */
+/* 이름 : 유형(heading, body)_크기_무게 / 공통 : Pretendard, line-height 150%, letter-spacing -6% */
+.heading_xlarge_bold {font-weight:700; font-size:34px; line-height:1.5; letter-spacing:-0.06em;}
+.heading_large_bold {font-weight:700; font-size:28px; line-height:1.5; letter-spacing:-0.06em;}
+.heading_medium_bold {font-weight:700; font-size:22px; line-height:1.5; letter-spacing:-0.06em;}
+.heading_small_bold {font-weight:700; font-size:20px; line-height:1.5; letter-spacing:-0.06em;}
+.heading_xsmall_bold {font-weight:700; font-size:17px; line-height:1.5; letter-spacing:-0.06em;}
+.body_medium_bold {font-weight:700; font-size:17px; line-height:1.5; letter-spacing:-0.06em;}
+.body_small_bold {font-weight:700; font-size:16px; line-height:1.5; letter-spacing:-0.06em;}
+.body_xsmall_bold {font-weight:700; font-size:15px; line-height:1.5; letter-spacing:-0.06em;}
+.body_medium_regular {font-weight:400; font-size:17px; line-height:1.5; letter-spacing:-0.06em;}
+.body_small_regular {font-weight:400; font-size:16px; line-height:1.5; letter-spacing:-0.06em;}
+.body_xsmall_regular {font-weight:400; font-size:15px; line-height:1.5; letter-spacing:-0.06em;}
+/* //2026.10.30 추가 - 타이포그래피 */
+
+/* width값 글로벌 css */
+.w50 {width:50px !important;}
+.w60 {width:60px !important;}
+.w70 {width:70px !important;}
+.w80 {width:80px !important;}
+.w90 {width:90px !important;}
+.w100 {width:100px !important;}
+.w110 {width:110px !important;}
+.w120 {width:120px !important;}
+.w130 {width:130px !important;}
+.w140 {width:140px !important;}
+.w150 {width:150px !important;}
+.w160 {width:160px !important;}
+.w170 {width:170px !important;}
+.w180 {width:180px !important;}
+.w190 {width:190px !important;}
+.w200 {width:200px !important;}
+.w222 {width:222px !important;}
+.w250 {width:250px !important;}
+.w300 {width:300px !important;}
+.w350 {width:350px !important;}
+.w380 {width:380px !important;}
+.w380 {width:380px !important;}
+.w400 {width:400px !important;}
+.w450 {width:450px !important;}
+.w480 {width:480px !important;}
+.w500 {width:500px !important;}
+.w550 {width:550px !important;}
+.w600 {width:600px !important;}
+.w650 {width:650px !important;}
+.w700 {width:700px !important;}
+.w750 {width:750px !important;}
+.w800 {width:800px !important;}
+.w850 {width:850px !important;}
+.w900 {width:900px !important;}
+.w950 {width:950px !important;}
+.w1000 {width:1000px !important;}
+
+@media screen and (max-width:768px){
+	.w50 {width:initial !important;}
+	.w60 {width:initial !important;}
+	.w70 {width:initial !important;}
+	.w80 {width:initial !important;}
+	.w90 {width:initial !important;}
+	.w100 {width:initial !important;}
+	.w150 {width:initial !important;}
+	.w200 {width:initial !important;}
+	.w222 {width:initial !important;}
+	.w250 {width:initial !important;}
+	.w300 {width:initial !important;}
+	.w350 {width:initial !important;}
+	.w380 {width:initial !important;}
+	.w380 {width:initial !important;}
+	.w400 {width:initial !important;}
+	.w450 {width:initial !important;}
+	.w480 {width:initial !important;}
+	.w500 {width:initial !important;}
+	.w550 {width:initial !important;}
+	.w600 {width:initial !important;}
+	.w650 {width:initial !important;}
+	.w700 {width:initial !important;}
+	.w750 {width:initial !important;}
+	.w800 {width:initial !important;}
+	.w850 {width:initial !important;}
+	.w900 {width:initial !important;}
+	.w950 {width:initial !important;}
+	.w1000 {width:initial !important;}
+}
+
+/* concealment element */
+.blind {
+	position:absolute !important;
+	overflow:hidden !important;
+	width:1px !important;
+	height:1px !important;
+	font-size:0 !important;
+	line-height:0 !important;
+	border:0 !important;
+	background:none !important;
+}
+
+.contTitle {font-size:28px; font-weight:700; color:#222;}
+.contTitle2 {font-size:20px; font-weight:500; color:#222;}
+.contTitle2-2 {font-size:20px; font-weight:600; color:#222;}
+
+@media screen and (max-width:768px){
+	.subHeading {font-size:1.6rem;}
+}
+
+/* padding reset */
+.pdR {padding:0 !important;;}
+
+/* align */
+.align_l {text-align:left !important;}
+.align_r {text-align:right !important;}
+.align_c {text-align:center !important;}
+
+/* Form과 인접시 임의 간격 */
+.withForm {line-height:40px;}
+.withForm.left {margin-right:10px;}
+.withForm.right {margin-left:10px;}
+
+/* 줄바꿈 없음 임의 간격 */
+.wsnw {white-space:nowrap;}
+.wsnw.scL {margin-left:10px;}
+.wsnw.scR {margin-right:10px;}
+.wsnw.scLmid {margin-left:30px;}
+.wsnw.scRmid {margin-right:30px;}
+.wsnw.scLbig {margin-left:50px;}
+.wsnw.scRbig {margin-right:50px;}
+@media screen and (max-width:768px){
+	.wsnw {white-space:inherit;}
+}
+
+/*** 도형블릿 ***/
+/* 삼각형버튼 */
+.after_triangle::after {content:''; display:block; width: 9px; height: 5px;}
+/* .after_triangle::after {content:''; display:block; width:0px; height:0px; border-top:solid transparent 6px; border-bottom:solid #000 6px; border-left:solid transparent 5px; border-right:solid transparent 5px;} */
+
+/* 우측 화살표 */
+.after_arrow_right::after {content:''; display:block; position:relative; width:8px; height:8px; border-bottom:solid #000 1px; border-right:solid #000 1px; transform:rotate(-45deg);}
+
+/* 닫기(X) */
+.all_close::before, .all_close::after {content:''; display:block; position:absolute; width:100%; height:3px; background-color:#000; border-radius:2px;}
+.all_close::before {transform:rotate(45deg);}
+.all_close::after {transform:rotate(-45deg);}
+.xbtn {position:relative; width:20px; height:20px; border:solid #999 1px; border-radius:10px;}
+.xbtn span {position:absolute; font-size:1px; color:transparent; text-indent:-9999px;}
+.xbtn::before {content:''; display:block; position:absolute; left:calc(50% - 6px); top:8px; width:12px; height:1px; background-color:#999; transform:rotate(45deg);}
+.xbtn::after {content:''; display:block; position:absolute; left:calc(50% - 6px); top:8px; width:12px; height:1px; background-color:#999; transform:rotate(-45deg);}
+
+/** 파일아이콘 블릿 **/
+.icoFile {position:relative; min-height:20px; line-height:20px; /* padding-left:32px; */}
+.icoFile::before {content:''; display:inline-block; position:relative; width:20px; height:20px; margin-right:4px; background-image:url(/startkosmes-preview/images/common/ico_file_set.png); background-repeat:no-repeat; background-size:100%; vertical-align:middle;}
+.icoFile.ico01::before {background-position:0 0;}
+.icoFile.ico02::before {background-position:0 -50px;}
+.icoFile.ico03::before {background-position:0 -100px;}
+.icoFile.ico04::before {background-position:0 -150px;}
+.icoFile.ico05::before {background-position:0 -200px;}
+.icoFile.ico06::before {background-position:0 -250px;}
+.icoFile.ico07::before {background-position:0 -300px;}
+.icoFile.ico08::before {background-position:0 -350px;}
+
+/** 마커 **/
+.marker_dot:not(ul) {position:relative; padding-left:9px; font-size:14px; color:#666}
+ul.marker_dot li {position:relative; padding-left:9px; font-size:14px; color:#666}
+ul.marker_dot li + li {margin:4px 0 0 0;}
+.marker_dot:not(ul)::before, ul.marker_dot li::before {content:''; display:block; position:absolute; left:0; top:50%; width:3px; height:3px; background-color:#666; border-radius:50%; transform:translateY(-50%);}
+ul.marker_dot.f_row {display:flex; flex-direction:row; justify-content:start;}
+ul.marker_dot.f_row li + li {margin:0 0 0 6px;}
+
+.marker_dot.font16, ul.marker_dot.font16 li {font-size:16px;}
+.marker_dot.font16:not(ul)::before, ul.marker_dot.font16 li::before {top:9px;}
+.marker_dot.darkgray_txt01, ul.marker_dot.darkgray_txt01 li {color:#222}
+
+
+.marker_star:not(ul) {position:relative; padding-left:12px; font-size:16px; line-height:1.5; color:#666} /* 2026.11.05 수정 - Figma 서브 기본 (547:1336) */ /* 보조 문구 */
+ul.marker_star li {position:relative; padding-left:12px; font-size:16px; line-height:1.5; color:#666} /* 2026.11.05 수정 - Figma 서브 기본 (547:1336) */ /* 보조 문구 */
+ul.marker_star li + li {margin:4px 0 0 0;}
+.marker_star:not(ul)::before, ul.marker_star li::before {content:'*'; display:inline-block; position:absolute; left:0; top:2px; color:#666; font-size:12px;}
+ul.marker_star.f_row {display:flex; flex-direction:row; justify-content:start;}
+ul.marker_star.f_row li + li {margin:0 0 0 6px;}
+
+.marker_dash:not(ul) {position:relative; padding-left:12px; font-size:inherit; color:#666}
+ul.marker_dash li {position:relative; padding-left:12px; font-size:inherit; color:#666}
+ul.marker_dash li + li {margin:4px 0 0 0;}
+.marker_dash:not(ul)::before, ul.marker_dash li::before {content:'-'; display:inline-block; position:absolute; left:0; top:2px; color:#666; font-size:inherit;}
+ul.marker_dash.f_row {display:flex; flex-direction:row; justify-content:start;}
+ul.marker_dash.f_row li + li {margin:0 0 0 6px;}
+
+.marker_refer:not(ul) {position:relative; padding-left:16px; font-size:inherit; color:inherit;}
+ul.marker_refer li {position:relative; padding-left:16px; font-size:inherit; color:inherit;}
+ul.marker_refer li + li {margin:4px 0 0 0;}
+.marker_refer:not(ul)::before, ul.marker_refer li::before {content:'※'; display:inline-block; position:absolute; left:0; top:-1px; color:inherit; font-size:inherit;}
+ul.marker_refer.f_row {display:flex; flex-direction:row; justify-content:start;}
+ul.marker_refer.f_row li + li {margin:0 0 0 6px;}
+
+.marker_check {position:relative; padding-left:15px !important; font-weight:bold; line-height:28px;}
+.marker_check::before {content:''; display:inline-block; position:absolute; left:0; top:7px; width:12px; height:9px; background:url(/startkosmes-preview/images/common/ico_check.png) no-repeat center / 100%;}
+
+/* 뱃지 공통영역 .badge의 대한 정의(여백)은 개별정의 우선순위 밀림 */
+.boardList li.badge .bdg,
+/* .badge .bdg {display:inline-block; position:absolute; left:0; top:0; min-width:70px; height:22px; padding:0 10px; line-height:22px; background-color:#c7c7c7; border-radius:11px; color:#fff; font-size:14px; text-align:center;} */
+
+/* 2021.01.07 곽현준 수정 */
+/* .badge .bdg {display:inline-block; padding:4px 9px !important; height:24px; padding:0; line-height:24px; vertical-align:middle; background-color:#c7c7c7; border-radius:3px; color:#fff; font-size:12px; text-align:center; border-radius: 50px; letter-spacing: -0.9px;padding-bottom:20px !important;padding-top:0px !important;} */
+.badge .bdg {display:inline-block; height:24px; padding:0 9px 20px; line-height:24px; vertical-align:middle; background-color:#c7c7c7; border-radius:3px; color:#fff; font-size:12px; text-align:center; border-radius: 50px; letter-spacing: -0.9px;} /* 2026.11.05 수정 - !important 제거 */ /* 계산값 그대로 : 위 0, 좌우 9px, 아래 20px */
+
+/* 201230 추가 */
+.badge .badgeArea .bdg {position:relative !important;}
+
+/* .badge .bdg.notice, */ /* 공지 */
+.badge .bdg.before /* 접수 전 */ {background-color:#003894 !important; color:#FFF !important;}
+.badge .bdg.notice /* 공지 */ {background-color:#003894; color:#FFF;} /* 2026.11.05 수정 - !important 제거 */ /* 공지 배지만 분리, 게시판 목록 값은 contents.css */
+.badge .bdg.emergency, /* 긴급 */  /*201230 추가*/
+.badge .bdg.ing  /* 접수 중 */{background-color:#D74180 !important; color:#FFF !important;}
+.badge .bdg.end, /* 마감 */
+.badge .bdg.choice /* 선택 */{background-color:#999 !important; color:#FFF !important;}
+/* .badge .bdg.new, */ /* 신규 */  /*201230 추가*/
+.badge .bdg.complete, /* 완료 */
+.badge .bdg.must /* 필수 */  {background-color:#000 !important; color:#FFF !important;}
+.badge .bdg.new /* 신규 */ {background-color:#4380e0; color:#FFF;} /* 2026.11.05 수정 - !important 제거 */ /* 신규 배지만 분리, 게시판 목록 값은 contents.css */
+
+.badge .bdgTxt {display:block; position:relative; margin:0; padding:0;}
+.badge .bdgTxt.question {height:24px; margin:0; padding:0 16px; background-color:transparent; border-radius:0; font-size:24px; font-weight:600; line-height:24px; color:#003894;}
+.badge.relative .bdg {display:inline-block; position:relative; width:inherit; left:inherit; top:inherit; white-space:nowrap; text-align:center;}
+.tableWrap01 .badge.relative .bdg {display:inline-block; margin:0 auto;}
+
+/* 뱃지가 아이콘일 경우 */
+.boardList li.badge .bdgIco,
+.badge .bdgIco {display:inline-block; position:relative; left:0; top:0; margin:0; padding:0;}
+.badge .bdgIco.secret {width:14px; height:20px; background:transparent url(/startkosmes-preview/images/common/ico_secret.png) no-repeat left top / 14px auto; color:transparent; font-size:1px;} /* 비밀글 */
+
+/* 뱃지 옆에 뱃지 아이콘가 있을 경우 */
+.bdg.complete + .bdgIco.secret {left:80px;}
+
+/* .badge .bdg.pin {width:26px; height:25px; background:#fff url('/startkosmes-preview/images/common/icon_pin.svg') no-repeat center center !important;} */
+.badge .bdg.pin {width:26px; height:25px; background:#fff url('/startkosmes-preview/images/common/icon_pin.svg') no-repeat center center;} /* 2026.11.05 수정 - !important 제거 */
+
+/* 필수 입력 */
+.essential {position:relative;}
+.essential::after {display:block; position:absolute; right:-11px; top:-4px; font-size:16px; font-weight:500; color:#4380e0; content:"*"; }
+.essential.t_center::after {display:block; position:absolute; right:60px; top:-4px; font-size:16px; font-weight:500; color:#4380e0; content:"*"; }
+.essential span.findent {position:absolute; color:transparent !important;}
+
+/* 인풋 화살표 없애기 */
+.unstyled {-webkit-appearance:none;}
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {display:none; -webkit-appearance:none;}
+
+/* 히든 텍스트 */
+.hiddenText {position:absolute !important; height:1px !important; width:1px; overflow:hidden; clip: rect(1px,1px,1px,1px); word-break:initial; word-wrap:initial;}
+
+/* 링크 텍스트 */
+.linkTxt a,
+.linkTxt button,
+a.linkTxt > span {color:#4380e0; border-bottom:1px solid #4380e0;}
+/* 비활성 처리 */
+.linkTxt.disabled span {display:inline-block; position:relative; margin:0; padding:0; color:#999; border-bottom:1px solid #999;}
+
+
+
+@media screen and (max-width:768px){
+	body {font-size:10px;}
+	/* .icoFile {padding-left:25px} */
+	.withForm {line-height:30px;}
+	.mbr {display:block;}
+	.pcbr {display:inline;}
+	.mnone {display:none !important;}
+	/* 컨텐츠 탑라인 */
+	.contentBody .contentzone.topLine {padding-top:40px; border-top:solid #003894 1px;}
+}
+
+/* 2024.09.25 - 김지안 추가 */
+.boardList li.badge .bdg, .badge .bdg {/*vertical-align: 2px;*/ margin-right: 4px;}

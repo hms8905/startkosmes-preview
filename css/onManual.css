@@ -1,0 +1,52 @@
+.online-contentBox {margin: 30px 45px; } 
+
+.online-title1 {font-size: 20px;font-weight: bold;margin-bottom: 20px;padding-left: 23px;background: url(/startkosmes-preview/images/online/img-icon.png) no-repeat center left;background-size: 20px 20px; } 
+
+.online-title1+.online-title2 {margin-top: 20px; } 
+
+.online-guide+.online-title1 {margin-top: 30px; } 
+.online-tablebox +.online-title1 {margin-top: 30px; } 
+.online-list+.online-title1 {margin-top: 30px; } 
+
+.online-title2+.online-title1 {margin-top: 30px; } 
+
+.online-title2 {font-size: 18px;font-weight: bold;margin-top: 30px; } 
+
+.online-title2 strong {color: #EF7200;font-weight: 700; } /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 시안 없음 : 파랑 -> #EF7200 */ 
+
+.online-title-center {font-size: 20px;font-weight: bold;text-align: center;margin: 30px 0px 20px; } 
+
+.online-list {font-size: 17px;color: #444;padding-left: 15px;text-indent: -15px;display: block;margin-top: 9px; line-height: 140%;} 
+
+.online-list::before {content: "•";padding-right: 5px; vertical-align: 2px;} 
+
+.online-list strong {color: #EF7200;font-weight: 700; } /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 시안 없음 : 파랑 -> #EF7200 */ 
+.online-graybox > .online-list:first-child {margin: 0;}
+.online-guide {font-size: 16px;color: #666;padding-left: 24px;text-indent: -10px;display: block;margin-top: 5px; } 
+
+.online-guide::before {content: "*";padding-right: 2px; } 
+
+.online-guide strong {color: #EF7200;font-weight: 700; } /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 시안 없음 : 파랑 -> #EF7200 */ 
+
+.online-page {background: #000; color: #fff; display: flex; gap: 10px; } 
+
+.online-tablebox {border-radius: 10px 10px 0 0;border: 1px solid #DEDEDE;overflow: hidden;margin-top: 20px; } 
+
+.online-table {width: 100%;border-collapse: collapse; } 
+
+.online-table th {background: #EBEBEB;position: relative;font-size: 15px;padding: 10px;font-weight: 600;line-height: 110%;border: 1px solid #D7D7D7; vertical-align: middle;} 
+
+.online-table th::before {display: none;content: "";position: absolute;left: 0px;top: 15px;bottom: 15px;border-left: 1px solid #C0C0C0; } 
+
+.online-table tr th:first-child::before {border-left: 0px; } 
+
+.online-table td {border: 1px solid #d7d7d7; padding: 20px; vertical-align: middle;} 
+
+.online-table td.ac {text-align: center; } 
+
+.online-graybox {width: 100%;border-radius: 5px;border: 1px solid #EFEFEF;background: #F5F5F5;padding: 12px;margin: 12px 0px 16px;font-size: 16px; line-height: 150%; word-break: keep-all;} 
+
+.online-graybox strong {color: #EF7200;font-weight: 700; } /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 시안 없음 : 파랑 -> #EF7200 */
+
+.imgStyle00 {margin: 0 auto; text-align: center; border: 1px solid #333;}
+.imgStyle00 img {width: 80%;}

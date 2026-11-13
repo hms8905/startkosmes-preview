@@ -1,0 +1,350 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0,0,0, 0.6);
+}
+.onDashBoard {
+  position: relative;
+  display: flex;
+  width: 1431px;
+  height: 901px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 30px 50px 0 rgba(0, 0, 0, 0.50);
+}
+
+/* 좌측 네비게이션 바 */
+.onLeftNavBar {
+  position: relative;
+  width: 380px;
+  height: 100%;
+  box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: linear-gradient(159.04deg, #947042 9.69%, #565351 19.2%, #343232 100%); /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 파랑 그라데이션 -> 갈색 · 진회색 */
+}
+.onOpenBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 20px;
+  height: 54px;
+  border-radius: 10px 0 0 10px;
+  background: linear-gradient(159.04deg, #947042 9.69%, #565351 19.2%, #343232 100%); /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 시안 없음 : 목록 바탕과 같게 */
+  transform: rotate(180deg);
+  z-index: 999;
+}
+.onOpenBtn::after {
+  content: '';
+  position: relative;
+  width: 9px;
+  height: 16px;
+  margin: 0;
+  background: url("/startkosmes-preview/images/leftNavBar-btn.svg") center center / cover no-repeat;
+  transform: rotate(0deg);
+}
+.onLeftNavBar .onLeftNavBarTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 34px 24px 20px;
+}
+.onLeftNavBarTitle .onCloseBtn {
+  position: relative;
+  width: 9px;
+  height: 16px;
+  margin-right: 5px;
+  background: url("/startkosmes-preview/images/leftNavBar-btn.svg") center center / cover no-repeat;
+}
+.onLeftNavBarTitle .onCloseBtn::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -8px;
+  width: 1px;
+  height: 20px;
+  border-right: 1px dashed rgba(255, 255, 255, 0.50);
+}
+.onLeftNavBar .onLeftNavBarTitle h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.32px;
+}
+.onLeftNavBar .onLeftNavBarTitle h1::before {
+  content: '';
+  width: 24px;
+  height: 22.738px;
+  background: url("/startkosmes-preview/images/title_logo.svg") center center / cover no-repeat;
+}
+.onToggleWrap {
+  width: auto;
+  height: 42px;
+  margin: 0 24px 28px;
+}
+.onToggleBg {
+  position: relative;
+  display: flex;
+  height: 42px;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.1); /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+}
+.onToggle-btn {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.80);
+  font-family: Pretendard;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -1.02px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s;
+}
+.onToggle-btn.select {
+  color: #fff;
+}
+.onToggle-active {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50%;
+  height: 100%;
+  border-radius: 30px;
+  border: 1px solid #E89120; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+  background: #E89120; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s ease;
+  z-index: 1;
+}
+.onListBox {
+  position: relative;
+}
+.onListBox ul li.onItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.35s;
+}
+.onListBox ul li.onItem:hover {
+  opacity: 1;
+}
+.onListBox ul li.onItem > h2 {
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+.onListBox ul li.onItem.open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 0px;
+  background: #424141; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+  opacity: 1;
+}
+.onListBox ul li.onItem.open > h2 {
+  width: 100%;
+  padding: 0px 30px 20px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  box-sizing: border-box;
+}
+.onListBox ul li.onItem ul {
+  display: none;
+}
+.onListBox ul li.onItem.open ul {
+  display: block;
+  width: 100%;
+  padding: 0px 30px;
+  list-style: none;
+  counter-reset: li;
+  box-sizing: border-box;
+}
+.onListBox ul li.onItem.open ul li::before {
+  counter-increment: li;
+  content: counter(li) ". ";
+  font-weight: inherit; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 번호도 글자와 같은 굵기 */
+  color: inherit; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+}
+.onListBox ul li.onItem.open ul>li {
+  position: relative;
+  color: #CFCFCF; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+  font-family: Pretendard;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* Regular */
+  line-height: 28px;
+  letter-spacing: -1.02px;
+  transition: all 0.35s;
+  opacity: 1; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* 흐림 대신 #CFCFCF */
+}
+.onListBox ul li.onItem.open ul>li:hover {
+  color: #FFF; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */
+}
+.onListBox ul li.onItem.open ul>li.onSelect {
+  color: #FFF;
+  font-weight: 600; /* 2026.11.11 수정 - Figma 온라인 매뉴얼 (870:22683) */ /* SemiBold */
+  opacity: 1;
+}
+.onListBox ul li.onItem.open ul>li.onSelect::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 7px);
+  right: 0;
+  width: 10px;
+  height: 14px;
+  background: url("/startkosmes-preview/images/onSlect-ico.svg") center center / auto 14px no-repeat;
+}
+
+/* 컨텐츠 컨테이너 */
+.onContents {
+  flex: 1;
+}
+.onContents .onContentHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 34px 40px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+.onContents .onContentHeader::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 3px solid rgba(191, 191, 191, 0.30); 
+}
+.onContents .onContentHeader h4 {
+  color: #000;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -1.44px;
+}
+.onContents .onContentHeader dl.breadcrumb {
+  display: flex;
+  align-items: center;
+}
+.onContents .onContentHeader dl.breadcrumb dt {
+  color: #999;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}
+.onContents .onContentHeader dl.breadcrumb dt::after {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 10px;
+  margin: 0 10px;
+  background: url("/startkosmes-preview/images/breadcrumb-ico.svg") center center / cover no-repeat;
+}
+.onContents .onContentHeader dl.breadcrumb dd {
+  color: #999;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.84px;
+}
+
+/* 실제 컨텐츠 내용 */
+.onContentInner {
+  position: relative;
+  height: calc(100% - 149px);
+  padding: 24px 46px;
+  overflow-y: auto;
+}
+.onContents::-webkit-scrollbar {
+  height: 8px;
+}
+.onContents::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+}
+.onContents::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.onContentInner::-webkit-scrollbar {
+  width: 8px;
+}
+.onContentInner::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+}
+.onContentInner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+@media all and (max-width: 1440px) {
+  .onDashBoard {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+  .onLeftNavBar {
+    display: block;
+    min-width: 380px;
+    border-radius: 0px;
+  }
+  .onContents {
+    flex: auto;
+    width: 100%;
+    min-width: 300px;
+    margin-left: 0px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .onContents .onContentHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 40px;
+    overflow: hidden;
+  }
+  .onContentInner {
+    display: inline-flex;
+    width: auto;
+    min-width: 300px;
+    padding: 20px 40px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+}

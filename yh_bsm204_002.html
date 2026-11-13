@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>팝업-교육이수목록 | KOSME 청년창업사관학교</title>
+
+		<!-- 공통스타일  -->
+		<link href="/startkosmes-preview/css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/swiper.min.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/ui.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/contents.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/main02.css" rel="stylesheet" type="text/css" />
+
+		<!-- 공통 jquery plugins  -->
+		<script src="/startkosmes-preview/js/libs/jquery-3.5.1.min.js"></script><script src="/startkosmes-preview/__preview/pages.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery-ui.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/swiper.min.js"></script>
+		<script src="/startkosmes-preview/js/common.js"></script>
+		<script src="/startkosmes-preview/js/contents.js"></script>
+
+		<!-- kakao talk 공유 -->
+		<script src="/startkosmes-preview/js/libs/kakao.min.js"></script>
+
+		<!-- 개발공통 -->
+		<script src="/startkosmes-preview/js/libs/jquery.validate.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery.form.js"></script>
+		<script src="/startkosmes-preview/js/commUtil.js"></script>
+
+		<script>
+			// pc,mobile 분기체크
+			function isMobile(){
+			    var UserAgent = navigator.userAgent;
+			    if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson|Mobile|Tablet/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+			    {
+			        return true;
+			    }else{
+			        return false;
+			    }
+			}
+
+
+			$(document).ready(function() {
+				/* 2026.11.04 수정(UI 미러) - 로그인 토큰 갱신 타이머 삭제 (9분마다 /login/refreshTokenReal.do 호출) */
+
+
+
+					 $('.quickBtn').show();
+				     $('.menu_setting').show();
+				     $('.quickBtn').css('display', 'flex');
+
+
+				 $('.menu_setting').hide();
+			});
+
+
+			function alertPopup(){
+
+				alert("서비스 준비 중입니다.");
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				window.parent.$("#iFramePop").attr("title", "교육이수목록");
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" id="resultMsg" value="" />
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+					var date = new Date();
+					var fDate = new Date(date.getFullYear(), date.getMonth(), 1);
+					var lDate = new Date(date.getFullYear(), date.getMonth()+1, 0 );
+
+					var fst = fDate.getFullYear()+"-"+(('00'+(fDate.getMonth()+1).toString()).slice(-2))+"-"+('00'+fDate.getDate().toString()).slice(-2);
+					var lst = lDate.getFullYear()+"-"+(('00'+(lDate.getMonth()+1).toString()).slice(-2))+"-"+('00'+lDate.getDate().toString()).slice(-2);
+
+					console.log(fst);
+
+					$("#eduSttDt").val(fst);
+					$("#edtEndDt").val(lst);
+
+			});
+			function lfn_doSearch() {
+					$("#searchFrm").submit();
+			}
+
+			function fn_link_page(pageIndex) {
+
+				$("#pageIndex").val(pageIndex);
+				$("#searchFrm").attr("action", "/startkosmes-preview/yh_bsm204_002.html");
+
+				var formData = $("#searchFrm").serialize();
+				//console.log(formData);return;
+
+				$("#searchFrm").submit();
+			}
+		</script>
+
+		<div class="dateBtnWrap">
+			<form id="searchFrm" name="searchFrm" method="post" action="/startkosmes-preview/yh_bsm204_002.html">
+				<input type="hidden" name="pageIndex" id="pageIndex" value="1" />
+				<input type="hidden" name="rcpNo" id="rcpNo" value="" />
+				<input type="hidden" name="evlTbCd" id="evlTbCd" value="" />
+
+				<div class="dateBtnBox">
+					<div class="dateSetting">
+						<div class="datePC">
+							<div class="datePic">
+								<input type="text" name="eduSttDt" id="eduSttDt" value="" readonly="" class="inputDatepicker" />
+							</div>
+							<span class="bar">~</span>
+							<div class="datePic">
+								<input type="text" name="edtEndDt" id="edtEndDt" value="" readonly="" class="inputDatepicker" />
+							</div>
+						</div>
+						<!-- //dataPC  -->
+						<div class="dateMobile">
+							<input type="date" name="eduSttDt1" id="eduSttDt1" value="" class="typeDate" />
+							<span class="bar">~</span>
+							<input type="date" name="edtEndDt1" id="edtEndDt1" value="" class="typeDate" />
+						</div>
+						<!-- //dateMobile -->
+					</div>
+					<div class="btnWrap flexend">
+						<button type="button" name="" id="" class="btn darkgray search" onclick="lfn_doSearch()"><span>조회</span></button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- //dateBtnWrap -->
+		<div class="tableWrap01 scrollTable myclassroom">
+			<table>
+				<caption>
+					교육 완료한 목록
+				</caption>
+				<colgroup>
+					<col style="width:10%;" />
+					<col style="width:8%;" />
+					<col style="width:8%;" />
+					<col style="width:8%;" />
+					<col style="width:auto;" />
+					<col style="width:10%;" />
+					<col style="width:8%;" />
+					<col style="width:8%;" />
+					<col style="width:8%;" />
+					<col style="width:8%;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">번호</th>
+						<th scope="col">구분</th>
+						<th scope="col">과정유형</th>
+						<th scope="col">개설 사관학교</th>
+						<th scope="col">실시계획명</th>
+						<th scope="col">교육일자</th>
+						<th scope="col">강의자</th>
+						<th scope="col">수료여부</th>
+						<th scope="col">인정학점</th>
+						<th scope="col">강의설문조사</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<div class="pagingWrap">
+			<p class="summary">
+				현재 <span><em>1</em> ~ <em>1</em></span
+				>전체 <span class="total">0</span>건
+			</p>
+			<div class="paging">
+				<a href="#" class="current"><span>1</span></a>
+
+				<button type="button" name="" class="mobileMore" onclick="fn_link_page((1+1));">
+					<span class="isthis">더보기 총(<em>1</em>~<em>1</em>/<em class="total">0</em>)</span>
+				</button>
+			</div>
+		</div>
+
+		<!-- //pagingWrap -->
+	</body>
+</html>

@@ -1,0 +1,306 @@
+{
+  "life": {
+    "title1": "Ⅰ. 입교생활",
+    "items1": {
+      "청년창업사관학교 연간일정": {
+        "header": "1. 청년창업사관학교 연간일정",
+        "breadcrumb": [
+          "Ⅰ. 입교생활",
+          "1. 청년창업사관학교 연간일정"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_01_1.html"
+      },
+      "청년창업사관학교 생활": {
+        "header": "2. 청년창업사관학교 생활",
+        "breadcrumb": [
+          "Ⅰ. 입교생활",
+          "2. 청년창업사관학교 생활"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_01_2.html"
+      },
+      "창업 및 창업유지 의무": {
+        "header": "3. 창업 및 창업유지 의무",
+        "breadcrumb": [
+          "Ⅰ. 입교생활",
+          "3. 창업 및 창업유지 의무"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_01_3.html"
+      },
+      "기업형태 변경 유형별 처리기준": {
+        "header": "4. 기업형태 변경 유형별 처리기준",
+        "breadcrumb": [
+          "Ⅰ. 입교생활",
+          "4. 기업형태 변경 유형별 처리기준"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_01_4.html"
+      },
+      "사업비 카드 특별 한도": {
+        "header": "5. 사업비 카드 특별 한도",
+        "breadcrumb": [
+          "Ⅰ. 입교생활",
+          "5. 사업비 카드 특별 한도"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_01_5.html"
+      }
+    },
+
+    "title2": "Ⅱ. 평가",
+    "items2": {
+      "출석관리": {
+        "header": "1. 출석관리",
+        "breadcrumb": [
+          "Ⅱ. 평가",
+          "1. 출석관리"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_02_1.html"
+      },
+      "창업활동보고서": {
+        "header": "2. 창업활동보고서",
+        "breadcrumb": [
+          "Ⅱ. 평가",
+          "2. 창업활동보고서"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_02_2.html"
+      },
+      "중간‧성공평가": {
+        "header": "3. 중간‧성공평가",
+        "breadcrumb": [
+          "Ⅱ. 평가",
+          "3. 중간‧성공평가"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_02_3.html"
+      }
+    },
+
+    
+
+
+    "title3": "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+    "items3": {
+      "교육계획 및 기준": {
+        "header": "1. 교육계획 및 기준",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "1. 교육계획 및 기준"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_1.html"
+      },
+      "상시코칭": {
+        "header": "2. 상시코칭",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "2. 상시코칭"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_2.html"
+      },
+      "기초 교육 운영": {
+        "header": "3. 기초 교육 운영",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "3. 기초 교육 운영"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_6.html"
+      },
+      "특화코칭": {
+        "header": "4. 특화코칭",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "4. 특화코칭"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_3.html"
+      },
+      "스타트업지식공동체(S-CoP)": {
+        "header": "5. 스타트업지식공동체(S-CoP)",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "5. 스타트업지식공동체(S-CoP)"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_4.html"
+      },
+      "투자유치 지원": {
+        "header": "6. 투자유치 지원",
+        "breadcrumb": [
+          "Ⅲ. 교육, 코칭, 투자유치, 네트워킹",
+          "6. 투자유치 지원"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_03_5.html"
+      }
+    },
+
+    "title4": "Ⅳ. 디자인 팩토리",
+    "items4": {
+      "Design Lab": {
+        "header": "1. Design Lab",
+        "breadcrumb": [
+          "Ⅳ. 디자인 팩토리",
+          "1. Design Lab"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_04_1.html"
+      },
+      "MVP Station(시제품제작터)": {
+        "header": "2. MVP Station(시제품제작터)",
+        "breadcrumb": [
+          "Ⅳ. 디자인 팩토리",
+          "2. MVP Station(시제품제작터)"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_04_2.html"
+      },
+      "Startup Studio": {
+        "header": "3. Startup Studio",
+        "breadcrumb": [
+          "Ⅳ. 디자인 팩토리",
+          "3. Startup Studio"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_04_3.html"
+      },
+      "3D Printing Room": {
+        "header": "4. 3D Printing Room",
+        "breadcrumb": [
+          "Ⅳ. 디자인 팩토리",
+          "4. 3D Printing Room"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_04_4.html"
+      },
+      "Design Talk": {
+        "header": "5. Design Talk",
+        "breadcrumb": [
+          "Ⅳ. 디자인 팩토리",
+          "5. Design Talk"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_04_5.html"
+      }
+    },
+
+    "title5": "Ⅴ. 연계지원 및 사후관리",
+    "items5": {
+      "(별첨) 청년창업사관학교 연락처": {
+        "header": "(별첨) 청년창업사관학교 연락처",
+        "breadcrumb": [
+          "Ⅴ. 연계지원 및 사후관리",
+          "(별첨) 청년창업사관학교 연락처"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_05_1.html"
+      }
+    },
+
+    "title6": "Ⅵ. 청년창업사관학교 홈페이지 매뉴얼",
+    "items6": {
+      "청년창업사관학교 홈페이지 매뉴얼": {
+        "header": "1. 청년창업사관학교 홈페이지 매뉴얼",
+        "breadcrumb": [
+          "Ⅵ. 청년창업사관학교 홈페이지 매뉴얼",
+          "1. 청년창업사관학교 홈페이지 매뉴얼"
+        ],
+        "file": "/startkosmes-preview/contents/life/life_contents_06_1.html"
+      }
+    }
+  },
+  "cost": {
+    "title1": "Ⅰ. 사업비 개요",
+    "items1": {
+      "사업비 집행 및 지급 절차": {
+        "header": "1. 사업비 집행 및 지급 절차",
+        "breadcrumb": [
+          "Ⅰ. 사업비 개요",
+          "1. 사업비 집행 및 지급 절차"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_01_1.html"
+      },
+      "사업비 집행 및 지급 공통 제출서류": {
+        "header": "2. 사업비 집행 및 지급 공통 제출서류",
+        "breadcrumb": [
+          "Ⅰ. 사업비 개요",
+          "2. 사업비 집행 및 지급 공통 제출서류"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_01_2.html"
+      },
+      "사업비 집행 및 지급시 유의사항": {
+        "header": "3. 사업비 집행 및 지급시 유의사항",
+        "breadcrumb": [
+          "Ⅰ. 사업비 개요",
+          "3. 사업비 집행 및 지급시 유의사항"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_01_3.html"
+      }
+    },
+
+    "title2": "Ⅱ. 비목·세목별 안내",
+    "items2": {
+      "사업비 비목·세목": {
+        "header": "1. 사업비 비목·세목",
+        "breadcrumb": [
+          "Ⅱ. 비목·세목별 안내",
+          "1. 사업비 비목·세목"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_02_1.html"
+      },
+      "사업비 세목별 세부내용 및 FAQ": {
+        "header": "2. 사업비 세목별 세부내용 및 FAQ",
+        "breadcrumb": [
+          "Ⅱ. 비목·세목별 안내",
+          "2. 사업비 세목별 세부내용 및 FAQ"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_02_2.html"
+      },
+      "증빙자료 첨부 예시": {
+        "header": "3. 증빙자료 첨부 예시",
+        "breadcrumb": [
+          "Ⅱ. 비목·세목별 안내",
+          "3. 증빙자료 첨부 예시"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_02_3.html"
+      }
+    },
+
+    
+
+
+    "title3": "Ⅲ. 온라인 사업비 집행",
+    "items3": {
+      "사업비 집행계획 승인요청": {
+        "header": "1. 사업비 집행계획 승인요청",
+        "breadcrumb": [
+          "Ⅲ. 온라인 사업비 집행",
+          "1. 사업비 집행계획 승인요청"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_03_1.html"
+      },
+      "구매계약 승인요청": {
+        "header": "2. 구매계약 승인요청",
+        "breadcrumb": [
+          "Ⅲ. 온라인 사업비 집행",
+          "2. 구매계약 승인요청"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_03_2.html"
+      },
+      "사업비 지급요청": {
+        "header": "3. 사업비 지급요청",
+        "breadcrumb": [
+          "Ⅲ. 온라인 사업비 집행",
+          "3. 사업비 지급요청"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_03_3.html"
+      },
+      "사업비 반납요청": {
+        "header": "4. 사업비 반납요청",
+        "breadcrumb": [
+          "Ⅲ. 온라인 사업비 집행",
+          "4. 사업비 반납요청"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_03_4.html"
+      }
+    },
+
+    "title4": "Ⅳ. 사업비 집행 서류양식",
+    "items4": {
+      "별첨 서류": {
+        "header": "1. 별첨 서류",
+        "breadcrumb": [
+          "Ⅳ. 사업비 집행 서류양식",
+          "1. 별첨 서류"
+        ],
+        "file": "/startkosmes-preview/contents/cost/cost_contents_04_1.html"
+      }
+    }
+  }
+}

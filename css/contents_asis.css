@@ -1,0 +1,124 @@
+@charset 'utf-8';
+/* asis 팝업 그대로 사용하기 때문에 추가함 */
+/* 레이어팝업 */
+body.fixed{/*position:fixed;*/width:100%}
+.layerPopupWrap{display:none;position:absolute;top:0;left:0;border:none;z-index:200}
+.layer_popup_wrap{box-sizing:border-box;border:1px solid #d0d0d0;position:relative;background:#fff}
+.layer_popup_wrap.wd_480{width:100%}
+.layer_popup_wrap.wd_640{width:100%}
+.layer_popup_wrap.wd_800{width:100%}
+.layer_popup_wrap.wd_980{width:100%}
+
+/* .layer_popup_wrap .pop_header{height:50px;padding:0 20px;background:#376dd1} */
+.layer_popup_wrap .pop_header {height:40px; padding:0 10px; line-height:43px; vertical-align:middle; background:#3b3b3b;} /* 2021.01.05 곽현준 수정 - 팝업 스타일 to-be에 맞게 스타일 */
+
+/* .layer_popup_wrap .pop_header .pop_tit{font-size:22px;font-weight:300;color:#fff;line-height:50px} */
+.layer_popup_wrap .pop_header .pop_tit {font-size:18px; font-weight:300; color:#fff;} /* 2021.01.05 곽현준 수정 - 팝업 스타일 to-be에 맞게 스타일 */
+
+.layer_popup_wrap .pop_scroll{overflow-y:auto;max-height:500px}
+.layer_popup_wrap .pop_cont{padding:30px;background:#fff}
+
+.layer_popup_wrap .pop_cont .guide_list {font-size:16px;}
+
+/* .layer_popup_wrap .btn_header{position:absolute;top:10px;right:13px} */
+.layer_popup_wrap .btn_header {position:absolute; top:5px; right:10px;} /* 2021.01.05 곽현준 수정 - 팝업 스타일 to-be에 맞게 스타일 */
+
+.layer_popup_wrap .btn_print{display:inline-block;width:29px;height:29px;background:url('/startkosmes-preview/images/btn_print.png') no-repeat;vertical-align:top}
+.layer_popup_wrap .btn_pop_close{margin-left:4px;padding:7px;vertical-align:top}
+
+/* .layer_popup_wrap .btn_pop_close .sp{width:16px;height:16px;background:url('/startkosmes-preview/images/btn_close_pop.png') no-repeat} */
+.layer_popup_wrap .btn_pop_close .sp {display:block; width:16px;height:16px;background:url('/startkosmes-preview/images/btn_close_pop.png') no-repeat} /* 2021.01.05 곽현준 수정 - 닫기 버튼 오류 */
+
+.dimmed{position:fixed;top:0;left:0;width:100%;background:url("/startkosmes-preview/images/bg_dim.png") repeat;z-index:100}
+
+/* 윈도우팝업 */
+/* .ly_win_popup .pop_header{height:60px;padding:6px 10px 0}
+.ly_win_popup .pop_header .pop_tit{height:60px;padding:0 20px;background:#376dd1 url('/startkosmes-preview/images/bg_pop_header.gif') no-repeat 100% 0;font-size:20px;color:#fff;line-height:60px}
+.ly_win_popup .pop_cont .view_txt{padding:32px 30px;color:#666;line-height:30px}
+.ly_win_popup .pop_footer{padding:12px 30px;background:#eee;text-align:right}
+.ly_win_popup .pop_footer .popClose{font-size:12px; padding:0 0 0 20px}
+.ly_win_popup .pop_footer label{font-size:12px} */
+
+/* 2021.02.04 곽현준 수정 - 팝업 스타일 to-be에 맞게 스타일 */
+.ly_win_popup .pop_header {height:40px; padding:0 22px; line-height:43px; vertical-align:middle; background:#3b3b3b;}
+.ly_win_popup .pop_header .pop_tit {font-size:18px; font-weight:300; color:#fff;}
+.ly_win_popup .pop_cont .view_txt {padding:22px; font-size:16px; line-height:28px; color:#222;}
+.ly_win_popup .pop_cont img {width:100%;} /* 2021.01.08 곽현준 추가 - 팝업 이미지 100% 설정 */
+/* .ly_win_popup .pop_footer {padding:10px 22px; color:#fff; background:#333; text-align:right;} */
+.ly_win_popup .pop_footer {
+	position:absolute;
+    bottom:0;
+    left:0;
+    padding:10px 22px;
+    width:100%;
+   	color:#fff;
+   	text-align:right;
+   	background:#333;
+} /* 2021.01.08 곽현준 수정 - 팝업 이미지 100% 설정 */
+.ly_win_popup .pop_footer .popClose{font-size:12px; padding:0 0 0 20px}
+.ly_win_popup .pop_footer > input[type="checkbox"] {vertical-align:middle;} /* 체크박스 상하 정렬을 위해 추가 */
+.ly_win_popup .pop_footer label {margin-left:5px; font-size:12px;}
+
+@media screen and (max-width:768px){
+	.layer_popup_wrap .pop_cont .guide_list {font-size:13px;}
+}
+
+/* 로딩바 */
+#progress{position:absolute;left:0;top:0;z-index:100;background:rgba(0, 0, 0, 0.6);display:none;}
+#progress img{position:absolute;width:160px;z-index:120}
+
+/* 기본 테이블(등록, 수정) */
+.tb_base{border-top:2px solid #4d525a}
+.tb_base th{height:50px;padding-left:20px;background:#f6f8fa;border-bottom:1px solid #ddd;font-weight:normal;text-align:left}
+.tb_base .ht40 th{height:40px} /* 만족설문조사 */
+.tb_base td + th{border-left:1px solid #eee}
+.tb_base thead th{padding:0;text-align:center}
+.tb_base th + th{border-left:1px solid #eee}
+.tb_base tbody th.t_c{padding-left:0}
+.tb_base td{padding:10px;border-bottom:1px solid #ddd;border-left:1px solid #eee}
+.tb_base tr td:first-child{border-left:0}
+.tb_base tfoot th{padding-left:0;background:#fbfdff;text-align:center}
+.tb_base tfoot td{background:#fbfdff}
+.tb_base .bg_blue{background:#fbfdff}
+.tb_base .bg_white{background:#fff}
+.tb_base .line{border-left:1px solid #eee}
+.tb_base tr td.line{border-left:1px solid #eee}
+.tb_base input[type="text"], .tb_base textarea{width:100%}
+.tb_base .inp_radio, .tb_base .inp_chk{padding:5px 0;vertical-align:top}
+.tb_base .inp_radio + .inp_radio, .tb_base .inp_chk + .inp_chk{margin-left:17px}
+.tb_base .chk_small .inp_radio, .tb_base .chk_small .inp_chk{width:74px;margin-left:10px}
+.tb_base .chk_small .inp_radio + .inp_radio, .tb_base .chk_small .inp_chk + .inp_chk{margin-left:0}
+.tb_base .inp_block .inp_radio{display:block;margin-left:0}
+.tb_base .td_normal{padding-top:17px;padding-bottom:17px}
+.tb_base .row_box + .row_box{margin-top:10px}
+.tb_base .row_box .inp_radio:first-child{margin-left:0}
+.tb_base .inp_small{display:inline-block}
+.tb_base .inp_small input{width:60px;margin-right:10px;text-align:right}
+.tb_base .td_tel select, .tb_base .td_tel input{width:68px}
+.tb_base .td_mail select, .tb_base .td_mail input{width:160px}
+.tb_base .td_adrs input{width:100px}
+.tb_base .td_adrs .btn_cmn_gray{margin-left:1px}
+.tb_base .td_adrs .inp_adrs{margin-top:10px}
+.tb_base .td_adrs .inp_adrs input{width:49.5%;margin-left:1px}
+.tb_base .th_total{padding:0;background:#fbfdff;text-align:center}
+
+/* 기본 목록 테이블 */
+.tb_base.list_type td{height:30px;text-align:center}
+
+/* 관리자 - 메뉴관리 */
+.level2{display:block;padding-left:25px;background:url('/startkosmes-preview/images/bg_menu_level.png') no-repeat;line-height:30px}
+.level3{display:block;padding-left:48px;background:url('/startkosmes-preview/images/bg_menu_level.png') no-repeat 24px 0;line-height:30px}
+
+
+/* print layout */
+.print_wrap{position:relative}
+.print_wrap:after{display:block;clear:both;content:''}
+.print_wrap #print_content{width:920px;padding:30px}
+.print_inner{box-sizing:border-box;margin:0 auto}
+/* .print_wrap .print_header{width:920px;height:50px;padding:0 30px;background:#376dd1} */
+.print_wrap .print_header{width:100%; height:50px;padding:0 30px;background:#376dd1} /* 2021.03.08 곽현준 수정 */
+.print_wrap .print_header .pop_tit{font-size:22px;font-weight:300;color:#fff;line-height:50px}
+.print_wrap .btn_header{position:absolute;top:10px;right:13px}
+.print_wrap .btn_print{display:inline-block;width:29px;height:29px;background:url('/startkosmes-preview/images/btn/btn_print.png') no-repeat;vertical-align:top}
+.print_wrap .btn_pop_close{margin-left:7px;padding:7px;vertical-align:top}
+.print_wrap .btn_pop_close .sp{width:16px;height:16px;background:url('/startkosmes-preview/images/btn/btn_close_pop.png') no-repeat}

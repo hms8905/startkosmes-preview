@@ -1,0 +1,5418 @@
+@charset "utf-8";
+/*-------------------------------------------------------------------------------------------------------------
+	File : Layout.css
+	CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+	CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+	CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+-------------------------------------------------------------------------------------------------------------*/
+
+/* Wrapper */
+
+/* 화면 확대 축소 */
+body {
+  transition: all 0.3s;
+  -ms-transform-origin: 50% 0;
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+}
+body.zoom-80 {
+  -ms-transform: scale(0.8, 0.8);
+  -webkit-transform: scale(0.8, 0.8);
+  transform: scale(0.8, 0.8);
+}
+body.zoom-90 {
+  -ms-transform: scale(0.9, 0.9);
+  -webkit-transform: scale(0.9, 0.9);
+  transform: scale(0.9, 0.9);
+}
+body.zoom-100 {
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+body.zoom-110 {
+  -ms-transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+body.zoom-120 {
+  -ms-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+body.zoom-130 {
+  -ms-transform: scale(1.3, 1.3);
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+body.zoom-140 {
+  -ms-transform: scale(1.4, 1.4);
+  -webkit-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
+}
+body.zoom-150 {
+  -ms-transform: scale(1.5, 1.5);
+  -webkit-transform: scale(1.5, 1.5);
+  transform: scale(1.5, 1.5);
+}
+
+/*** swiper 기본 style정의 ***/
+.swiper-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.swiper-container .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition-property: transform;
+  flex-shrink: 0;
+}
+.swiper-container .swiper-button-prev {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: calc(50% - 22px);
+  cursor: pointer;
+}
+.swiper-container .swiper-button-next {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 22px);
+  cursor: pointer;
+}
+.swiper-container .swiper-button-prev::before,
+.swiper-container .swiper-button-next::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ccc;
+}
+.swiper-container .swiper-button-prev::after,
+.swiper-container .swiper-button-next::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 36px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ccc;
+}
+.swiper-container .swiper-button-prev.swiper-button-disabled,
+.swiper-container .swiper-button-next.swiper-button-disabled {
+  opacity: 0.2;
+  cursor: auto; /* pointer-event:none; */
+}
+.swiper-container .swiper-button-prev::before {
+  transform: rotate(135deg);
+  top: 4px;
+}
+.swiper-container .swiper-button-prev::after {
+  transform: rotate(45deg);
+  top: 23px;
+}
+.swiper-container .swiper-button-next::before {
+  transform: rotate(45deg);
+  top: 4px;
+}
+.swiper-container .swiper-button-next::after {
+  transform: rotate(135deg);
+  top: 23px;
+}
+
+.swiper-container .swiper-pagination {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  display: inline-block;
+  position: relative;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  padding: 0;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 1);
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+.swiper-container .swiper-controls {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  z-index: 20;
+}
+.swiper-container .swiper-controls .swiper-button-play {
+  width: 20px;
+  height: 20px;
+  z-index: 20;
+}
+.swiper-container .swiper-controls .swiper-button-pause {
+  width: 20px;
+  height: 20px;
+  z-index: 20;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-slide {
+    padding-bottom: 6rem;
+  }
+  .swiper-slide .item .img {
+    width: 100%;
+  }
+  .swiper-slide .item .img img {
+    width: 80%;
+  }
+}
+
+/*** 분할영역 만들기 ***/
+/** float요소를 이용한 분할영역 **/
+.partitionWrap {
+  display: table;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.partitionWrap::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.partitionWrap .blueZone {
+  float: left;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.partitionWrap .redZone {
+  float: right;
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+/* table속성을 부여하여 좌우 분할 */
+.partitionWrap.tableGrid .blueZone,
+.partitionWrap.tableGrid .redZone {
+  float: initial;
+  display: table-cell;
+  height: 100%;
+}
+.partitionWrap.tableGrid .tableCell {
+  display: table-cell;
+  text-align: center;
+  height: 100%;
+}
+
+/* Vertical-align:middle */
+.tableGrid.vMiddle .blueZone,
+.tableGrid.vMiddle .redZone,
+.tableGrid.vMiddle .tableCell {
+  vertical-align: middle;
+}
+
+/** flex요소를 이용한 분할영역 **/
+.flexWrap {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flexWrap .flexItem {
+  display: flex;
+  position: relative;
+}
+.flexWrap .wsnw {
+  white-space: nowrap;
+}
+.flexend {
+  margin-left: auto;
+}
+.subHeading {
+  align-items: flex-end;
+  -ms-flex-align: end;
+}
+@media screen and (max-width: 768px) {
+  .subHeading {
+    align-items: flex-start;
+    -ms-flex-align: start;
+  }
+  .subHeading .tip {
+    margin-left: 0;
+  }
+  .flexend {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+/* flex속성 변경 */
+.flexWrap.wrap {
+  flex-wrap: wrap;
+}
+.flexWrap.column {
+  flex-direction: column;
+}
+.flexWrap.default,
+.flexItem.default {
+  justify-content: start;
+}
+.flexWrap.center,
+.flexItem.center {
+  justify-content: center;
+}
+.flexWrap.around,
+.flexItem.around {
+  justify-content: space-around;
+}
+.flexWrap.vMiddle,
+.flexItem.vMiddle {
+  align-items: center;
+}
+.flexWrap.rowReverce {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.flexWrap.btnBoth {
+  align-items: center;
+}
+.subHeading .tip {
+  margin-left: 8px;
+}
+
+/* .flexWrap.default.subHeading .tip {margin-left:8px;} */
+@media screen and (max-width: 768px) {
+  .subHeading .tip {
+    margin-left: 0;
+  }
+}
+/* flex 모바일에서 column */
+@media screen and (max-width: 768px) {
+  .flexWrap.mfall {
+    flex-direction: column;
+  }
+  .flexWrap.mfall > * {
+    align-self: flex-end;
+  }
+  .flexWrap.mfall > button:first-child {
+    margin-bottom: 15px;
+  }
+}
+
+/*** 탭영역  ***/
+.tabWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* .tabWrap .tabList {display:flex; position:relative; width:100%; margin:0 -8px 0 0; padding:0; flex-wrap:wrap; flex-direction:row; justify-content:start;} */
+.tabWrap .tabList {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0 -8px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  border-bottom: 1px solid #ccc;
+} /* 2021.01.19 곽현준 수정 */
+
+.tabWrap .tabList.pcCenter {
+  justify-content: center;
+}
+
+/* .tabWrap .tabList li {display:block; position:relative; height:40px; margin:0 8px 0 0; padding:0; box-sizing:border-box;} */
+/* .tabWrap .tabList li {display:block; position:relative; height:40px; margin:0 0 0 -1px; padding:0; box-sizing:border-box;} */ /* 2021.01.19 곽현준 수정 */
+.tabWrap .tabList li {
+  display: block;
+  position: relative;
+  height: 43px;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  box-sizing: border-box;
+} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.tabWrap .tabList li button {
+  display: inline-block;
+}
+.tabWrap .tabList li a,
+.tabWrap .tabList li p {
+  display: table;
+}
+
+/* .tabWrap .tabList li button,
+.tabWrap .tabList li a,
+.tabWrap .tabList li p {position:relative; min-width:90px; height:100%; margin:0; padding:0 16px; border:solid #999 1px; background-color:#FFF; text-align:center; border-radius:20px; box-sizing:border-box;} */
+.tabWrap .tabList li button,
+.tabWrap .tabList li a,
+.tabWrap .tabList li p {
+  position: relative;
+  min-width: 90px;
+  height: 100%;
+  margin: 0;
+  padding: 0 16px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  background-color: #fff;
+  text-align: center;
+  /* border-radius:20px; */
+  box-sizing: border-box;
+  outline: none;
+} /* 2021.01.19 곽현준 수정 */
+
+.tabWrap .tabList li button,
+.tabWrap .tabList li a {
+  border: none;
+  background-color: transparent;
+} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+/*** 회원가입 탭영역  ***/
+.tabWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.tabWrap .cellin.info .txt {
+  margin: 0 auto;
+  width: 940px;
+} /* 2021.01.20 곽현준 추가 */
+@media screen and (max-width: 768px) {
+  .tabWrap .cellin.info .txt {
+    margin: 0 auto 15px;
+    width: 300px;
+  }
+} /* 2021.01.20 곽현준 추가 */
+
+.tabWrap .tabList.join {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0 -8px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: none;
+}
+.tabWrap .tabList.join li.join_box {
+  display: block;
+  position: relative;
+  margin: 10px;
+  padding: 22px;
+  width: 300px;
+  height: 150px;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.tabWrap .tabList.join li.join_box:nth-child(1) {
+  background: url("/startkosmes-preview/images/contents/ico_join_people_02.png") 38px 22px no-repeat;
+}
+.tabWrap .tabList.join li.join_box:nth-child(2) {
+  background: url("/startkosmes-preview/images/contents/ico_join_people_04.png") 38px 22px no-repeat;
+}
+.tabWrap .tabList.join li.join_box:nth-child(3) {
+  background: url("/startkosmes-preview/images/contents/ico_join_people_03.png") 38px 22px no-repeat;
+}
+.tabWrap .tabList.join li.join_box:nth-child(1) div.big-text {
+  margin: 15px 0 5px 73px;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.tabWrap .tabList.join li.join_box:nth-child(2) div.big-text {
+  margin: 15px 0 5px 73px;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.tabWrap .tabList.join li.join_box:nth-child(3) div.big-text {
+  margin: 15px 0 5px 84px;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+.tabWrap .tabList.join li.join_box div.small-text {
+  margin-left: 50px;
+}
+
+.tabWrap .tabList.join li.join_box button {
+  display: inline-block;
+}
+.tabWrap .tabList.join li.join_box button span {
+  padding: 0 15px;
+  color: #fff;
+}
+
+.tabWrap .tabList.join li.join_box a,
+.tabWrap .tabList li p {
+  display: table;
+}
+
+.tabWrap .tabList.join li.join_box button,
+.tabWrap .tabList.join li.join_box a {
+  position: relative;
+  display: inline-block;
+  margin-top: 22px;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #003894;
+  background-color: #003894;
+  color: #fff;
+  border-radius: 3px;
+  outline: none;
+}
+.tabWrap .tabList.join li.current.join_box button,
+.tabWrap .tabList.join li.current.join_box a {
+  background-color: #4380e0;
+  border-color: #4380e0;
+}
+/*** //회원가입 탭영역  ***/
+
+/* 2021.01.19 곽현준 추가 */
+@media screen and (max-width: 768px) {
+  .tabWrap .tabList {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 0 -8px 0 0;
+    padding: 0;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: start;
+    border-bottom: initial;
+  }
+  .tabWrap .tabList li {
+    display: block;
+    position: relative;
+    height: 40px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .tabWrap .tabList li button,
+  .tabWrap .tabList li a,
+  .tabWrap .tabList li p {
+    position: relative;
+    min-width: 90px;
+    height: 100%;
+    margin: 0;
+    padding: 0 16px;
+    border: solid #999 1px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+  }
+}
+
+/* .tabWrap .tabList li span {position:relative; width:100%; height:100%; margin:0; padding:0; text-align:center; vertical-align:middle; color:#999; font-size:16px;} */
+.tabWrap .tabList li span {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  color: #999;
+  font-size: 18px;
+} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.tabWrap .tabList li a span,
+.tabWrap .tabList li p span {
+  display: table-cell;
+}
+
+.tabWrap .tabList li.current a,
+.tabWrap .tabList li.current p,
+.tabWrap .tabList li.current button {
+  background-color: #4380e0;
+  border-color: #4380e0;
+}
+
+/* .tabWrap .tabList li.current button, .tabWrap .tabList li.current a, .tabWrap .tabList li.current p {cursor: default;} */
+.tabWrap .tabList li.current button,
+.tabWrap .tabList li.current a,
+.tabWrap .tabList li.current p {
+  cursor: default;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.tabWrap .tabList li.current span {
+  color: #fff;
+}
+
+.tabWrap .tabContents {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.tabContents .tabCont {
+  display: none;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.tabContents .tabCont.current {
+  display: block;
+}
+.tabContents .tabCont.on {
+  display: block;
+}
+
+/** Tab In Tab**/
+.tabWrap.insideTab .tabList {
+  margin: 0 0 12px 0;
+  padding: 0 6px;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+.tabWrap.insideTab .tabList li {
+  height: 32px;
+  margin: 0;
+  padding: 0;
+}
+.tabWrap.insideTab .tabList li + li {
+  padding-left: 1px;
+}
+.tabWrap.insideTab .tabList li + li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 6px);
+  width: 1px;
+  height: 12px;
+  background-color: #999;
+}
+.tabWrap.insideTab .tabList li button,
+.tabWrap.insideTab .tabList li a {
+  min-width: inherit;
+  padding: 0 10px;
+  border: none;
+  background-color: transparent;
+  border-radius: inherit;
+}
+.tabWrap.insideTab .tabList li span {
+  font-size: 14px;
+}
+.tabWrap.insideTab .tabList li.current a,
+.tabWrap.insideTab .tabList li.current button {
+  background-color: transparent;
+  border: none;
+}
+.tabWrap.insideTab .tabList li.current span {
+  color: #4380e0;
+}
+
+@media screen and (max-width: 768px) {
+  /*** 탭영역  ***/
+  /* .tabWrap .tabList {margin-right:-12px;} */
+  .tabWrap .tabList {
+    display: block;
+    margin-right: -12px;
+    flex-wrap: initial;
+    flex-direction: initial;
+    justify-content: initial;
+  } /* 2021.02.23 곽현준 수정 */
+  .tabWrap .tabList.pcCenter {
+    justify-content: start;
+  }
+  /* .tabWrap .tabList li {height:30px; margin:0 12px 12px 0;} */
+  .tabWrap .tabList li {
+    display: inline-block;
+    height: 30px;
+    margin: 0 12px 12px 0;
+  } /* 2021.02.23 곽현준 수정 */
+  .tabWrap .tabList li button,
+  .tabWrap .tabList li a {
+    min-width: 80px;
+  }
+  .tabWrap .tabList li span {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+
+  /** Tab In Tab**/
+  .tabWrap.insideTab .tabList {
+    margin: 0 0 12px 0;
+    padding: 0 8px;
+  }
+  .tabWrap.insideTab .tabList li {
+    height: 28px;
+  }
+  .tabWrap.insideTab .tabList li button,
+  .tabWrap.insideTab .tabList li a {
+    padding: 0 7px;
+  }
+  .tabWrap.insideTab .tabList li span {
+    font-size: 16px;
+  }
+}
+
+/*** 로그인 탭영역 ***/
+.tabWrap.segmented {
+  width: fit-content;
+  margin-block: 30px -33px;
+  margin-inline: auto;
+}
+.tabWrap.segmented .onTabSub {
+  margin: 0;
+  border: 1px solid #2251C1;
+  background-color: #F2F6FF;
+  border-radius: 99.9px;
+}
+.tabWrap.segmented .onTabSub:after {
+  display: none;
+}
+.tabWrap.segmented .onTabSub li {
+  min-width: 0;
+  background: transparent;
+  color: #666;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: normal;
+  border: none;
+  border-radius: 99.9px;
+} /* 2026.11.03 수정 - Figma 탭 */
+.tabWrap.segmented .onTabSub li a {
+  height: 45px;
+  padding-inline: 20px;
+  line-height: 43px;
+}
+.tabWrap.segmented .onTabSub li.on a {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFF;
+  background-color: #0036AD;
+  border-radius: 99.9px;
+}
+
+/*** 아코디언 ***/
+.accordionWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.accordionWrap .accUnit {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-bottom: solid #ccc 1px;
+}
+.accUnit .accHead {
+  display: block;
+  position: relative;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+.accHead > button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.accHead > button:focus {
+  outline: solid transparent 1px;
+}
+.accHead > button:focus::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #999;
+}
+.accHead .ico {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  transform: rotate(0deg);
+}
+.accHead .ico::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ccc;
+}
+.accHead .ico::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ccc;
+}
+.accordionWrap.arrow .accHead .ico::before {
+  transform: rotate(135deg);
+  right: calc(50% - 5px);
+  top: calc(50% - 2px);
+}
+.accordionWrap.arrow .accHead .ico::after {
+  transform: rotate(45deg);
+  left: calc(50% - 5px);
+  top: calc(50% - 2px);
+}
+.accordionWrap.arrow .accUnit .accHead .ico {
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+.accordionWrap.arrow .accUnit.current .accHead .ico {
+  transform: rotate(0deg);
+  transition: all 0.3s;
+}
+.accordionWrap .accBody {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+  border-top: solid #ccc 1px;
+  background-color: #f5f9ff;
+}
+
+/* 확장영역 리스트 */
+.expandListWrap .expandTitle .icoCross {
+  position: absolute;
+  top: 21px;
+  right: 16px;
+  overflow: hidden;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+.expandListWrap .expandTitle .icoCross::before,
+.expandListWrap .expandTitle .icoCross::after {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  background-color: #999;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  content: "";
+}
+.expandListWrap .expandTitle .icoCross::before {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+}
+.expandListWrap .expandTitle .icoCross::after {
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 2px;
+  height: 20px;
+}
+.expandListWrap .expandTitle.is-expanded .icoCross::before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  opacity: 0;
+}
+.expandListWrap .expandTitle.is-expanded .icoCross::after {
+  -webkit-transform: translate(-50%, 0) rotate(90deg);
+  -ms-transform: translate(-50%, 0) rotate(90deg);
+  transform: translate(-50%, 0) rotate(90deg);
+}
+.expandListWrap .expandContent.reset {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .expandListWrap .expandTitle .icoCross {
+    top: 12px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+  }
+  .expandListWrap .expandTitle .icoCross::before {
+    width: 16px;
+    height: 2px;
+  }
+  .expandListWrap .expandTitle .icoCross::after {
+    width: 2px;
+    height: 16px;
+  }
+}
+
+/*** flow step ***/
+.flowStep {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.flowStep ol,
+.flowStep ul {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.flowStep li {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.flowStep li + li {
+  margin-left: 30px;
+}
+.flowStep li span {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.flowStep li.current {
+  margin: 0;
+  padding: 0;
+}
+.flowStep p.findent {
+  position: absolute;
+}
+
+/** 바 타입 **/
+.flowStep.barType {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border-top: solid #9e9e9e 1px;
+  background-color: #f9f7f4;
+} /* 2026.11.06 수정 - 시안 없음, 현재 색으로 임시 적용 */ /* 선 #9E9E9E (표 위 선), 배경 #F9F7F4 (검색 영역) */
+.flowStep.barType ol {
+  display: flex;
+  justify-content: space-around;
+}
+.flowStep.barType ol li {
+  display: table;
+  height: 52px;
+}
+.flowStep.barType ol li + li {
+  margin-left: 0;
+}
+.flowStep.barType ol li span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #666;
+}
+.flowStep.barType ol li.current span {
+  color: #eea415;
+  font-weight: 400;
+} /* 2026.11.06 수정 - 시안 없음, 현재 색으로 임시 적용 */ /* 현재 단계 #EEA415 (탭 선택색) */
+.flowStep.barType ol li.current span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: 0;
+  width: calc(100% + 40px);
+  height: 4px;
+  background-color: #eea415;
+} /* 2026.11.06 수정 - 시안 없음, 현재 색으로 임시 적용 */
+.flowStep.barType.icon ol li {
+  position: relative;
+}
+
+/* 2021.03.08 곽현준 추가 - 화살표 삽입 */
+.flowStep.barType.icon ol li:nth-child(1):after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 263px;
+  width: 22px;
+  height: 22px;
+  background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+  background-size: 22px;
+}
+.flowStep.barType.icon ol li:nth-child(2):after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 202px;
+  width: 22px;
+  height: 22px;
+  background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+  background-size: 22px;
+}
+.flowStep.barType.icon ol li:nth-child(3):after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 202px;
+  width: 22px;
+  height: 22px;
+  background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+  background-size: 22px;
+}
+@media screen and (max-width: 1000px) {
+  .flowStep.barType.icon ol li:nth-child(1):after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 220px;
+    width: 22px;
+    height: 22px;
+    background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+    background-size: 22px;
+  }
+  .flowStep.barType.icon ol li:nth-child(2):after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 152px;
+    width: 22px;
+    height: 22px;
+    background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+    background-size: 22px;
+  }
+  .flowStep.barType.icon ol li:nth-child(3):after {
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 152px;
+    width: 22px;
+    height: 22px;
+    background: url(/startkosmes-preview/images/common/ico_progress.png) no-repeat 0 0;
+    background-size: 22px;
+  }
+}
+/* //2021.03.08 곽현준 추가 - 화살표 삽입 */
+
+/** 탭 타입 **/
+.flowStep.tabType ol {
+  justify-content: flex-start;
+}
+.flowStep.tabType ol li {
+  display: table;
+  min-width: 90px;
+  height: 40px;
+  margin: 0 8px 0 0;
+  padding: 0 16px;
+  border: solid #999 1px;
+  text-align: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.flowStep.tabType ol li + li {
+  margin-left: inherit;
+}
+.flowStep.tabType ol li span {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  color: #999;
+  font-size: 16px;
+}
+.flowStep.tabType ol li.current {
+  border-color: #4380e0;
+  background-color: #4380e0;
+}
+.flowStep.tabType ol li.current span {
+  color: #fff;
+}
+
+/*** input ***/
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  height: 40px;
+  padding: 0 16px;
+  border: solid #d0d0d0 1px;
+  background-color: #fff;
+  color: #222;
+  font-size: 16px;
+}
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder {
+  color: #d0d0d0;
+}
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="number"]:disabled {
+  background-color: #ececec;
+  color: #999;
+}
+input[type="password"] + p {
+  display: inline-block;
+}
+input[readonly="readonly"],
+select[disabled="disabled"],
+input[disabled="disabled"] {
+  background-color: #ececec;
+  color: #999;
+}
+input[readonly="readonly"].borderNone {
+  padding: 0;
+  border-top: 1px solid transparent !important;
+  border-right: 1px solid transparent !important;
+  border-bottom: 1px solid transparent !important;
+  border-left: 1px solid transparent !important;
+  background-color: #fff;
+  color: #666;
+  outline: unset;
+}
+input.full {
+  width: 100%;
+}
+input.dfsize {
+  width: 100%;
+  max-width: 390px;
+}
+
+.tdcell input[type="text"],
+.tdcell input[type="password"],
+.tdcell input[type="number"] {
+  padding: 0 12px;
+  width: 227px;
+  border: solid #d9d9d9 1px;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #1f1f1f;
+  font-size: 15px;
+} /* 2021.01.28 곽현준 추가 - 조회 input 사이즈 */ /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 227 x 40, 테두리 #D9D9D9, 모서리 4px, 15px #1F1F1F */
+
+.tdcell input.full {
+  width: 100%;
+} /* 2021.01.28 곽현준 추가 - 조회 input 사이즈 */
+.tdcell input.dfsize {
+  width: 227px; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */
+  max-width: 390px;
+} /* 2021.01.28 곽현준 추가 - 조회 input 사이즈 */
+
+.inputWrap {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.inputWrap input {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+}
+.inputWrap.initDel input,
+.inputWrap.error input,
+.inputWrap.verify input {
+  padding-right: 50px;
+}
+.inputWrap.initDel .clearValue {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+.inputWrap.initDel .clearValue span {
+  position: absolute;
+  font-size: 1px;
+  color: transparent;
+  text-indent: -9999px;
+}
+.inputWrap.initDel .clearValue::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_inputwrap.png) no-repeat 0 0;
+  background-size: 100%;
+}
+.inputWrap.verify::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_inputwrap.png) no-repeat 0 -50px;
+  background-size: 100%;
+}
+.inputWrap.error::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_inputwrap.png) no-repeat 0 -98px;
+  background-size: 100%;
+}
+.inputWrap.error input {
+  border-color: #e60020;
+}
+.inputWrap.error .errorMsg {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  font-size: 14px;
+  color: #e60020;
+  z-index: 2;
+}
+.inputWrap .clearValue,
+.inputWrap .errorMsg {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  input[type="text"],
+  input[type="password"],
+  input[type="number"] {
+    width: 100%;
+    height: 30px;
+    padding: 0 12px;
+  }
+
+  .tdcell input[type="text"],
+  .tdcell input[type="password"],
+  .tdcell input[type="number"],
+  input.dfsize {
+    width: 100%;
+  } /* 2021.01.28 곽현준 추가 - 조회 input 사이즈 */
+
+  .inputWrap.initDel input,
+  .inputWrap.error input,
+  .inputWrap.verify input {
+    padding-right: 42px;
+  }
+  .inputWrap.initDel .clearValue {
+    height: 30px;
+  }
+  .inputWrap.initDel .clearValue::before {
+    top: 5px;
+    right: 12px;
+  }
+  .inputWrap.verify::after {
+    top: 5px;
+    right: 12px;
+  }
+  .inputWrap.error::after {
+    top: 5px;
+    right: 12px;
+  }
+  input.dfsize {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/** radioSet **/
+.radioSet {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: start;
+  align-items: baseline;
+}
+.radioSet label {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 28px;
+  line-height: 20px;
+  font-size: 17px;
+  letter-spacing: -0.06em;
+  color: #1f1f1f;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label + label {
+  margin-left: 50px;
+}
+.radioSet label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  z-index: 0;
+}
+.radioSet label input[type="radio"] + span {
+  display: inline-block;
+}
+.radioSet label input[type="radio"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border: solid #666 1px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"] + span::after {
+  content: "";
+}
+.radioSet label input[type="radio"]:checked + span::before {
+  border-color: #ef8b19;
+  box-shadow: inset 0 0 0 0.4px #ef8b19;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background-color: #ef8b19;
+  border-radius: 5px;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:disabled + span {
+  color: #9a9a9a;
+}
+.radioSet label input[type="radio"]:disabled + span::before {
+  background-color: #d9d9d9;
+  border-color: #9a9a9a;
+  box-shadow: none;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:disabled:checked + span::after {
+  content: "";
+  background-color: #9a9a9a;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:foucs + span::before {
+  border: dotted #333 1px;
+}
+/** pre 추가 이태호21-02-08 **/
+.radioSet label input[type="radio"] + pre {
+  display: inline-block;
+  font-weight: bold;
+}
+.radioSet label input[type="radio"] + pre::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border: solid #666 1px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"] + pre::after {
+  content: "";
+}
+.radioSet label input[type="radio"]:checked + pre::before {
+  border-color: #ef8b19;
+  box-shadow: inset 0 0 0 0.4px #ef8b19;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:checked + pre::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background-color: #ef8b19;
+  border-radius: 5px;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:disabled + pre {
+  color: #9a9a9a;
+}
+.radioSet label input[type="radio"]:disabled + pre::before {
+  background-color: #d9d9d9;
+  border-color: #9a9a9a;
+  box-shadow: none;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:disabled:checked + pre::after {
+  content: "";
+  background-color: #9a9a9a;
+} /* 2026.11.03 수정 - Figma 라디오 */
+.radioSet label input[type="radio"]:foucs + pre::before {
+  border: dotted #333 1px;
+}
+
+.radioSet.column {
+  flex-direction: column;
+}
+.radioSet.column label + label {
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.radioSet.multiline {
+  display: block;
+}
+.radioSet.multiline + .radioSet.multiline {
+  margin-top: 12px;
+}
+.radioSet.multiline label {
+  width: 20%;
+}
+
+@media screen and (max-width: 768px) {
+  .radioSet.mColumn {
+    flex-direction: column;
+  }
+  .radioSet.mColumn label + label {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/** radioSet : button type **/
+.radioSet.btnType {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  width: 100%;
+}
+.radioSet.btnType label {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 44px;
+  font-size: 16px;
+  letter-spacing: normal;
+  color: inherit;
+} /* 2026.11.03 수정 - Figma 라디오 (버튼형은 기존 모양 유지) */
+.radioSet.btnType label + label {
+  margin: 10px 0 0 0;
+}
+.radioSet.btnType label input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  z-index: 0;
+  opacity: 0;
+}
+.radioSet.btnType label input[type="radio"] + span {
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px;
+  height: 44px;
+  line-height: 40px;
+  text-align: center;
+}
+.radioSet.btnType label input[type="radio"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  border: solid #ccc 1px;
+  border-radius: 0;
+  background-color: transparent;
+  box-sizing: content-box;
+} /* 2026.11.03 수정 - Figma 라디오 (버튼형은 기존 모양 유지) */
+.radioSet.btnType label input[type="radio"] + span::after {
+  content: "";
+}
+.radioSet.btnType label input[type="radio"]:checked + span::before {
+  border-color: #4380e0;
+  box-shadow: none;
+} /* 2026.11.03 수정 - Figma 라디오 (버튼형은 기존 모양 유지) */
+.radioSet.btnType label input[type="radio"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  background-color: #4380e0;
+  border-radius: 0;
+  z-index: -1;
+}
+.radioSet.btnType label input[type="radio"]:checked + span {
+  color: #fff;
+}
+.radioSet.btnType label input[type="radio"]:disabled + span::before {
+  background-color: #ececec;
+  border-color: #d1d1d1;
+}
+.radioSet.btnType label input[type="radio"]:disabled:checked + span::after {
+  content: "";
+  background-color: #999;
+}
+.radioSet.btnType label input[type="radio"]:foucs + span::before {
+  border: dotted #333 1px;
+}
+
+.radioSet.btnType.harf {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -10px 0 0 0;
+}
+.radioSet.btnType.harf label {
+  max-width: calc(50% - 10px);
+  flex: 1 1 auto;
+  margin: 10px 10px 0 0;
+}
+.radioSet.btnType.harf label:nth-child(even) {
+  margin: 0;
+}
+
+.checkboxSet.btnType {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  justify-content: start;
+  align-items: baseline;
+  width: 100%;
+}
+.checkboxSet.btnType label {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 44px;
+  font-size: 16px;
+}
+.checkboxSet.btnType label + label {
+  margin: 10px 0 0 0;
+}
+.checkboxSet.btnType label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  z-index: 0;
+  opacity: 0;
+}
+.checkboxSet.btnType label input[type="checkbox"] + span {
+  display: inline-block;
+  width: 100%;
+  padding: 0 10px;
+  height: 44px;
+  line-height: 40px;
+  text-align: center;
+}
+.checkboxSet.btnType label input[type="checkbox"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  border: solid #ccc 1px;
+  border-radius: 0;
+  background-color: transparent;
+}
+.checkboxSet.btnType label input[type="checkbox"] + span::after {
+  content: "";
+}
+.checkboxSet.btnType label input[type="checkbox"]:checked + span::before {
+  border-color: #4380e0;
+}
+.checkboxSet.btnType label input[type="checkbox"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  background-color: #4380e0;
+  border-radius: 0;
+  z-index: -1;
+  transform: rotate(0deg) !important;
+}
+.checkboxSet.btnType label input[type="checkbox"]:checked + span {
+  color: #fff;
+}
+.checkboxSet.btnType label input[type="checkbox"]:disabled + span::before {
+  background-color: #ececec;
+  border-color: #d1d1d1;
+}
+.checkboxSet.btnType
+  label
+  input[type="checkbox"]:disabled:checked
+  + span::after {
+  content: "";
+  background-color: #999;
+}
+.checkboxSet.btnType label input[type="checkbox"]:foucs + span::before {
+  border: dotted #333 1px;
+}
+
+.checkboxSet.btnType.harf {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: -10px 0 0 0;
+}
+.checkboxSet.btnType.harf label {
+  max-width: calc(50% - 10px);
+  flex: 1 1 auto;
+  margin: 10px 10px 0 0;
+}
+.checkboxSet.btnType.harf label:nth-child(even) {
+  margin: 0;
+}
+
+/** checkboxSet **/
+.checkboxSet {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.checkboxSet label {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 28px;
+  line-height: 20px;
+  font-size: 17px;
+  letter-spacing: -0.06em;
+  color: #1f1f1f;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet label + label {
+  margin-left: 50px;
+}
+.checkboxSet label input[type="checkbox"] + span {
+  display: inline-block;
+}
+.checkboxSet label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  z-index: 0;
+}
+.checkboxSet label input[type="checkbox"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border: solid #b7b7b7 1px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet label input[type="checkbox"] + span::after {
+  content: "";
+}
+.checkboxSet label input[type="checkbox"]:checked + span::before {
+  border-color: #fa8517;
+  background-color: #fa8517;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet label input[type="checkbox"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: calc(50% - 6px);
+  width: 12px;
+  height: 12px;
+  background: url(/startkosmes-preview/images/common/icon_checkboxOn.svg) no-repeat 50% / 12px 12px;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet label input[type="checkbox"]:disabled + span {
+  color: #9a9a9a;
+}
+.checkboxSet label input[type="checkbox"]:disabled + span::before,
+.checkboxSet label input[type="checkbox"]:disabled:checked + span::before {
+  background-color: #f4f5f6;
+  border-color: #b7b7b7;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet label input[type="checkbox"]:disabled:checked + span::after {
+  background-image: url(/startkosmes-preview/images/common/icon_checkboxOnDisabled.svg);
+} /* 2026.11.03 수정 - Figma 체크박스 */
+.checkboxSet.pdFixed {
+  padding-left: 10px;
+}
+.checkboxSet.flexwrap {
+  width: 100%;
+  flex-wrap: wrap;
+}
+.checkboxSet.fixSize15to50 label {
+  width: 15%;
+  margin: 5px 0;
+}
+
+label.checkSingle {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 28px;
+  line-height: 20px;
+  font-size: 17px;
+  letter-spacing: -0.06em;
+  color: #1f1f1f;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 14px;
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  z-index: 0;
+}
+label.checkSingle input[type="checkbox"] + span {
+  display: inline-block;
+}
+label.checkSingle input[type="checkbox"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border: solid #b7b7b7 1px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"] + span::after {
+  content: "";
+}
+label.checkSingle input[type="checkbox"]:checked + span::before {
+  border-color: #fa8517;
+  background-color: #fa8517;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"]:checked + span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: calc(50% - 6px);
+  width: 12px;
+  height: 12px;
+  background: url(/startkosmes-preview/images/common/icon_checkboxOn.svg) no-repeat 50% / 12px 12px;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"]:disabled + span {
+  color: #9a9a9a;
+}
+label.checkSingle input[type="checkbox"]:disabled + span::before,
+label.checkSingle input[type="checkbox"]:disabled:checked + span::before {
+  background-color: #f4f5f6;
+  border-color: #b7b7b7;
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"]:disabled:checked + span::after {
+  background-image: url(/startkosmes-preview/images/common/icon_checkboxOnDisabled.svg);
+} /* 2026.11.03 수정 - Figma 체크박스 */
+label.checkSingle input[type="checkbox"] + span.findent {
+  position: absolute;
+}
+
+/* 2026.11.03 추가 - 버튼형 체크박스(.checkboxSet.btnType)는 기존 모양 유지 */
+.checkboxSet.btnType label {
+  padding: 0;
+  color: inherit;
+  letter-spacing: normal;
+}
+.checkboxSet.btnType label input[type="checkbox"] + span::before {
+  border-radius: 0;
+  box-sizing: content-box;
+}
+.checkboxSet.btnType label input[type="checkbox"]:checked + span::before {
+  background-color: transparent;
+}
+.checkboxSet.btnType label input[type="checkbox"]:checked + span::after {
+  width: 100%;
+  height: 44px;
+  left: 0;
+  top: 0;
+  background: #4380e0;
+}
+.checkboxSet.btnType label input[type="checkbox"]:disabled + span::before {
+  background-color: #ececec;
+  border-color: #d1d1d1;
+}
+.checkboxSet.btnType label input[type="checkbox"]:disabled:checked + span::after {
+  background: #999;
+}
+/* //2026.11.03 추가 - 버튼형 체크박스 */
+
+/* label 없는 checkbox */
+.checkSelf {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: solid #999 1px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.checkSelf input[type="checkbox"] {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+.checkSelf input[type="checkbox"]:checked + .check {
+  display: inline-block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #4380e0;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.checkSelf input[type="checkbox"]:checked + .check::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: calc(50% - 6px);
+  width: 12px;
+  height: 8px;
+  border-bottom: solid #4380e0 2px;
+  border-left: solid #4380e0 2px;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  /* .radioSet {padding:0 12px;} */ /* 1228 */
+  .radioSet label + label {
+    margin-left: 50px;
+  }
+  .checkboxSet {
+    padding: 0 12px;
+  }
+  .checkboxSet label + label {
+    margin-left: 30px;
+  }
+  label.checkSingle {
+    padding: 0 0 0 30px;
+  }
+  .checkboxSet.pdFixed {
+    padding: 12px 0 0 0;
+  }
+
+  label.checkSingle input[type="checkbox"] + span::before {
+    top: 0;
+  }
+  label.checkSingle input[type="checkbox"]:checked + span::after {
+    top: 4px;
+  }
+
+  .checkboxSet.fixSize15to50 label {
+    width: 50%;
+  }
+}
+
+select {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  margin: 0;
+  padding: 0 36px 0 12px;
+  font-size: 15px;
+  letter-spacing: -0.04em;
+  color: #1f1f1f;
+  border: solid #d9d9d9 1px;
+  border-radius: 4px;
+  background-color: #fff;
+  background: url(/startkosmes-preview/images/icon/icon_arrowDown.svg) no-repeat right 14px center / 12px 7px #fff; /* 2026.11.03 수정 - Figma 셀렉트 */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.tdcell select {
+  width: 202px;
+} /* 2021.01.28 곽현준 추가 - 조회 select 사이즈 */
+select::-ms-expand {
+  display: none;
+}
+select.full {
+  width: 100%;
+}
+/* select.dfsize {width:100%; max-width:390px;} */
+select.dfsize {
+  width: 202px;
+  max-width: 390px;
+} /* 2021.01.28 곽현준  수정 - 조회 select 사이즈 */
+
+.disabled select,
+.disabled input {
+  background-color: #ececec;
+  border-color: #d1d1d1;
+  pointer-events: none;
+}
+
+/** dateSetting **/
+.dateSetting {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.dateSetting.full {
+  width: 100%;
+}
+.dateSetting .datePC {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.dateSetting .datePC.full {
+  width: 100%;
+}
+.dateSetting .dateMobile {
+  display: none;
+}
+.dateSetting .datePic {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+/* .dateSetting .datePic input[type="text"] {display:block; position:relative; height:38px; width:120px; padding-right:40px; box-sizing:content-box;} */
+
+/* 2021.01.28 곽현준  추가 - 조회 달력 input 사이즈 */
+.dateSetting .datePic input[type="text"] {
+  display: block;
+  position: relative;
+  height: 38px;
+  width: 173px; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 전체 폭 227px (173 + 왼쪽 12 + 오른쪽 40 + 테두리 2) */
+  padding: 0 40px 0 12px;
+  box-sizing: content-box;
+  border-color: #d9d9d9;
+  border-radius: 4px;
+  font-size: 15px;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+
+.dateSetting .datePic input[type="text"]:read-only {
+  background-color: #fff;
+  color: #333;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+.dateSetting .datePic input[type="text"]:disabled,
+.dateSetting .datePic input[type="text"]:read-only:disabled {
+  background-color: #ececec;
+  color: #999;
+}
+
+.dateSetting .datePic input[type="text"]:disabled + .ui-datepicker-trigger {
+  display: none;
+} /* 2021.02.08 곽현준  추가 - disable일때 달력 호출 막음 */
+/* .dateSetting .datePic input[type="text"]:disabled:after {
+	content:'';
+	position:absoute;
+	right:16px;
+	top:calc(50% - 10px);
+	width:20px;
+	hegith:20px;
+	backgorund:url('/startkosmes-preview/images/common/ico_tws_datepic.png') 0 0 no-repeat;
+} */
+
+.dateSetting .datePic .btnDatepicker {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+.dateSetting .datePic .btnDatepicker span {
+  position: absolute;
+  font-size: 1px;
+  color: transparent;
+  text-indent: -9999px;
+}
+.dateSetting .datePic .btnDatepicker::before {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 16px;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_tws_datepic.png) no-repeat 50%;
+  background-size: 100%;
+}
+.dateSetting span.bar {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 12px; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 8 -> 12px */
+  line-height: 40px;
+  font-size: 19px;
+  color: #666;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+.dateSetting.full .datePic {
+  width: 100%;
+}
+.dateSetting.full .datePic .inputDatepicker {
+  width: 100%;
+}
+.dateSetting.full .KdatePic input[type="text"] {
+  padding: 0;
+}
+.dateSetting .ui-datepicker-trigger {
+  display: inline-block;
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  content: url(/startkosmes-preview/images/icon/icon_calendar.svg);
+  cursor: pointer;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+.formGrid .dateSetting .ui-datepicker-trigger {
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 입력 폼 달력 아이콘 20px */
+
+@media screen and (max-width: 768px) {
+  select {
+    height: 30px;
+    padding: 0 32px 0 12px;
+    background: #fff url(/startkosmes-preview/images/icon/icon_arrowDown.svg) no-repeat right 12px center / 12px 7px;
+  } /* 2026.11.03 수정 - Figma 셀렉트 */
+  .thcell select {
+    width: calc(100% + 24px);
+    margin-left: -12px;
+  }
+  .tdcell select {
+    width: 100%;
+  } /* 2021.01.28 곽현준  추가 - 조회 select 사이즈 */
+  .tdcell select.mfull {
+    width: 100%;
+  }
+  select.dfsize {
+    width: 100%;
+    max-width: 100%;
+  } /* 2021.01.28 곽현준  수정 - 조회 select 사이즈 */
+
+  /* 2021.01.28 곽현준  추가 - 조회 달력 input 사이즈 */
+  .dateSetting .datePic input[type="text"] {
+    display: block;
+    position: relative;
+    height: 38px;
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: content-box;
+  }
+}
+
+.textareaWrap {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.textareaWrap.borderTop textarea {
+  border-top-color: #003894;
+}
+.textareaWrap .textarea {
+  font-size: 1.6rem;
+}
+textarea {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+textarea.textarea {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin: 0;
+  padding: 12px 16px;
+  border: solid #d0d0d0 1px;
+  background-color: #fff;
+  color: #222;
+}
+textarea.textarea::placeholder {
+  color: #999;
+} /*201229 박진우 수정/ color #d0d0d0 -> #999*/
+textarea.textarea.thin {
+  height: 80px;
+}
+textarea.textarea.small {
+  height: 120px;
+}
+textarea.textarea.middle {
+  height: 260px;
+}
+textarea.textarea.editer {
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  textarea.textarea {
+    padding: 12px;
+    height: 60px;
+  }
+  textarea.textarea.thin {
+    height: 40px;
+  }
+  textarea.textarea.middle {
+    height: 130px;
+  }
+  textarea.textarea.editer {
+    height: 200px;
+  }
+}
+
+.ui-datepicker {
+  display: none;
+  position: absolute;
+  width: 333px;
+  height: 372px;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  border: solid #d0d0d0 1px;
+  z-index: 3 !important;
+  box-sizing: border-box;
+} /* 2021.01.08 곽현준 수정 - 레이어 우선 설정 */
+.ui-datepicker .ui-datepicker-header {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 64px;
+  margin: 0;
+  padding: 12px 46px;
+  background-color: #4380e0;
+  box-sizing: border-box;
+}
+.ui-datepicker-header .ui-corner-all span {
+  position: absolute;
+  font-size: 1px;
+  color: transparent;
+  text-indent: -9999px;
+}
+.ui-datepicker-header .ui-datepicker-prev {
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  background: url(/startkosmes-preview/images/common/ico_datepic_prev.png) no-repeat 50%;
+  background-size: 20px;
+}
+.ui-datepicker-header .ui-datepicker-next {
+  display: block;
+  position: absolute;
+  right: 6px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  background: url(/startkosmes-preview/images/common/ico_datepic_prev.png) no-repeat 50%;
+  background-size: 20px;
+  transform: rotate(180deg);
+}
+.ui-datepicker-header .ui-datepicker-title {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.ui-datepicker-title .ui-datepicker-year {
+  width: 50%;
+  margin-right: 4px;
+}
+.ui-datepicker-title .ui-datepicker-month {
+  width: 50%;
+  margin: 0;
+}
+.datepicker01.reserve + .ui-datepicker {
+  z-index: 1 !important;
+}
+
+.ui-datepicker .ui-datepicker-calendar {
+  position: relative;
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 0;
+  font-size: 16px;
+}
+.ui-datepicker-calendar thead th,
+.ui-datepicker-calendar tbody td {
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  padding: 0 2px;
+  text-align: center;
+}
+.ui-datepicker-calendar thead th span {
+  font-weight: 700;
+}
+.ui-datepicker-calendar .ui-datepicker-week-end:first-child,
+.ui-datepicker-calendar .ui-datepicker-week-end:first-child a {
+  color: #e60020;
+}
+.ui-datepicker-calendar a {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  z-index: 10;
+}
+.ui-datepicker-calendar .ui-datepicker-week-end:last-child a {
+  color: #222;
+}
+.ui-datepicker-calendar .ui-state-highlight,
+.ui-datepicker-calendar .ui-state-active {
+  color: #fff !important;
+  z-index: 10;
+  font-weight: 700;
+}
+.ui-datepicker-calendar .ui-state-highlight::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  background-color: #4380e0;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.5;
+}
+.ui-datepicker-calendar .ui-state-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  width: 40px;
+  height: 40px;
+  background-color: #4380e0;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 1;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+}
+.ui-datepicker-buttonpane .ui-datepicker-current {
+  display: none;
+}
+.ui-datepicker-buttonpane .ui-datepicker-close {
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 0;
+  width: 60px;
+  height: 32px;
+  border: solid #999 1px;
+  border-radius: 16px;
+  font-size: 16px;
+  color: #999;
+  background-color: #fff;
+}
+
+/** timeSetting **/
+.timeSetting {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+}
+.timeSetting .hour,
+.timeSetting .minute {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row-reverse;
+}
+.timeSetting .minute {
+  margin-left: 10px;
+}
+.timeSetting select {
+  width: 120px;
+}
+.timeSetting label {
+  display: none;
+  line-height: 40px;
+  margin-left: 8px;
+}
+.dateSetting + .timeSetting {
+  margin-left: 8px;
+}
+
+/* scrollTable 가로 */
+.scrollTable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px !important;
+}
+.fixScrollTable {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 4px !important;
+}
+
+/* scroll bar 노출  */
+/* ::-webkit-scrollbar {width:6px; height:8px;} */ /* 2021.01.25 곽현준 수정 - 스크롤바 기본형태로 복원 */
+::-webkit-scrollbar-thumb {
+  height: 8px;
+  background-color: #d0d0d0;
+  border-radius: 4px;
+}
+
+/** 버튼셋 **/
+.btnWrap {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: start;
+}
+.btnWrap.flexend {
+  justify-content: flex-end;
+}
+.btnWrap.flexend.rank {
+  justify-content: flex-end;
+  top: 0;
+} /* 2021.01.19 곽현준 추가 */
+@media screen and (max-width: 768px) {
+  .btnWrap.flexend.rank {
+    position: relative;
+    top: initial;
+    bottom: 15px;
+    right: 0px;
+  }
+} /* 2021.01.19 곽현준 추가 */
+
+.btnWrap.alignend {
+  align-items: flex-end;
+}
+.btnWrap.alignend button {
+  margin-right: 10px;
+}
+.btnWrap.alignend .tip {
+  font-size: 15px;
+  color: #444;
+  letter-spacing: -0.06em;
+} /* 2026.11.04 수정 - Figma 버튼 옆 안내문 */
+.btnWrap .txt {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 5px 0;
+}
+.btnWrap .txt span {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0 10px 0 0;
+  line-height: 20px;
+  word-break: keep-all;
+}
+.btnWrap.between {
+  justify-content: space-between;
+  align-items: center;
+}
+.btnWrap.center {
+  justify-content: center;
+}
+.btnWrap.center .btn + .btn {
+  margin-left: 20px;
+}
+.btnWrap.center button {
+  height: 46px;
+  margin: 0 10px;
+} /* 2026.11.03 수정 - Figma 버튼 */
+
+.btnWrap .summary {
+  margin-right: 20px;
+  line-height: 40px;
+}
+.btnWrap .summary .total {
+  color: #003894;
+}
+.btn {
+  position: relative;
+  min-width: 64px;
+  height: 40px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.06em;
+  border-radius: 6px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.btn span {
+  padding: 0 16px;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.btn + .btn {
+  margin-left: 8px;
+}
+a.btn,
+p.btn {
+  display: inline-table;
+}
+a.btn span,
+p.btn span {
+  display: table-cell;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+button.btn,
+button.btn span,
+.commentBtn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+} /* 2026.11.05 수정 - inline-flex 로 바꾸면서 가운데 정렬 (최소 폭 · 고정 높이 버튼에서 글자가 왼쪽 위로 쏠리지 않도록) */
+.selectBtnBox .btnWrap {
+  display: inline-flex;
+}
+
+/* 상세 팝업 오픈 버튼 */
+.detailPopOpen {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  background: url("/startkosmes-preview/images/contents/ico_popup.png") no-repeat center center /
+    15px 15px;
+}
+.detailBtnWrap .detailPopOpen {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.detailPop .blueBox {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 17px 24px;
+  background-color: #f5f9ff;
+}
+
+@media screen and (max-width: 768px) {
+  .detailBtnWrap {
+    display: flex !important;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .detailBtnWrap .detailPopOpen {
+    margin-left: 1rem;
+  }
+}
+
+/* 모바일 버튼 줄바꿈 및 간격 */
+.btnWrap.wrap {
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .btnWrap {
+    font-size: 1.6rem;
+  }
+  .btnWrap.alignend {
+    align-items: flex-start;
+  }
+  .btnWrap.alignend button {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .btnWrap.mfull {
+    width: 100%;
+  }
+  .btnWrap.mfull .btn {
+    width: 100%;
+  }
+  .btnWrap.mfull .btn span {
+    letter-spacing: -1px;
+  }
+
+  /* 모바일 버튼 줄바꿈 및 간격 */
+  .btnWrap.wrap {
+    margin-top: 25px !important;
+  }
+  .btnWrap.wrap .btn {
+    padding: 0;
+    margin-top: 15px;
+  }
+}
+
+.btn.btnSmall {
+  height: 32px;
+  min-width: 60px;
+  letter-spacing: -0.04em;
+  border-radius: 4px;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.btn.btnSmall span {
+  padding: 0 12px;
+}
+.btn.btnSmall.line.skyblue > span:has(> .sysIco) {
+  gap: 2px;
+} /* 2026.11.05 수정 - Figma 서브 기본 (547:1336) */ /* tertiary xsmall : 32px, 모서리 4px, 테두리 #C1C1C1 (색은 .line.skyblue), 아이콘 16px · 간격 2px */
+.btn.btnMicro {
+  height: 22px;
+  padding: 0 10px;
+}
+.btn.btnLine {
+  height: 22px;
+  width: inherit;
+  min-width: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+.btn.btnLine::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+}
+
+.btn.btnWide {
+  min-width: 200px;
+}
+
+.btn.lightblue {
+  background-color: #ef8b19;
+  color: #fff;
+}
+.btn.lightblue:hover {
+  background-color: #ef7200;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.btn.slate {
+  background-color: #858697;
+  color: #fff;
+}
+/* .btn.lightblue {margin-top:22px; width:100px; height:44px; background-color:#003894; color:#fff; border-radius:3px;} */ /* 2021.01.06 곽현준 수정 */
+/* .btn.lightblue {margin-top:22px; min-width:100px; height:44px; background-color:#003894; color:#fff; border-radius:3px;} */ /* 2021.01.14 곽현준 수정 */
+/*.btn.lightblue {margin-top:22px; min-width:100px; height:44px; background-color:#003894; color:#fff; border-radius:3px; outline:none;} */ /* 2021.01.18 곽현준 수정 */
+.btn.lightblue.search {
+  margin-top: 0px !important;
+  min-width: 100px;
+  height: 40px;
+  background-color: #ef8b19;
+  color: #fff;
+  border-radius: 6px;
+  outline: none;
+} /* 2021.01.18 곽현준 수정 */ /* 2026.11.03 수정 - Figma 버튼 */
+
+/* 2021.03.08 곽현준 추가 - 그린버튼 추가 */
+.btn.darkgreen {
+  background-color: #166b2a;
+  color: #fff;
+}
+
+/*.btn.lightblue:hover {background-color:#535353;} */ /* 2021.01.18 곽현준 추가 */
+.btn.lightblue.search:hover {
+  background-color: #ef7200;
+} /* 2026.11.03 수정 - Figma 버튼 */ /* 2021.01.18 곽현준 추가 */
+.btn.darkgreen:hover {
+  background-color: #535353;
+} /* 2021.03.08 곽현준 추가 - 그린버튼 추가 */
+
+.btn.lightblue.clearValue {
+  padding-right: 34px;
+}
+.btn.lightblue.clearValue,
+.btn.lightblue.clearValue:hover {
+  height: 40px;
+  padding: 0 48px 0 14px;
+  border-radius: 20px;
+  background-color: #333;
+  font-size: 16px;
+  font-weight: 400;
+} /* 2026.11.05 수정 - Figma 테이블 (562:7117) 필터 칩 */ /* #333 알약 40px, 16px 흰 글자, 오른쪽 닫기 20px */
+.btn.lightblue.clearValue span {
+  padding: 0;
+} /* 2026.11.05 수정 - Figma 테이블 (562:7117) 필터 칩 */
+.btn.lightblue.clearValue:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  background: url(/startkosmes-preview/images/common/ico_close.png) no-repeat 0 50%;
+  background-size: 100%;
+}
+.btn.darkgray {
+  background-color: #444;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+.btn.darkgray:hover {
+  background-color: #000;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.btn.red {
+  background-color: #e60020;
+  color: #fff;
+}
+.btn.red2 {
+  background-color: #e60020;
+  color: #fff;
+}
+.btn.btnLine.lightblue {
+  color: #4380e0;
+  background-color: transparent;
+}
+.btn.btnLine.lightblue::before {
+  background-color: #4380e0;
+}
+.btn.btnLine.red {
+  color: #e60020;
+  background-color: transparent;
+}
+.btn.btnLine.red::before {
+  background-color: #e60020;
+}
+.btn.btnLine.darkgray {
+  color: #999;
+  background-color: transparent;
+}
+.btn.btnLine.darkgray::before {
+  background-color: #999;
+}
+
+.line.white {
+  border: solid #fff 1px;
+  color: #fff;
+}
+.line.skyblue {border:solid #c1c1c1 1px; color:#333; background-color:#FFF;}
+.line.skyblue:hover {background-color:#f4f5f6; color:#1f1f1f;} /* 2026.11.03 수정 - Figma 버튼 */
+.btn > span:has(> .sysIco) {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.btn span.sysIco {
+  padding: 0;
+} /* 2026.11.04 수정 - 버튼 안 아이콘 (아이콘 16px + 글자, 간격 4px) */
+.line.lightblue {
+  margin-top: 22px;
+  min-width: 100px;
+  height: 46px;
+  background-color: #ef8b19;
+  color: #fff;
+  font-size: 17px;
+  border-radius: 8px;
+  outline: none;
+} /* 2021.01.18 곽현준 수정 */ /* 2026.11.03 수정 - Figma 버튼 */
+.line.lightblue:hover {
+  background-color: #ef7200;
+} /* 2021.01.18 곽현준 추가 */ /* 2026.11.03 수정 - Figma 버튼 */
+
+/* .line.darkgray {border:solid #999 1px; color:#666; background-color:#FFF;} */ /*201229 박진우/ color #999 -> #666 변경*/
+.line.darkgray {
+  margin-top: 22px;
+  min-width: 100px;
+  height: 46px;
+  border: solid #c1c1c1 1px;
+  color: #333;
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.06em;
+  border-radius: 8px;
+} /* 2021.01.18 곽현준 수정 */ /* 2026.11.03 수정 - Figma 버튼 */
+.line.darkgray:hover {
+  color: #1f1f1f;
+  border: 1px solid #c1c1c1;
+  background-color: #f4f5f6;
+} /* 2021.01.18 곽현준 추가 */ /* 2026.11.03 수정 - Figma 버튼 */
+
+.inputWrap.unit + .line.darkgray {
+  margin-top: 0;
+  height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .inputWrap.unit + .line.darkgray {
+    margin-top: 0;
+    height: 30px;
+  }
+} /* 2021.01.18 곽현준 추가 */
+
+.line.darkgray.btn_list {
+  margin-top: 22px;
+  padding-left: 30px;
+  min-width: 100px;
+  height: 44px;
+  border: solid #4380e0 1px;
+  color: #4380e0;
+  background-color: #fff;
+  background: #fff url(/startkosmes-preview/images/btn/bg_btn_list.png) 15px center no-repeat;
+  border-radius: 3px;
+} /* 2021.01.18 곽현준 추가 */
+.line.darkgray.btn_list:hover {
+  color: #535353;
+  border: 1px solid #535353;
+  background: #fff url(/startkosmes-preview/images/btn/bg_btn_list_hover.png) 15px center no-repeat;
+} /* 2021.01.18 곽현준 추가 */
+
+/* 버튼 비활성 */
+.btn:disabled {
+  border: solid transparent 1px !important;
+  color: #666 !important;
+  background-color: #c8c8c8 !important;
+  font-weight: 400 !important;
+  cursor: default !important;
+} /* 2026.11.03 수정 - Figma 버튼 */
+a.btn.disabled {
+  border: solid transparent 1px !important;
+  color: #666 !important;
+  background-color: #c8c8c8 !important;
+  font-weight: 400 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* .search.darkgray, .reset.darkgray, .file.darkgray {border:solid #999 1px; color:#999; background-color:#FFF; padding-right:25px;} */
+.search.darkgray,
+.reset.darkgray,
+.file.darkgray {
+  height: 40px;
+  color: #fff;
+  background-color: #535353;
+  border-radius: 3px;
+  padding-left: 22px;
+} /* 2021.01.06 곽현준 수정 */
+.search.darkgray:hover,
+.reset.darkgray:hover,
+.file.darkgray:hover {
+  background-color: #4380e0;
+} /* 2021.01.06 곽현준 추가 */
+
+/* .file.darkgray {
+  padding-left: 30px;
+  min-width: 100px;
+  height: 38px !important;
+  line-height: 38px !important;
+  ...
+} */
+.file.darkgray {
+  padding-left: 30px;
+  min-width: 100px;
+  /* height:44px; */
+  height: 38px;
+  line-height: 38px; /* input과 높이 통일 */ /* 2026.11.05 수정 - !important 제거 */
+  border: solid #4380e0 1px;
+  color: #4380e0;
+  background-color: #fff;
+  background: #fff url(/startkosmes-preview/images/btn/bg_btn_file.png) 15px center no-repeat;
+  border-radius: 3px;
+} /* 2021.01.18 곽현준 추가 */
+.file.darkgray:hover {
+  color: #535353;
+  border: 1px solid #535353;
+  background: #fff url(/startkosmes-preview/images/btn/bg_btn_file_hover.png) 15px center no-repeat;
+} /* 2021.01.18 곽현준 추가 */
+.btn.darkgray.file {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 64px;
+  height: 40px;
+  padding: 0 16px;
+  line-height: 1.5;
+  border: 1px solid #c1c1c1;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* tertiary small + icon_attachment 16px */
+.btn.darkgray.file:hover {
+  border-color: #c1c1c1;
+  background: #f4f5f6;
+  color: #1f1f1f;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */
+.btn.darkgray.file::before {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  -webkit-mask: url(/startkosmes-preview/images/icon/icon_attachment.svg) no-repeat 50% / 75% 69.76%;
+  mask: url(/startkosmes-preview/images/icon/icon_attachment.svg) no-repeat 50% / 75% 69.76%;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 아이콘 영역 16px 안 12 x 11.16 */
+.btn.darkgray.file span {
+  padding: 0;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */
+
+/* .search.darkgray::after {content:''; display:block; position:absolute; right:16px; top:calc(50% - 10px); width:17px; height:20px; background:url(/startkosmes-preview/images/common/ico_tws_search.png) no-repeat 50%; background-size:100%;} */
+
+/* 2021.01.18 곽현준 수정 */
+.search.darkgray::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 11px;
+  top: calc(50% - 10px);
+  width: 19px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_tws_search_1.png) no-repeat 50%;
+  background-size: 100%;
+}
+
+/* .reset.darkgray::after {content:''; display:block; position:absolute; right:12px; top:calc(50% - 10px); width:20px; height:20px; background:url(/startkosmes-preview/images/common/ico_tws_reset.png) no-repeat 50%; background-size:100%;} */
+
+/* 2021.01.06 곽현준 수정 */
+.reset.darkgray::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_tws_reset_1.png) no-repeat 50%;
+  background-size: 100%;
+}
+
+/* 2021.01.18 곽현준 수정 */
+/* .file.darkgray::after {content:''; display:block; position:absolute; right:16px; top:calc(50% - 10px); width:20px; height:20px; background:url(/startkosmes-preview/images/common/ico_tws_file.png) no-repeat 50%; background-size:100%;} */
+
+.btn.btnSmall.darkgray {
+  position: relative;
+  padding-right: 24px;
+  height: 32px;
+  color: #fff;
+  border: 1px solid #444;
+  background-color: #444;
+  border-radius: 4px;
+} /* 2021.01.18 곽현준 추가 */ /* 2026.11.03 수정 - Figma 버튼 */ /* 2026.11.04 수정 - 화살표 자리 24px */
+.btn.btnSmall.darkgray > span {
+  padding: 0 4px 0 12px;
+} /* 2026.11.04 수정 - 글자와 화살표 간격 4px */
+.btn.btnSmall.darkgray:after {
+  content: "";
+  position: absolute;
+  right: 8px;
+  top: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  -webkit-mask: url(/startkosmes-preview/images/icon/icon_arrowRight.svg) no-repeat 53.4483% 50% / 39.5833% 72.9167%;
+  mask: url(/startkosmes-preview/images/icon/icon_arrowRight.svg) no-repeat 53.4483% 50% / 39.5833% 72.9167%;
+} /* 2021.01.18 곽현준 추가 */ /* 2026.11.03 수정 - Figma 버튼 */ /* 2026.11.04 수정 - 아이콘 비율 .sysIco.icon_arrowRight 와 같게 */
+.btn.btnSmall.darkgray:hover {
+  color: #fff;
+  border: 1px solid #000;
+  background-color: #000;
+} /* 2021.01.18 곽현준 추가 */ /* 2026.11.03 수정 - Figma 버튼 */
+.btn.btnSmall.darkgray:hover:after {
+  background: currentColor;
+} /* 2026.11.03 수정 - Figma 버튼 */
+
+.expandBtn {
+  min-width: inherit;
+  width: 40px;
+  height: 40px;
+  border: solid #999 1px;
+  border-radius: 20px;
+}
+.expandBtn span {
+  position: absolute;
+  font-size: 1px;
+  color: transparent;
+  text-indent: -9999px;
+}
+.expandBtn::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 6px);
+  width: 20px;
+  height: 12px;
+  background: url(/startkosmes-preview/images/common/ico_tws_up.png) no-repeat 50%;
+  background-size: 100%;
+  transform: rotate(180deg);
+  transition: all 0.3s;
+}
+.expandBtn.open::before {
+  transform: rotate(0deg);
+  transition: all 0.3s;
+}
+
+.linkArrBtn {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: solid #c7c7c7 1px;
+  border-radius: 20px;
+  font-size: 1px;
+  text-indent: -9999px;
+  color: transparent;
+  transform: translateY(-50%);
+}
+.linkArrBtn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  background: url(/startkosmes-preview/images/common/ico_arr_right.png) no-repeat 50%;
+  background-size: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  /*** input ***/
+  /** dateSetting **/
+  .dateSetting {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .dateSetting .datePC {
+    display: none;
+  }
+  .dateSetting .dateMobile {
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: start;
+    flex-direction: row;
+  }
+  .dateSetting .dateMobile span.bar {
+    display: none;
+  }
+  .dateMobile input[type="date"] {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    padding: 0 0 0 12px;
+    border: solid #d0d0d0 1px;
+    font-size: 1.6rem;
+    background-color: #fff;
+    color: #222;
+    -webkit-appearance: none;
+  }
+  .dateMobile input[type="date"]:nth-of-type(2) {
+    margin-top: 12px;
+  }
+  .dateMobile input[type="date"]::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: url(/startkosmes-preview/images/common/ico_tws_datepic.png) no-repeat 50%;
+    background-size: 100%;
+  }
+  .dateMobile input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  .dateMobile input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+    -webkit-appearance: none;
+  }
+
+  /** timeSetting **/
+  .timeSetting {
+    display: flex;
+    flex-direction: column;
+  }
+  .timeSetting .hour,
+  .timeSetting .minute {
+    display: flex;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    flex-direction: row-reverse;
+  }
+  .timeSetting .minute {
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+  .timeSetting select {
+    width: 100%;
+  }
+  .timeSetting label {
+    display: none;
+    line-height: 30px;
+    margin-left: 10px;
+  }
+  .dateSetting + .timeSetting {
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+
+  /** 버튼셋**/
+  .btnWrap.fall {
+    flex-direction: column;
+  }
+  .btnWrap.fall .btn {
+    margin-right: auto;
+  }
+
+  .btn {
+    min-width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    padding: 0 10px;
+  }
+  .btn.btnSmall {
+    height: 28px;
+    padding: 0 12px;
+  }
+
+  .btn.fall {
+    height: 60px;
+    border-radius: 32px;
+  }
+  .btn.fall span {
+    line-height: 22px;
+  }
+
+  /* .search.darkgray, .reset.darkgray, .file.darkgray {min-width:inherit; width:30px; height:30px; padding:0;}
+	.search.darkgray span, .reset.darkgray span, .file.darkgray span {position:absolute; font-size:1px; color:transparent; text-indent:-9999px;} */
+
+  /* 2021.01.07 곽현준 수정 */
+  .search.darkgray,
+  .reset.darkgray,
+  .file.darkgray {
+    margin-top: 12px;
+  }
+  .btn.lightblue.search {
+    margin-top: 12px !important;
+  }
+
+  .search.darkgray::after {
+    width: 15px;
+    height: 17px;
+    right: calc(50% - 8px);
+    top: calc(50% - 9px);
+  }
+  .reset.darkgray::after {
+    width: 17px;
+    height: 17px;
+    right: calc(50% - 8px);
+    top: calc(50% - 8px);
+  }
+  .file.darkgray::after {
+    width: 14px;
+    height: 15px;
+    right: calc(50% - 7px);
+    top: calc(50% - 8px);
+  }
+
+  /* .expandBtn {min-width:inherit; width:30px; height:30px;}
+	.expandBtn::before {left:calc(50% - 8px); top:calc(50% - 4px); width:15px; height:9px;} */
+
+  /* 2021.01.19 곽현준 수정 */
+  .expandBtn {
+    margin-top: 12px;
+    min-width: inherit;
+    width: 40px;
+    height: 40px;
+    border: solid #999 1px;
+    border-radius: 20px;
+  }
+  .expandBtn span {
+    position: absolute;
+    font-size: 1px;
+    color: transparent;
+    text-indent: -9999px;
+  }
+  .expandBtn::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: calc(50% - 6px);
+    width: 20px;
+    height: 12px;
+    background: url(/startkosmes-preview/images/common/ico_tws_up.png) no-repeat 50%;
+    background-size: 100%;
+    transform: rotate(180deg);
+    transition: all 0.3s;
+  }
+  .expandBtn.open::before {
+    transform: rotate(0deg);
+    transition: all 0.3s;
+  }
+
+  .btnWrap .summary {
+    font-size: 1.6rem;
+    line-height: 30px;
+  }
+
+  .btnPrintWrap {
+    display: none;
+  }
+}
+
+/** 페이징 **/
+/* .pagingWrap {display:block; position:relative; margin:0; padding:0;} */
+.pagingWrap {
+  display: block;
+  position: relative;
+  margin: 30px 0 0;
+  padding: 0;
+} /* 2021.01.19 곽현준 추가 */
+.pagingWrap .summary {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  color: #666;
+}
+.pagingWrap .summary .total {
+  color: #003894;
+}
+.pagingWrap .paging {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+/* .pagingWrap .paging a {display:inline-block; position:relative; width:40px; height:40px; line-height:40px; margin:0; padding:0; border:solid #c7c7c7 1px; border-radius:50%; text-align:center;} */
+
+/* 2021.01.06 곽현준 수정 */
+.pagingWrap .paging a {
+  display: inline-block;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  margin: 0;
+  padding: 0;
+  border: solid #c7c7c7 1px;
+  text-align: center;
+}
+
+.pagingWrap .paging a + a {
+  margin-left: 8px;
+}
+.pagingWrap .paging a span {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #666;
+}
+/* .pagingWrap .paging a.current {background-color:#999; border-color:#999;} */
+.pagingWrap .paging a.current {
+  background-color: #252525;
+  border-color: #252525;
+} /* 2021.01.06 곽현준 수정 */
+.pagingWrap .paging a.current span {
+  color: #fff;
+}
+.pagingWrap .paging a.first span,
+.paging a.prev span,
+.paging a.next span,
+.paging a.end span {
+  position: absolute;
+  font-size: 1px;
+  color: transparent;
+  text-indent: -9999px;
+}
+.pagingWrap .paging a.first::before,
+.paging a.prev::before,
+.paging a.next::before,
+.paging a.end::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100%;
+}
+.pagingWrap .paging a.first::before {
+  background-image: url(/startkosmes-preview/images/common/ico_tws_first.png);
+}
+.pagingWrap .paging a.prev::before {
+  background-image: url(/startkosmes-preview/images/common/ico_tws_prev.png);
+}
+.pagingWrap .paging a.next::before {
+  background-image: url(/startkosmes-preview/images/common/ico_tws_prev.png);
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.end::before {
+  background-image: url(/startkosmes-preview/images/common/ico_tws_first.png);
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.first.disable,
+.paging a.prev.disable,
+.paging a.next.disable,
+.paging a.end.disable {
+  opacity: 0.6;
+  cursor: default;
+}
+.pagingWrap .mobileMore {
+  display: none;
+}
+
+.pagingWrap > .total {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.pagingWrap > .total span {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #003894;
+}
+.pagingWrap > .sign {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+.pagingWrap > .sign span {
+  display: inline-block;
+  position: relative;
+  margin: 0 5px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .pagingWrap {
+    padding-top: 40px;
+    font-size: 1.6rem;
+  }
+  .pagingWrap .summary {
+    width: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+  }
+  /* .pagingWrap .paging a {width:30px; height:30px; border-radius:100px; line-height:30px;} */
+
+  /* 2021.01.06 곽현준 수정 */
+  .pagingWrap .paging a {
+    display: inline-block;
+    position: relative;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    margin: 0;
+    padding: 0;
+    border: solid #c7c7c7 1px;
+    text-align: center;
+  }
+
+  .pagingWrap .paging a + a {
+    margin-left: 12px;
+  }
+
+  /* 모바일 더보기 사용안함 */
+  .pagingWrap button.mobileMore {
+    display: none;
+  }
+  /* .pagingWrap button.mobileMore {display:block; position:relative; width:100%; height:30px; border:solid #999 1px; border-radius:15px; text-align:center; color:#999;} */
+  /* .pagingWrap .mobileMore > span {display:inline-block; position:relative; margin:0; padding:0 25px 0 0; background:url(/startkosmes-preview/images/common/ico_more.png) no-repeat right 6px; background-size:14px;} */
+}
+
+/** fileBox **/
+.fileBox {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+}
+.fileBox .fileName {
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 118px);
+  height: 40px;
+  line-height: 40px;
+  margin: 0 16px 0 0;
+  padding: 0 16px;
+  border: solid #d0d0d0 1px;
+  font-size: 16px;
+}
+.fileBox .fileName::placeholder {
+  font-size: 16px;
+  color: #999;
+}
+/* .fileBox .btn_file.btn {display:table; position:relative; line-height:40px; cursor:pointer;} */
+.fileBox .btn_file.btn {
+  display: table;
+  position: relative;
+  line-height: 40px;
+  cursor: pointer;
+  border-collapse: separate;
+} /* 2021.01.28 곽현준 수정 - 첨부버튼 특정 위치에서 스타일 오류 방지 */
+.fileBox .btn_file.btn span {
+  display: table-cell;
+  position: relative;
+}
+.fileBox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Logo Upload FileBox */
+.logoFileBox {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.logoFileBox .comp_logo {
+  display: block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+  background: url(/startkosmes-preview/images/common/ico_logo_none.png) no-repeat center;
+  background-size: 100%;
+}
+
+/* 2021.03.08 곽현준 추가 - 명함사진 비율고정 */
+.logoFileBox.wrap_photo .comp_logo {
+  display: block;
+  position: relative;
+  margin: 0 10px 0 0;
+  padding: 0;
+  width: 106px;
+  height: 136px;
+  background: url(/startkosmes-preview/images/common/ico_logo_none.png) no-repeat center;
+  background-size: 100%;
+}
+.logoFileBox.wrap_photo .btnFixed p {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.logoFileBox.wrap_photo .btnFixed .fileName {
+  display: none;
+}
+
+.logoFileBox .comp_logo img {
+  width: 100%;
+  height: 100%;
+}
+.logoFileBox.initFile .comp_logo img {
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .logoFileBox {
+    padding: 0 0 0 12px;
+  }
+}
+
+/* logoTextWrap */
+.logoTextWrap {
+  display: block;
+  position: relative;
+  margin: 16px 0 40px -32px;
+  padding: 0;
+}
+.logoTextWrap ul {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.logoTextBox {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.logoTextBox a {
+  display: flex;
+  position: relative;
+  margin: 24px 0 0 32px;
+  padding: 18px 25px;
+  border: 1px solid #d0d0d0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* .logoTextBox .comp_logo {display:block; position:relative; min-width:100px; height:100px; background:url(/startkosmes-preview/images/common/ico_logo_none.png) no-repeat center; background-size:100%;} */
+.logoTextBox .comp_logo {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: url(/startkosmes-preview/images/common/ico_logo_none.png) no-repeat center;
+  background-size: 100%;
+} /* 2021.02.02 곽현준 수정 - 폭 고정 */
+
+.logoTextBox .comp_logo img {
+  width: 100%;
+  height: 100%;
+}
+.logoTextBox .comp_info {
+  margin-left: 25px;
+}
+.logoTextBox .comp_info .bold {
+  font-weight: bold;
+}
+.logoTextBox .comp_info .title {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 14px 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.logoTextBox .comp_info .infoText {
+  display: block;
+  position: relative;
+  margin: 22px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  color: #999;
+}
+.logoTextBox .comp_info .infoText li {
+  display: inline-block;
+  position: relative;
+  margin: 0 6px 0 0;
+  padding: 0 10px 0 0;
+}
+.logoTextBox .comp_info .infoText li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 1px;
+  height: 12px;
+  background-color: #999;
+}
+.logoTextBox .comp_info .infoText li:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+.logoTextBox .comp_info .infoText li:last-child::after {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .logoTextWrap {
+    font-size: 1.6rem;
+  }
+  .logoTextBox .comp_info .infoText li {
+    margin: 0 6px 0 0;
+    padding: 0 6px 0 0;
+  }
+}
+
+/** Dropdown fileBox**/
+.multiFileBox {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-direction: column-reverse;
+}
+.multiFileBox .infoMsg {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 8px 0 0 0;
+}
+.multiFileBox .infoMsg.marker_star {
+  flex-direction: row;
+}
+.multiFileBox .infoMsg.marker_star li + li {
+  margin: 0 0 0 12px;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 안내 사이 12px */
+.multiFileBox .infoMsg.marker_star li {
+  font-size: 15px;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 안내 15px #666 */
+.multiFileBox .btnFixed {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0 140px 0 0;
+}
+.boardWriteWrap .multiFileBox .btnFixed {
+  padding-right: 114px;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 파일선택 버튼 102px + 간격 12px */
+.multiFileBox .btnFixed button.file {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.multiFileBox .dropArea {
+  display: block;
+  position: relative;
+  min-height: 64px;
+  max-height: 200px;
+  margin: 0 0 10px;
+  padding: 14px 16px;
+  background-color: #f7f7f7;
+  border-radius: 4px; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */
+  overflow: hidden;
+  overflow-y: auto;
+}
+.multiFileBox .dropArea .beforeMsg {
+  display: inline-block;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 10px);
+  width: 200px;
+  height: 20px;
+  line-height: 20px;
+  color: #666;
+  text-align: center;
+}
+.multiFileBox .dropArea.disabled {
+  background-color: #ececec;
+  color: #999;
+}
+
+.multiFileBox.initFile .beforeMsg {
+  display: none;
+}
+.multiFileBox.initFile .filelist {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.multiFileBox.initFile .filelist li {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
+  justify-content: start;
+}
+.multiFileBox.initFile .filelist li + li {
+  padding-top: 6px;
+}
+.boardWriteWrap .multiFileBox.initFile .filelist li {
+  align-items: center;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 파일명 · 삭제 버튼 세로 가운데 */
+.boardWriteWrap .multiFileBox.initFile .filelist li span.icoFile {
+  line-height: 24px;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 한 줄 24px : 상자 40px = 위 8 + 24 + 아래 8 */
+.boardWriteWrap .multiFileBox.initFile .filelist .fileDel {
+  top: 0;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */
+.multiFileBox.initFile .filelist li span {
+  display: inline-block;
+  position: relative;
+  color: #222;
+}
+.multiFileBox.initFile .filelist .fileDel {
+  display: block;
+  position: relative;
+  top: -1px;
+  width: 19px;
+  height: 19px;
+  margin: 0 0 0 8px;
+  padding: 0;
+  border: solid #666 1px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+.multiFileBox.initFile .filelist .fileDel span {
+  position: absolute;
+  font-size: 1;
+  color: transparent;
+  text-indent: -9999px;
+}
+.multiFileBox.initFile .filelist .fileDel::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 9px;
+  height: 1px;
+  background-color: #666;
+}
+.multiFileBox.initFile .filelist .fileDel::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 1px;
+  height: 9px;
+  background-color: #666;
+}
+
+.btn_del_img {
+  display: block;
+  position: relative;
+  top: 9px;
+  width: 19px;
+  height: 19px;
+  margin: 0 0 0 8px;
+  padding: 0;
+  border: solid #666 1px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+.btn_del_img span {
+  position: absolute;
+  font-size: 1;
+  color: transparent;
+  text-indent: -9999px;
+}
+.btn_del_img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 9px;
+  height: 1px;
+  background-color: #666;
+}
+.btn_del_img::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 1px;
+  height: 9px;
+  background-color: #666;
+}
+
+.multiFileBox .filelist {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .fileBox .fileName {
+    width: calc(100% - 30px);
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+  }
+  .fileBox .btn_file.btn {
+    line-height: 30px;
+  }
+
+  .multiFileBox {
+    flex-direction: column;
+  }
+  .multiFileBox .btnFixed {
+    padding-right: 40px;
+  }
+  .multiFileBox .infoMsg.marker_star {
+    flex-direction: column;
+    padding: 0 0 8px 0;
+  }
+  .multiFileBox .infoMsg.marker_star li + li {
+    margin: 4px 0 0 0;
+  }
+
+  /* 고정 스크롤 테이블 안에 파일박스가 있는 경우 */
+  .fixScrollTable .multiFileBox {
+    flex-direction: column-reverse;
+  }
+  .fixScrollTable .multiFileBox .infoMsg {
+    padding: 8px 0 0 0;
+  }
+  .fixScrollTable .multiFileBox .infoMsg.marker_star {
+    flex-direction: row;
+  }
+  .fixScrollTable .multiFileBox .infoMsg.marker_star li + li {
+    margin: 0 0 0 8px;
+  }
+
+  .multiFileBox .dropArea {
+    width: 70%;
+  } /* 2021.01.20 곽현준 추가 */
+  .fileBox .fileName + .btn_file.btn.darkgray.file {
+    margin-top: 0;
+    height: 30px !important;
+    line-height: 30px !important;
+  } /* 2021.01.20 곽현준 추가 */
+}
+
+/*** ModalPop ***/
+/* .lpContainer {display:none; position:fixed; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); font-size:16px; z-index:100;} */
+.lpContainer {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.6);
+  font-size: 16px;
+  z-index: 1000;
+  overflow: auto;
+} /* 2021.02.04 곽현준 수정 - 스크롤 */ /* 2026.11.04 수정 - Figma 팝업 (사업비 지급완료) */
+/* .lpContainer .lpWrap {display:block; position:relative; top:50%; margin:0 auto; padding:0; background-color:#fff; transform:translateY(-50%);} */
+.lpContainer .lpWrap {
+  display: block;
+  position: relative;
+  top: 15%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff; /* transform:translateY(-50%); */
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+} /* 2021.02.04 곽현준 수정 - 모달팝업 width가 길경우 화면 안보임 수정 */
+/* .lpContainer .lpWrap.small {width:calc(100% - 32px); max-width:344px; padding:44px 20px;} */
+.lpContainer .lpWrap.small {
+  width: calc(100% - 32px);
+  max-width: 344px;
+  padding: 22px;
+} /* 2021.02.11 곽현준 수정 - 모달팝업 패딩 수정 */
+.lpContainer .lpWrap.medium {
+  width: calc(100% - 32px);
+  max-width: 700px;
+}
+.lpContainer .lpWrap.big {
+  width: calc(100% - 32px);
+  max-width: 800px;
+} /* 2026.11.04 수정 - Figma 팝업 (사업비 지급완료) */
+.lpContainer .lpWrap.veryBig {
+  width: calc(100% - 32px);
+  max-width: 1024px;
+}
+.lpContainer .lpWrap.full {
+  top: 32px; /* 2026.11.06 수정 - 높은 팝업이 화면 아래로 잘려 위로 올림 (기존 15%) */
+  width: calc(100% - 32px);
+  max-width: 100%;
+}
+
+/* 2026.11.06 수정 - 지급완료 조회 팝업: 화면 안에 배치하고 iframe 내부에서 스크롤 */
+html:has(#paynCompList.on) {
+  overflow: hidden;
+}
+#paynCompList {
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+#paynCompList > .lpWrap {
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+}
+#paynCompList > .lpWrap > .lpHead,
+#paynCompList > .lpWrap > .btnWrap {
+  flex: 0 0 auto;
+}
+#paynCompList #paynCompIfm {
+  display: block;
+  flex: 0 1 580px;
+  min-height: 0;
+  width: 100%;
+  height: 580px;
+}
+
+.lpWrap .lpHead {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.lpWrap .lpHead .title {
+  display: block;
+  position: relative;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.06em;
+  margin: 0 0 20px 0;
+  color: #212121;
+} /* 2026.11.04 수정 - Figma 팝업 (사업비 지급완료) */
+.lpWrap .lpHead .title::focus {
+  color: #ccc;
+}
+.lpWrap .lpHeadSub {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.lpWrap .lpHeadSub .title {
+  display: block;
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 30px 0 25px 0;
+  color: #000;
+}
+.lpWrap .lpContent {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* .lpWrap .lpContent p {padding-top:40px; color:#222; text-align:center; line-height:28px;} */
+.lpWrap .lpContent p {
+  padding-top: 22px;
+  color: #222;
+  text-align: center;
+  line-height: 28px;
+} /* 2021.02.11 곽현준 수정 - 모달팝업 패딩 수정 */
+.lpWrap .lpContent p.infoText {
+  padding-top: 0;
+}
+.lpWrap .btnWrap {
+  justify-content: center;
+}
+.lpWrap .lpContent + .btnWrap {
+  margin-top: 20px !important;
+} /* 2021.02.11 곽현준 수정 - 모달팝업 마진 수정 */
+.lpWrap .btnWrap.flexend {
+  justify-content: flex-end;
+}
+.lpWrap .lpContent p + p {
+  padding-top: 20px;
+}
+.lpWrap .boardListWrap .tableWrap01 .radioSet label {
+  padding: 0 0 0 20px;
+}
+/* .lpWrap .lpBottom {display:flex; position:relative; margin:40px 0 0 0; padding:0; text-align:center;} */
+.pwPop .lpContent em {
+  color: #e60020;
+}
+.pwPop .lpContent .blueBox span {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #f5f9ff;
+}
+
+.inputPop .lpWrap.small,
+.inputPop .lpWrap.medium,
+.inputPop .lpWrap.big,
+.inputPop .lpWrap.veryBig {
+  padding: 20px 30px 44px;
+} /* 2026.11.04 수정 - Figma 팝업 (사업비 지급완료) */
+.lpWrap .btnWrap.center .btn {
+  min-width: 150px;
+  height: 48px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+} /* 2026.11.04 수정 - Figma 팝업 (사업비 지급완료) */
+
+.inputPop .lpWrap.full {
+  padding: 30px 20px 10px;
+}
+
+/* 팝업의 내용이 길 경우 내용 높이 고정 */
+.fullPack .lpWrap .verticalFix {
+  overflow-y: auto;
+  max-height: 60vh;
+}
+.fullPack .lpWrap .verticalFix.small {
+  overflow-y: auto;
+  max-height: 30vh;
+}
+.fullPack .verticalFix .blueBox + .subHeading {
+  margin-top: 3rem;
+}
+.fullPack .verticalFix .contTitle + .txt {
+  margin-top: 1rem;
+}
+.fullPack .verticalFix .linkTxt {
+  color: #4380e0;
+  border-bottom: 1px solid #4380e0;
+}
+.fullPack .verticalFix .tableWrap01 .linkTxt {
+  color: inherit;
+  border-bottom: none;
+}
+.fullPack .buyCallPopList .tableWrap01 table td {
+  text-align: left;
+}
+.fullPack .verticalFix label.checkSingle input[type="checkbox"] + span {
+  padding-left: 10px;
+}
+
+.radioPop .formGrid {
+  display: block;
+  overflow-y: auto;
+  height: 105px;
+}
+.radioPop .formGrid .thcell p {
+  padding-top: 0;
+}
+.radioPop .formGrid .row .thcell {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: inherit;
+  margin: 0;
+  padding: 12px;
+  text-align: center;
+  font-weight: 400;
+  background-color: #edf4ff;
+  border-right: inherit;
+  box-sizing: border-box;
+}
+.radioPop .formGrid .row .tdcell {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.radioPop .formGrid .row:last-child .tdcell {
+  padding-bottom: 0;
+}
+.radioPop .formGrid .row:first-child .tdcell {
+  padding-top: 0;
+}
+.radioPop .formGrid .row .tdcell .radioSet {
+  flex-direction: column;
+  width: 100%;
+}
+.radioPop .formGrid .row .tdcell label {
+  width: 100%;
+  padding: 16px 24px 16px 24px;
+  text-align: left;
+}
+.radioPop .formGrid .row .tdcell label + label {
+  margin-left: 0;
+  border-top: 1px solid #ececec;
+}
+.radioPop .formGrid .row .tdcell label span {
+  padding-left: 30px;
+}
+.radioPop .radioSet label input[type="radio"] {
+  left: 28px;
+}
+.radioPop .radioSet label input[type="radio"] + span::before {
+  left: 20px;
+}
+.radioPop .radioSet label input[type="radio"]:checked + span::after {
+  left: 24px;
+}
+
+.confirmPop02 strong.data {
+  font-weight: bold;
+  color: #003894;
+}
+
+.closeModal {
+  display: block;
+  position: absolute;
+  top: 32px;
+  right: 22px;
+  color: #000;
+  z-index: 100;
+}
+.lpWrap .closeModal {
+  display: block;
+  width: 24px;
+  height: 24px;
+  text-indent: -9999px;
+  font-size: 1px;
+  color: transparent;
+}
+.lpWrap .closeModal::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: -4px;
+  width: 30px;
+  height: 1px;
+  background-color: #000;
+  transform: rotate(315deg);
+}
+.lpWrap .closeModal::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: -4px;
+  width: 30px;
+  height: 1px;
+  background-color: #000;
+  transform: rotate(-315deg);
+}
+
+.icoSymbol {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+.ico_info {
+  background: url(/startkosmes-preview/images/common/ico_info.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_warning {
+  background: url(/startkosmes-preview/images/common/ico_warning.png) center 0 no-repeat;
+  background-size: 92px 80px;
+}
+.ico_error {
+  background: url(/startkosmes-preview/images/common/ico_error.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_lock {
+  background: url(/startkosmes-preview/images/common/ico_lock.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_question {
+  background: url(/startkosmes-preview/images/common/ico_question.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_find {
+  background: url(/startkosmes-preview/images/common/ico_find.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_search {
+  background: url(/startkosmes-preview/images/common/ico_search.png) center 0 no-repeat;
+  background-size: 80px;
+}
+.ico_emailRefusal {
+  background: url(/startkosmes-preview/images/common/ico_email_refusal.png) center 0 no-repeat;
+  background-size: 114px 80px;
+}
+
+.icoCross.small {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  transform: translateY(-50%);
+}
+.icoCross.small::before,
+.icoCross.small::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  background-color: #999;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s;
+  content: "";
+}
+.icoCross.small::before {
+  width: 16px;
+  height: 2px;
+}
+.icoCross.small::after {
+  width: 2px;
+  height: 16px;
+}
+.is-show.icoCross.small::before {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.is-show.icoCross.small::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* 2024.09.24 - 김지안 추가*/
+/* 버튼 */
+.onSearch.detail + .onConHead .btn > * {
+  position: relative;
+  z-index: 10;
+}
+.onSearch.detail + .onConHead .btn {
+  border-radius: 5px;
+}
+.onSearch.detail + .onConHead .btn::before {
+  position: absolute;
+  opacity: 0;
+  content: "";
+  display: block;
+  background: transparent;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s linear;
+}
+.onSearch.detail + .onConHead .btn:hover::before {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 49, 130, 1) 0%,
+    rgba(216, 72, 102, 1) 100%
+  );
+  opacity: 1;
+}
+
+.onField .checkboxSet.pdFixed {
+  padding: 0;
+}
+.onField .checkboxSet label {
+  padding: 0 0 0 15px;
+}
+/* 2024.09.24 - 김지안 추가*/
+
+/* 라디오 버튼을 체크할 경우 하단 폼이 바뀜 */
+.tabRadio {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.contRadio {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.contRadio > .unit {
+  display: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.contRadio > .unit.is-active {
+  display: block;
+}
+
+/******** 1240이상 대응 *******/
+@media screen and (max-width: 1240px) {
+}
+
+/** 페이징 **/
+/* .pagingWrap {display:block; position:relative; margin:0; padding:0;} */
+.pagingWrap {
+  display: block;
+  position: relative;
+  margin: 50px 0 0;
+  padding: 0;
+} /* 2021.01.19 곽현준 추가 */
+.pagingWrap .summary {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 7px;
+  color: #666;
+}
+.pagingWrap .summary .total {
+  color: #003894;
+}
+.pagingWrap .paging {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  flex-direction: row;
+  justify-content: center;
+}
+/* .pagingWrap .paging a {display:inline-block; position:relative; width:40px; height:40px; line-height:40px; margin:0; padding:0; border:solid #c7c7c7 1px; border-radius:50%; text-align:center;} */
+
+/* 2021.01.06 곽현준 수정 */
+.pagingWrap .paging a {
+  display: inline-block;
+  position: relative;
+  border-color: none;
+  min-width: 12px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  width: auto;
+  height: 34px;
+  line-height: 34px;
+  margin: 0;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+.pagingWrap .paging a:not(.first):not(.prev):not(.next):not(.end) {
+  padding: 0 11px;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+
+.pagingWrap .paging a + a {
+  margin-left: 0;
+}
+.pagingWrap .paging a span {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: #888888;
+}
+/* .pagingWrap .paging a.current {background-color:#999; border-color:#999;} */
+.pagingWrap .paging a.current {
+  background-color: unset;
+  border: none;
+} /* 2021.01.06 곽현준 수정 */
+.pagingWrap .paging a:hover span,
+.pagingWrap .paging a.current span {
+  color: #eea415;
+} /* 2026.11.04 수정 - Figma 학점 이수 현황 */
+.pagingWrap .paging a.first,
+.pagingWrap .paging a.prev {
+  margin-right: 2%;
+}
+.pagingWrap .paging a.first::before {
+  background: url(/startkosmes-preview/images/common/icon_first.svg) no-repeat center center;
+}
+.pagingWrap .paging a.prev::before {
+  background: url(/startkosmes-preview/images/common/icon_prev.svg) no-repeat center center;
+}
+.pagingWrap .paging a.next::before {
+  background: url(/startkosmes-preview/images/common/icon_prev.svg) no-repeat center center;
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.next,
+.pagingWrap .paging a.end {
+  margin-left: 2%;
+}
+.pagingWrap .paging a.end::before {
+  background: url(/startkosmes-preview/images/common/icon_first.svg) no-repeat center center;
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.first:hover::before {
+  background: url(/startkosmes-preview/images/common/icon_firstHover.svg) no-repeat center center;
+}
+.pagingWrap .paging a.prev:hover::before {
+  background: url(/startkosmes-preview/images/common/icon_prevHover.svg) no-repeat center center;
+}
+.pagingWrap .paging a.next:hover::before {
+  background: url(/startkosmes-preview/images/common/icon_prevHover.svg) no-repeat center center;
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.end:hover::before {
+  background: url(/startkosmes-preview/images/common/icon_firstHover.svg) no-repeat center center;
+  transform: rotate(180deg);
+}
+.pagingWrap .paging a.first.disable::before,
+.paging a.prev.disable::before,
+.paging a.next.disable::before,
+.paging a.end.disable::before {
+  opacity: 0.6;
+  cursor: default;
+}
+/* 2026.11.04 수정 - Figma 학점 이수 현황 : 화살표 20px 아이콘 (기본 #666, hover #eea415) */
+.pagingWrap .paging a.first,
+.pagingWrap .paging a.prev,
+.pagingWrap .paging a.next,
+.pagingWrap .paging a.end {
+  min-width: 20px;
+  padding: 0 4px;
+  color: #666;
+}
+.pagingWrap .paging a.first:hover,
+.pagingWrap .paging a.prev:hover,
+.pagingWrap .paging a.next:hover,
+.pagingWrap .paging a.end:hover {
+  color: #eea415;
+}
+.pagingWrap .paging a.first::before,
+.pagingWrap .paging a.prev::before,
+.pagingWrap .paging a.next::before,
+.pagingWrap .paging a.end::before,
+.pagingWrap .paging a.first:hover::before,
+.pagingWrap .paging a.prev:hover::before,
+.pagingWrap .paging a.next:hover::before,
+.pagingWrap .paging a.end:hover::before {
+  background: currentColor;
+  transform: none;
+  -webkit-mask: no-repeat 50% / 65% 65%;
+  mask: no-repeat 50% / 65% 65%;
+}
+.pagingWrap .paging a.first::before {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleLeft.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleLeft.svg);
+}
+.pagingWrap .paging a.prev::before {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowLeft.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowLeft.svg);
+}
+.pagingWrap .paging a.next::before {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowRight.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowRight.svg);
+}
+.pagingWrap .paging a.end::before {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleRight.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleRight.svg);
+}
+
+/* 2024.09.05 - 김지안 추가*/
+.tdcell input[type="text"],
+.tdcell input[type="password"],
+.tdcell input[type="number"] {
+  border: 1px solid #d9d9d9; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* #e8e8e8 -> #D9D9D9 */
+}
+.onSearchIn .dateSetting .datePic input[type="text"] {
+  width: 100%;
+  height: 44px;
+  padding-left: 14px;
+  border-radius: 6px;
+  font-size: 17px;
+  color: #414141;
+} /* 2026.11.04 수정 - Figma 검색 영역 (위탁기관 검색) */
+.onSearchIn .checkboxSet {
+  align-items: center;
+}
+
+.boardDetailWrap .btnWrap.center .btn {
+  border-radius: 8px;
+  padding: 15px 60px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.boardDetailWrap .btnWrap.center .btn {
+  font-size: 17px;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.boardDetailWrap .btnWrap.center .btn.darkgray:hover {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.boardDetailWrap .btnWrap.center .btn.red:hover {
+  background: #fff;
+  border: 1px solid #747588;
+  color: #747588;
+}
+.boardDetailWrap .btnWrap.center .btn.red2:hover {
+  background: #fff;
+  border: 1px solid #747588;
+  color: #747588;
+}
+.boardDetailWrap .btnWrap.center .btn.lightblue:hover {
+  background: #ef7200;
+  border: 1px solid #ef7200;
+  color: #fff;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.boardDetailWrap .btnWrap.center + .adjacentList {
+  margin-top: 60px;
+}
+
+.btnWrap.center .btn + .btn {
+  margin: 0;
+}
+.contentzone .btnWrap.center {
+  flex-wrap: wrap;
+}
+/* .contentzone .btnWrap.center .btn {
+  margin: 5px 10px;
+  padding: 15px 60px;
+} */
+.contentzone .btnWrap.center .btn {
+  min-width: 150px; /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* 150 x 48, 버튼 사이 10px */
+  height: 48px;
+  margin: 5px;
+  border-radius: 8px;
+  padding: 0 12px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.contentzone .btnWrap.center .btn {
+  font-size: 17px;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.contentzone .btnWrap.center .btn.darkgray:hover {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.contentzone .btnWrap.center .btn.red:hover {
+  background: #fff;
+  border: 1px solid #747588;
+  color: #747588;
+}
+.contentzone .btnWrap.center .btn.lightblue:hover {
+  background: #ef7200;
+  border: 1px solid #ef7200;
+  color: #fff;
+} /* 2026.11.03 수정 - Figma 버튼 */
+.contentzone .btnWrap.center .btn.darkgray.line {
+  border-color: #c1c1c1;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* tertiary medium 테두리 유지 */
+.contentzone .btnWrap.center .btn.darkgray.line:hover {
+  border-color: #c1c1c1;
+  background: #f4f5f6;
+  color: #1f1f1f;
+} /* 2026.11.05 수정 - Figma 입력 폼 (801:1996) */ /* tertiary hover */
+.contentzone .btnWrap.center .btn span {
+  padding: 0px;
+}
+.contentzone .btnWrap.center + .adjacentList {
+  margin-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .pagingWrap .paging a {
+    font-size: 15px;
+    padding: 0 7px;
+  }
+  .contentzone .btnWrap.center .btn {
+    padding: 15px;
+    min-width: 130px;
+  }
+  .boardDetailWrap .btnWrap.center + .adjacentList {
+    flex-direction: column;
+  }
+  .boardDetailWrap .btnWrap.center + .adjacentList > p {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .onSearchIn .dateMobile input[type="date"] {
+    border-radius: 5px;
+    height: 32px;
+    border: 1px solid #e8e8e8;
+  }
+  .onSearchIn .dateMobile input[type="date"]:nth-of-type(2) {
+    margin-top: 10px;
+  }
+
+  .subHeading .btnWrap .btn.btnSmall.darkgray {
+    height: 32px;
+    font-size: 14px;
+    padding: 0;
+    background: url(/startkosmes-preview/images/btn/bg_btn_go.png) no-repeat 0 0 / contain;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 10px;
+    height: 12px;
+  }
+}
+/* 2024.09.05 - 김지안 추가*/
+/* 2026.10.30 추가 - 시스템 아이콘 (Figma 26_재도전 종합 지원 플랫폼 681:1095) */
+/* 구성 : .sysIco + 아이콘(icon_이름) + 크기(기본 24px / size20, size16, size14, size12) */
+/* 한 가지 색 아이콘은 글자색(currentColor)을 따름. 시스템 상태 아이콘 · deleteCircle · filter · group 은 원래 색 유지 */
+/* 이미지 : /images/icon/icon_이름.svg (위치 · 크기는 Figma 배치를 비율로 옮겨 크기를 바꿔도 같은 모양) */
+.sysIco {
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  background-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  vertical-align: middle;
+}
+.sysIco.size20 {
+  width: 20px;
+  height: 20px;
+}
+.sysIco.size16 {
+  width: 16px;
+  height: 16px;
+}
+.sysIco.size14 {
+  width: 14px;
+  height: 14px;
+}
+.sysIco.size12 {
+  width: 12px;
+  height: 12px;
+}
+.sysIco.icon_homeLine {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_homeLine.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_homeLine.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_homeFill {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_homeFill.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_homeFill.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_menu {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_menu.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_menu.svg);
+  -webkit-mask-size: 81.25% 72.9167%;
+  mask-size: 81.25% 72.9167%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_search {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_search.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_search.svg);
+  -webkit-mask-size: 82.5% 82.5%;
+  mask-size: 82.5% 82.5%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_add {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_add.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_add.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_minus {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_minus.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_minus.svg);
+  -webkit-mask-size: 81.25% 6.25%;
+  mask-size: 81.25% 6.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_arrowLeft {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowLeft.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowLeft.svg);
+  -webkit-mask-size: 39.5894% 72.9167%;
+  mask-size: 39.5894% 72.9167%;
+  -webkit-mask-position: 46.5569% 50%;
+  mask-position: 46.5569% 50%;
+}
+.sysIco.icon_arrowRight {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowRight.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowRight.svg);
+  -webkit-mask-size: 39.5833% 72.9167%;
+  mask-size: 39.5833% 72.9167%;
+  -webkit-mask-position: 53.4483% 50%;
+  mask-position: 53.4483% 50%;
+}
+.sysIco.icon_arrowDoubleLeft {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleLeft.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleLeft.svg);
+  -webkit-mask-size: 70.2463% 72.9167%;
+  mask-size: 70.2463% 72.9167%;
+  -webkit-mask-position: 52.5207% 50%;
+  mask-position: 52.5207% 50%;
+}
+.sysIco.icon_arrowDoubleRight {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleRight.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDoubleRight.svg);
+  -webkit-mask-size: 70.2467% 72.9167%;
+  mask-size: 70.2467% 72.9167%;
+  -webkit-mask-position: 52.5207% 50%;
+  mask-position: 52.5207% 50%;
+}
+.sysIco.icon_arrowUp {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowUp.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowUp.svg);
+  -webkit-mask-size: 81.25% 43.75%;
+  mask-size: 81.25% 43.75%;
+  -webkit-mask-position: 50% 53.7037%;
+  mask-position: 50% 53.7037%;
+}
+.sysIco.icon_arrowDown {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDown.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDown.svg);
+  -webkit-mask-size: 81.25% 43.75%;
+  mask-size: 81.25% 43.75%;
+  -webkit-mask-position: 50% 53.7037%;
+  mask-position: 50% 53.7037%;
+}
+.sysIco.icon_arrowDownFill {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_arrowDownFill.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_arrowDownFill.svg);
+  -webkit-mask-size: 81.25% 43.75%;
+  mask-size: 81.25% 43.75%;
+  -webkit-mask-position: 50% 53.7037%;
+  mask-position: 50% 53.7037%;
+}
+.sysIco.icon_arrowSortBoth {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+}
+.sysIco.icon_arrowSortBoth::before,
+.sysIco.icon_arrowSortBoth::after {
+  content: '';
+  position: absolute;
+  left: 28.125%;
+  width: 41.6667%;
+  height: 23.9583%;
+  background-color: currentColor;
+  -webkit-mask: url(/startkosmes-preview/images/icon/icon_arrowSortBoth.svg) no-repeat 0 0 / 100% 100%;
+  mask: url(/startkosmes-preview/images/icon/icon_arrowSortBoth.svg) no-repeat 0 0 / 100% 100%;
+}
+.sysIco.icon_arrowSortBoth::before {
+  top: 55.2292%;
+}
+.sysIco.icon_arrowSortBoth::after {
+  top: 17.6875%;
+  transform: scaleY(-1);
+}
+.sysIco.icon_copy {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_copy.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_copy.svg);
+  -webkit-mask-size: 81.2638% 81.2496%;
+  mask-size: 81.2638% 81.2496%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_refresh {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_refresh.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_refresh.svg);
+  -webkit-mask-size: 74.3042% 81.2504%;
+  mask-size: 74.3042% 81.2504%;
+  -webkit-mask-position: 52.7047% 50%;
+  mask-position: 52.7047% 50%;
+}
+.sysIco.icon_reload {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_reload.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_reload.svg);
+  -webkit-mask-size: 68.4446% 81.2508%;
+  mask-size: 68.4446% 81.2508%;
+  -webkit-mask-position: 56.1162% 50%;
+  mask-position: 56.1162% 50%;
+}
+.sysIco.icon_download {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_download.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_download.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_upload {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_upload.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_upload.svg);
+  -webkit-mask-size: 72.1046% 81.25%;
+  mask-size: 72.1046% 81.25%;
+  -webkit-mask-position: 48.5481% 50%;
+  mask-position: 48.5481% 50%;
+}
+.sysIco.icon_close {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_close.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_close.svg);
+  -webkit-mask-size: 60.4038% 60.3925%;
+  mask-size: 60.4038% 60.3925%;
+  -webkit-mask-position: 50.0126% 50%;
+  mask-position: 50.0126% 50%;
+}
+.sysIco.icon_deleteCircle {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+}
+.sysIco.icon_deleteCircle::before {
+  content: '';
+  position: absolute;
+  left: 6.25%;
+  top: 8.33%;
+  width: 83.33%;
+  height: 83.33%;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+.sysIco.icon_deleteCircle::after {
+  content: '';
+  position: absolute;
+  left: 31.25%;
+  top: 33.33%;
+  width: 33.33%;
+  height: 33.33%;
+  background: url(/startkosmes-preview/images/icon/icon_deleteCircle.svg) no-repeat 0 0 / 100% 100%;
+}
+.sysIco.icon_edit {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_edit.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_edit.svg);
+  -webkit-mask-size: 81.2633% 81.25%;
+  mask-size: 81.2633% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_heart {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_heart.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_heart.svg);
+  -webkit-mask-size: 81.25% 68.0125%;
+  mask-size: 81.25% 68.0125%;
+  -webkit-mask-position: 50% 55.3615%;
+  mask-position: 50% 55.3615%;
+}
+.sysIco.icon_user {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_user.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_user.svg);
+  -webkit-mask-size: 68.7512% 63.8767%;
+  mask-size: 68.7512% 63.8767%;
+  -webkit-mask-position: 50% 53.4465%;
+  mask-position: 50% 53.4465%;
+}
+.sysIco.icon_file {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_file.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_file.svg);
+  -webkit-mask-size: 71.8908% 81.25%;
+  mask-size: 71.8908% 81.25%;
+  -webkit-mask-position: 48.1856% 50%;
+  mask-position: 48.1856% 50%;
+}
+.sysIco.icon_checkCircle {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_checkCircle.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_checkCircle.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_attachment {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_attachment.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_attachment.svg);
+  -webkit-mask-size: 81.25% 76.0142%;
+  mask-size: 81.25% 76.0142%;
+  -webkit-mask-position: 50% 56.4621%;
+  mask-position: 50% 56.4621%;
+}
+.sysIco.icon_bookmark {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_bookmark.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_bookmark.svg);
+  -webkit-mask-size: 66.2617% 81.25%;
+  mask-size: 66.2617% 81.25%;
+  -webkit-mask-position: 52.4749% 50%;
+  mask-position: 52.4749% 50%;
+}
+.sysIco.icon_externalLink {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_externalLink.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_externalLink.svg);
+  -webkit-mask-size: 81.2638% 81.2512%;
+  mask-size: 81.2638% 81.2512%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_star {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_star.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_star.svg);
+  -webkit-mask-size: 102.0833% 93.75%;
+  mask-size: 102.0833% 93.75%;
+  -webkit-mask-position: 50% 83.28%;
+  mask-position: 50% 83.28%;
+}
+.sysIco.icon_image {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_image.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_image.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_pencil {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_pencil.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_pencil.svg);
+  -webkit-mask-size: 81.25% 80.8367%;
+  mask-size: 81.25% 80.8367%;
+  -webkit-mask-position: 50% 48.9302%;
+  mask-position: 50% 48.9302%;
+}
+.sysIco.icon_filter {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_filter.svg);
+  background-size: 75.01% 76.5629%;
+  background-position: 54.2017% 50%;
+}
+.sysIco.icon_print {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_print.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_print.svg);
+  -webkit-mask-size: 80.8688% 81.25%;
+  mask-size: 80.8688% 81.25%;
+  -webkit-mask-position: 49.0069% 50%;
+  mask-position: 49.0069% 50%;
+}
+.sysIco.icon_share {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_share.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_share.svg);
+  -webkit-mask-size: 56.8683% 75.6058%;
+  mask-size: 56.8683% 75.6058%;
+  -webkit-mask-position: 50.7187% 55.5136%;
+  mask-position: 50.7187% 55.5136%;
+}
+.sysIco.icon_grid {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_grid.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_grid.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_calendar {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_calendar.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_calendar.svg);
+  -webkit-mask-size: 89.5833% 89.5833%;
+  mask-size: 89.5833% 89.5833%;
+  -webkit-mask-position: 70.016% 50%;
+  mask-position: 70.016% 50%;
+}
+.sysIco.icon_headset {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_headset.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_headset.svg);
+  -webkit-mask-size: 81.24% 81.25%;
+  mask-size: 81.24% 81.25%;
+  -webkit-mask-position: 49.9733% 50%;
+  mask-position: 49.9733% 50%;
+}
+.sysIco.icon_thumbUp {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_thumbUp.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_thumbUp.svg);
+  -webkit-mask-size: 81.2508% 81.2371%;
+  mask-size: 81.2508% 81.2371%;
+  -webkit-mask-position: 50% 49.9734%;
+  mask-position: 50% 49.9734%;
+}
+.sysIco.icon_thumbDown {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_thumbDown.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_thumbDown.svg);
+  -webkit-mask-size: 81.2504% 81.2371%;
+  mask-size: 81.2504% 81.2371%;
+  -webkit-mask-position: 50% 49.9734%;
+  mask-position: 50% 49.9734%;
+}
+.sysIco.icon_lock {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_lock.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_lock.svg);
+  -webkit-mask-size: 75.1137% 81.25%;
+  mask-size: 75.1137% 81.25%;
+  -webkit-mask-position: 54.4201% 50%;
+  mask-position: 54.4201% 50%;
+}
+.sysIco.icon_unlock {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_unlock.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_unlock.svg);
+  -webkit-mask-size: 75.1137% 81.25%;
+  mask-size: 75.1137% 81.25%;
+  -webkit-mask-position: 54.4201% 50%;
+  mask-position: 54.4201% 50%;
+}
+.sysIco.icon_zoomIn {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_zoomIn.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_zoomIn.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_zoomOut {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_zoomOut.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_zoomOut.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 50% 50%;
+  mask-position: 50% 50%;
+}
+.sysIco.icon_chart {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_chart.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_chart.svg);
+  -webkit-mask-size: 81.25% 81.2683%;
+  mask-size: 81.25% 81.2683%;
+  -webkit-mask-position: 50% 50.0534%;
+  mask-position: 50% 50.0534%;
+}
+.sysIco.icon_briefcase {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_briefcase.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_briefcase.svg);
+  -webkit-mask-size: 81.25% 79.5921%;
+  mask-size: 81.25% 79.5921%;
+  -webkit-mask-position: 50% 45.933%;
+  mask-position: 50% 45.933%;
+}
+.sysIco.icon_out {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_out.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_out.svg);
+  -webkit-mask-size: 72.9167% 73.7825%;
+  mask-size: 72.9167% 73.7825%;
+  -webkit-mask-position: 50% 51.6592%;
+  mask-position: 50% 51.6592%;
+}
+.sysIco.icon_mail {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_mail.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_mail.svg);
+  -webkit-mask-size: 79.3038% 66.6096%;
+  mask-size: 79.3038% 66.6096%;
+  -webkit-mask-position: 49.997% 53.0292%;
+  mask-position: 49.997% 53.0292%;
+}
+.sysIco.icon_power {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_power.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_power.svg);
+  -webkit-mask-size: 73.5154% 81.25%;
+  mask-size: 73.5154% 81.25%;
+  -webkit-mask-position: 51.1327% 50%;
+  mask-position: 51.1327% 50%;
+}
+.sysIco.icon_global {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_global.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_global.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_location {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_location.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_location.svg);
+  -webkit-mask-size: 62.5254% 81.25%;
+  mask-size: 62.5254% 81.25%;
+  -webkit-mask-position: 47.2515% 50%;
+  mask-position: 47.2515% 50%;
+}
+.sysIco.icon_delete {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_delete.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_delete.svg);
+  -webkit-mask-size: 81.2633% 81.25%;
+  mask-size: 81.2633% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_sitemap {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_sitemap.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_sitemap.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_clock {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_clock.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_clock.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_pin {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_pin.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_pin.svg);
+  -webkit-mask-size: 78.8067% 81.25%;
+  mask-size: 78.8067% 81.25%;
+  -webkit-mask-position: 44.2435% 50%;
+  mask-position: 44.2435% 50%;
+}
+.sysIco.icon_bell {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_bell.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_bell.svg);
+  -webkit-mask-size: 71.9558% 81.25%;
+  mask-size: 71.9558% 81.25%;
+  -webkit-mask-position: 48.2884% 50%;
+  mask-position: 48.2884% 50%;
+}
+.sysIco.icon_logout {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_logout.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_logout.svg);
+  -webkit-mask-size: 72.9183% 72.9304%;
+  mask-size: 72.9183% 72.9304%;
+  -webkit-mask-position: 50% 50.0369%;
+  mask-position: 50% 50.0369%;
+}
+.sysIco.icon_play {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_play.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_play.svg);
+  -webkit-mask-size: 70.0996% 81.25%;
+  mask-size: 70.0996% 81.25%;
+  -webkit-mask-position: 52.2575% 50%;
+  mask-position: 52.2575% 50%;
+}
+.sysIco.icon_pause {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_pause.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_pause.svg);
+  -webkit-mask-size: 39.5833% 64.5833%;
+  mask-size: 39.5833% 64.5833%;
+  -webkit-mask-position: 53.4483% 50%;
+  mask-position: 53.4483% 50%;
+}
+.sysIco.icon_chat {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_chat.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_chat.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_apps {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_apps.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_apps.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_list {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_list.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_list.svg);
+  -webkit-mask-size: 81.25% 66.2383%;
+  mask-size: 81.25% 66.2383%;
+  -webkit-mask-position: 50% 52.4436%;
+  mask-position: 50% 52.4436%;
+}
+.sysIco.icon_group {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_group.svg);
+  background-size: 81.1442% 81.25%;
+  background-position: 49.7083% 50%;
+}
+.sysIco.icon_call {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_call.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_call.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_settings {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_settings.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_settings.svg);
+  -webkit-mask-size: 72.9171% 76.0146%;
+  mask-size: 72.9171% 76.0146%;
+  -webkit-mask-position: 50% 56.4623%;
+  mask-position: 50% 56.4623%;
+}
+.sysIco.icon_link {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_link.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_link.svg);
+  -webkit-mask-size: 75.0133% 75.0004%;
+  mask-size: 75.0133% 75.0004%;
+  -webkit-mask-position: 50.02% 50%;
+  mask-position: 50.02% 50%;
+}
+.sysIco.icon_info {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_info.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_info.svg);
+  -webkit-mask-size: 81.2638% 81.25%;
+  mask-size: 81.2638% 81.25%;
+  -webkit-mask-position: 50.0267% 50%;
+  mask-position: 50.0267% 50%;
+}
+.sysIco.icon_systemInfo {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_systemInfo.svg);
+  background-size: 75.0138% 75%;
+  background-position: 50.02% 50%;
+}
+.sysIco.icon_systemDanger {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_systemDanger.svg);
+  background-size: 83.3333% 83.3333%;
+  background-position: 37.49% 50%;
+}
+.sysIco.icon_systemSuccess {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_systemSuccess.svg);
+  background-size: 83.3333% 83.3333%;
+  background-position: 62.51% 50%;
+}
+.sysIco.icon_systemWarning {
+  background-color: transparent;
+  -webkit-mask: none;
+  mask: none;
+  background-image: url(/startkosmes-preview/images/icon/icon_systemWarning.svg);
+  background-size: 87.5% 79.1667%;
+  background-position: 50% 60.008%;
+}
+.sysIco.icon_shortcut {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_shortcut.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_shortcut.svg);
+  -webkit-mask-size: 81.25% 64.5833%;
+  mask-size: 81.25% 64.5833%;
+  -webkit-mask-position: 61.0933% 50%;
+  mask-position: 61.0933% 50%;
+}
+.sysIco.icon_newWindow {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_newWindow.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_newWindow.svg);
+  -webkit-mask-size: 81.25% 81.25%;
+  mask-size: 81.25% 81.25%;
+  -webkit-mask-position: 61.0933% 50%;
+  mask-position: 61.0933% 50%;
+}
+.sysIco.icon_more {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_more.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_more.svg);
+  -webkit-mask-size: 66.6625% 11.6658%;
+  mask-size: 66.6625% 11.6658%;
+  -webkit-mask-position: 56.2392% 51.8849%;
+  mask-position: 56.2392% 51.8849%;
+}
+.sysIco.icon_viewMode {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_viewMode.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_viewMode.svg);
+  -webkit-mask-size: 88.2004% 81.275%;
+  mask-size: 88.2004% 81.275%;
+  -webkit-mask-position: 61.796% 50.1059%;
+  mask-position: 61.796% 50.1059%;
+}
+.sysIco.icon_blank {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_blank.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_blank.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+}
+.sysIco.icon_monitor {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_monitor.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_monitor.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+}
+.sysIco.icon_notice {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_notice.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_notice.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: 0% 0%;
+  mask-position: 0% 0%;
+}
+.sysIco.icon_check {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_check.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_check.svg);
+  -webkit-mask-size: 77.4421% 56.6592%;
+  mask-size: 77.4421% 56.6592%;
+  -webkit-mask-position: 54.7249% 52.7678%;
+  mask-position: 54.7249% 52.7678%;
+}
+/* //2026.10.30 추가 - 시스템 아이콘 */
+/* 2026.10.30 추가 - 텍스트 입력 (Figma 26_재도전 종합 지원 플랫폼 681:5178) */
+/* 구성 : .textInput + 크기(large, medium, small) + 상태(error, disabled) / 포커스는 :focus-within 으로 자동 적용 */
+/* 지우기 버튼은 포커스 + 입력값이 있을 때만 노출, 클릭 동작은 common.js */
+.sysIco.icon_visibility {
+  -webkit-mask-image: url(/startkosmes-preview/images/icon/icon_visibility.svg);
+  mask-image: url(/startkosmes-preview/images/icon/icon_visibility.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+.textInput {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.textInputLabel {
+  display: block;
+  color: #1f1f1f;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+}
+.textInputHint {
+  color: #1f1f1f;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+}
+.textInputRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.textInputBox {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 56px;
+  padding: 0 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.2s;
+}
+.textInputBox input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  color: #1f1f1f;
+  font-size: 19px;
+  line-height: 1.5;
+  font-family: inherit;
+  letter-spacing: -0.04em;
+}
+.textInputBox input::placeholder {
+  color: #9a9a9a;
+  opacity: 1;
+}
+.textInputClear,
+.textInputView {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #33363d;
+  cursor: pointer;
+}
+.textInputClear {
+  display: none;
+}
+.textInputBox:focus-within input:not(:placeholder-shown) ~ .textInputClear,
+.textInputBox.focused .textInputClear {
+  display: flex;
+}
+.textInputMsg {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+}
+.textInputMsg .sysIco {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+}
+.textInputMsg.error {
+  color: #de3412;
+}
+/* 크기 : 기본(large) 56px / medium 46px / small 40px */
+.textInput.medium .textInputBox {
+  height: 46px;
+}
+.textInput.medium .textInputBox input {
+  font-size: 17px;
+  letter-spacing: -0.06em;
+}
+.textInput.medium .textInputBox .sysIco {
+  width: 20px;
+  height: 20px;
+}
+.textInput.small .textInputBox {
+  height: 40px;
+}
+.textInput.small .textInputBox input {
+  font-size: 15px;
+}
+.textInput.small .textInputBox .sysIco {
+  width: 16px;
+  height: 16px;
+}
+/* 상태 */
+.textInputBox:focus-within,
+.textInputBox.focused {
+  border-color: #0b78cb;
+}
+.textInput.error .textInputBox {
+  border-color: #de3412;
+}
+.textInput.disabled .textInputBox {
+  border-color: #d9d9d9;
+  background-color: #f4f5f6;
+}
+.textInput.disabled .textInputBox input {
+  color: #9a9a9a;
+  cursor: default;
+}
+.textInput.disabled .textInputView {
+  cursor: default;
+}
+/* //2026.10.30 추가 - 텍스트 입력 */

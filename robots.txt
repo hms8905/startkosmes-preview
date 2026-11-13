@@ -1,0 +1,11 @@
+User-agent: Googlebot
+Allow: /
+Disallow:/yh_bsm080_001.do*
+Disallow:/yh_not002_001.do*
+Disallow:/yh_stu010_003.do*
+Disallow:/yh_not020_001.do*
+Disallow:/yh_stu010_003.do*
+Disallow:/yh_cus200_001.do*
+Disallow:/yh_cus200_002.do*
+Disallow:/yh_cus300_001.do*
+Disallow:/yh_cus300_002.do*

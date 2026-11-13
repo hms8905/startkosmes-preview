@@ -1,0 +1,598 @@
+@charset 'utf-8';
+/*--------------------------------------------------------------------------------------------------------------------------
+	File : base.css
+	Company : The Webstyle co.,ltd
+    CSS 적용순서 : 아이디 > 태그와 클래스 > 클래스 > 태그
+    CSS 선택자 선언순서 : Type Selector, Layout Selector, Class Selector, Etc
+    CSS 속성 선언순서 : display, position, float/clear, overflow, width/height, margin/padding, border, background, font/color, align, etc
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* .keyVisual.main {height:296px; background-color:#ccc; background-image:url(/startkosmes-preview/images/common/main-visual.jpg);} */
+/*.keyVisual.main {height:773px; background-color:#d1ecfd; background-image:url(/startkosmes-preview/images/common/main-visual_220112.jpg);}*/ /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+.keyVisual.main {height:773px; background-color:#d1ecfd; background-image:url(/startkosmes-preview/images/common/main-visual_230118.jpg);} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.keyVisual.main2{
+		height:773px;
+		background-color:#d1ecfd;
+	}
+	.bg-fade{
+		height:383px;
+		display:flex;
+		justfy-content:center;
+		width:100%;
+		background:url('/startkosmes-preview/images/common/vmain-img3.png') center;
+		animation:bgFade 1s infinite;
+		animation-duration:12s;
+	}
+
+	@keyframes bgFade{
+		0%{
+			background:url(/startkosmes-preview/images/common/vmain-img3.png) center;
+		}
+		33%{
+			background:url(/startkosmes-preview/images/common/vmain-img3.png) center;
+		}
+		50%{
+			background:url(/startkosmes-preview/images/common/vmain-img2.png) center;
+		}
+		83%{
+			background:url(/startkosmes-preview/images/common/vmain-img2.png) center;
+		}
+	}
+	
+
+
+.keyVisual .quickBtn a {display:inline-block;}
+.keyVisual .quickBtn .moB {font-size:0;}
+.keyVisual .quickBtn .moB + .moB {margin-left:16px;}
+
+/* .mainCont .contentBody {padding-top:0; margin-top:-80px;} */
+.mainCont .contentBody {padding-top:0; margin-top:-362px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+.mainCont .contentBody:before {content:""; position:absolute; top:773px; left:0; width:100%; height:600px; background-color:#edf0f4;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+/* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+.contentBody .contentzone .swiper-group {border-radius:16px; background-color:#fff;}
+
+/* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+@media screen and (max-width:768px){
+	.contentBody .contentzone .swiper-group {display:contents;}
+}
+
+/* .mainSwiperWrap {display:block; position:relative; width:872px; margin:0; padding:0 0 36px 0; overflow:hidden;} */
+.mainSwiperWrap {display:block; width:872px; margin:0; padding:0 0 19px 0; overflow:hidden;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainSwiperWrap .swiper-container .swiper-wrapper .swiper-slide {display:block; position:relative; width:280px; height:280px; margin:0; padding:24px; border-radius:16px; border:solid #ccc 1px; background-color:#FFF;} */
+/* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+.mainSwiperWrap .swiper-container .swiper-wrapper .swiper-slide {display:block; position:relative; width:280px; height:280px; margin:0; padding:44px 41px; border-radius:16px; background-color:#FFF;}
+
+.mainSwiperWrap .swiper-slide + .swiper-slide {margin-left:16px;}
+/* .mainSwiperWrap .swiper-slide .hside {display:block; position:relative; width:100%; margin:0 0 32px 0; padding:0;} */
+.mainSwiperWrap .swiper-slide .hside {display:block; position:relative; width:100%; margin:0 0 15px 0; padding:0;} /* 2021.01.19 곽현준 수정 - 상하마진 수정 */
+
+/* 2021.01.19 곽현준 수정 - 불필요한 화살표 이미지 숨김 */
+/* .mainSwiperWrap .swiper-slide::before {content:''; display:block; position:absolute; left:24px; bottom:24px; width:70px; height:1px; background-color:#ccc;}
+.mainSwiperWrap .swiper-slide::after {content:''; display:block; position:absolute; left:86px; bottom:27px; width:10px; height:1px; background-color:#ccc; transform:rotate(45deg);} */
+
+.mainSwiperWrap .hside .badge {display:inline-block; position:relative;}
+.mainSwiperWrap .hside .badge .bdg {display:inline-block; position:relative; min-width:50px;}
+.mainSwiperWrap .hside .badge .bdg.t01 {background-color:#e60020; color:#FFF;} /* 공고 */
+.mainSwiperWrap .hside .badge .bdg.t02 {background-color:#003894; color:#FFF;} /* 공지 */
+.mainSwiperWrap .hside .badge .bdg.t03 {background-color:#999999; color:#FFF;} /* 자료 */
+.mainSwiperWrap .hside .badge .late {display:inline-block; position:relative; margin:0 0 0 8px; padding:0; font-size:14px; font-weight:400; color:#9e9e9e;}
+
+/* .mainSwiperWrap .hside .date {display:inline-block; position:absolute; right:0; top:2px; font-size:14px; color:#9e9e9e;} */
+
+/* 2021.01.19 곽현준 수정 - 날짜를 아래로 옮기고 아이콘 배경 삽입 */
+.mainSwiperWrap .date {display:inline-block; margin-top:22px; padding-left:22px; font-size:14px; color:#666; background:url('/startkosmes-preview/images/main/ico_date.png') 0 2px no-repeat;}
+
+.mainSwiperWrap .titlebox {display:block; position:relative;}
+
+/* 2021.01.19 곽현준 수정 - 스타일 수정 */
+/* .mainSwiperWrap .titlebox a {display:block; display:-webkit-box; height:11rem; color:#212121; font-weight:700; font-size:28px; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:3; -webkit-box-orient:vertical; letter-spacing:-1px;} */
+.mainSwiperWrap .titlebox a {display:block; display:-webkit-box; height:5rem; color:#222; font-weight:400; font-size:20px; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:3; -webkit-box-orient:vertical; letter-spacing:-1px;}
+
+.mainSwiperWrap .bodybox {display:block; position:relative; height:50px;} /* 2021.01.19 곽현준 추가 - 게시판 본문도 추출 */
+.mainSwiperWrap .bodybox a {
+	display:block;
+	display:-webkit-box;
+	margin-top:20px;
+	/* height:5rem; */
+	height:4rem;
+	color:#999;
+	font-weight:300;
+	font-size:16px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	-webkit-line-clamp:3;
+	-webkit-box-orient:vertical;
+	letter-spacing:-1px;
+} /* 2021.01.19 곽현준 추가 - 게시판 본문도 추출 */
+
+/* .mainSwiperWrap .slideNavi {display:block; position:absolute; left:28px; bottom:0px; width:44px; height:20px; background-color:#ccc; border-radius:0px 10px 10px 10px;} */
+.mainSwiperWrap .slideNavi {display:block; position:absolute; top:311px; left:0; bottom:inherit; width:76px; height:26px; background-color:#92a5b1; border-radius:15px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .slideNavi .nextSlide {display:block; position:absolute; right:2px; top:0; width:20px; height:20px;} */
+.slideNavi .nextSlide {display:block; position:absolute; right:8px; top:4px; width:20px; height:20px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.slideNavi .nextSlide::before {content:''; display:block; position:absolute; right:7px; top:5px; width:8px; height:8px; border-bottom:solid #fff 2px; border-right:solid #fff 2px; transform:rotate(-45deg)}
+
+/* .slideNavi .prevSlide {display:block; position:absolute; left:2px; top:0; width:20px; height:20px;} */
+.slideNavi .prevSlide {display:block; position:absolute; left:8px; top:4px; width:20px; height:20px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.slideNavi .prevSlide::before {content:''; display:block; position:absolute; left:7px; top:5px; width:8px; height:8px; border-bottom:solid #fff 2px; border-right:solid #fff 2px; transform:rotate(-225deg)}
+
+/* .mainSwiperWrap .swiper-controls {display:block; position:absolute; left:0px; bottom:0px; width:20px; height:20px; background-color:#ccc; border-radius:0px 10px 10px 10px;} */
+.mainSwiperWrap .swiper-controls {display:block; position:absolute; top:314px; left:29px; bottom:inherit; width:20px; height:20px; background-color:#92a5b1; border-radius:15px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.mainSwiperWrap .swiper-controls button {display:block; position:absolute; width:20px; height:20px; left:0; top:0; font-size:1px; color:transparent; text-indent:-9999px;}
+.mainSwiperWrap .swiper-controls.is_stoped .swiper-button-pause {display:none;}
+.mainSwiperWrap .swiper-controls.is_played .swiper-button-play {display:none;}
+.mainSwiperWrap .swiper-controls .swiper-button-play::after {content:''; display:block; position:absolute; left:8px; top:3px; width:0px; height:0px; border-top:solid transparent 7px; border-bottom:solid #FFF 7px; border-left:solid transparent 6px; border-right:solid transparent 6px; transform:rotate(90deg);}
+.mainSwiperWrap .swiper-controls .swiper-button-pause::before {content:''; display:block; position:absolute; left:6px; top:6px; width:2px; height:8px; background-color:#FFF;}
+.mainSwiperWrap .swiper-controls .swiper-button-pause::after {content:''; display:block; position:absolute; left:10px; top:6px; width:2px; height:8px; background-color:#FFF;}
+
+.introCompanyWrap {display:block; position:absolute; right:0; top:0; margin:0; padding:0 0 36px 0;}
+/* .introCompanyWrap .introCompany {width:340px; height:280px; padding:0; background-color:#edf4ff; border-radius:16px;} */
+
+/* .introCompanyWrap .introCompany {position:relative; width:340px; height:280px; padding:0; background-color:#edf4ff; border-radius:16px;} */ /* 2021.01.19 곽현준 수정 */
+.introCompanyWrap .introCompany {position:relative; width:340px; height:299px; padding:0; background-color:#1a467e; border-radius:16px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .introCompanyWrap .introCompany .label_intro_company {position:absolute; top:0; left:0; width:100%; text-align:center;} */ /* 2021.01.19 곽현준 추가 */
+.introCompanyWrap .introCompany .label_intro_company {position:absolute; top:15px; left:0; width:100%; text-align:center; z-index:2;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.introCompanyWrap .introCompany .label_intro_company img {text-align:center;}
+
+.introCompanyWrap .swiper-slide {flex-direction:column; padding:24px 20px;}
+.introCompanyWrap .swiper-slide .logoTitle {display:block; position:relative; width:100%; height:130px; margin:0; padding:0; border-bottom:solid #bcbfc3 1px;}
+
+/* .introCompanyWrap .no-slide {flex-direction:column; padding:24px 20px;} */ /* 2021.01.26 곽현준 수정 - 슬라이더 잠시 막음 */
+.introCompanyWrap .no-slide {flex-direction:column; padding:33px 20px;} /* 2021.03.26 곽현준 수정 */
+.introCompanyWrap .no-slide {flex-direction:column; padding:15px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .introCompanyWrap .no-slide .logoTitle {display:block; position:relative; width:100%; height:130px; margin:0; padding:0; border-bottom:solid #bcbfc3 1px;} */ /* 2021.01.26 곽현준 수정 - 슬라이더 잠시 막음 */
+/* .introCompanyWrap .no-slide .logoTitle {display:block; position:relative; margin:20px 0 0; width:100%; height:79px; padding:0; border-bottom:solid #bcbfc3 1px;} */ /* 2021.03.26 곽현준 수정 - 기업명 타이틀 추가로 높이 수정 */
+.introCompanyWrap .no-slide .logoTitle {
+	display:block;
+	position:relative;
+	margin:0; width:100%;
+	height:129px;
+	line-height:129px;
+	padding:0;
+	border-bottom:none;
+	border-radius:15px;
+	background-color:#fff;
+} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .introCompanyWrap .logoTitle .logo {display:block; position:relative; width:100%; height:90px; margin:0; padding:20px 0; text-align:center; box-sizing:border-box;} */
+.introCompanyWrap .logoTitle .logo {display:block; position:relative; margin:0; padding:0; text-align:center; box-sizing:border-box;} /* 2021.03.26 곽현준 수정 - 이미지 제어 */
+
+/* .introCompanyWrap .logoTitle .logo img {max-width:300px; height:62px;} */ /* 2021.03.26 곽현준 추가 - 로고이미지 폭 고정  */
+.introCompanyWrap .logoTitle .logo img {max-width:273px; max-height:73px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.introCompanyWrap .logoTitle .logo i {display:inline-block; position:relative; height:100%; margin:0 auto; padding:0; overflow:hidden;}
+.introCompanyWrap .logoTitle .logo i img {display:inline-block; position:relative; height:100%;}
+.introCompanyWrap .logoTitle .cname {display:block; position:relative; margin:0; padding:0; text-align:center; color:#212121; font-size:18px; font-weight:400;}
+/* .introCompanyWrap .companyInfo {display:block; position:relative; overflow:hidden; height:87px; margin:18px 0 0 0; padding:0;} */
+.introCompanyWrap .companyInfo {display:block; position:relative; overflow:hidden; height:110px; margin:15px 0 0 0; padding:0;}  /* 2021.03.26 곽현준 수정 - 기업명 타이틀 추가로 높이 수정 */
+.introCompanyWrap .companyInfo ul {display:flex; position:relative; margin:0; padding:0; flex-direction:row; justify-content:start; flex-wrap:nowrap;}
+.introCompanyWrap .companyInfo ul li {display:inline-block; position:relative; margin:0; padding:0; font-size:14px; color:#666; /*font-weight:400;*/}
+.introCompanyWrap .companyInfo ul li + li {margin-left:7px; padding-left:8px;}
+.introCompanyWrap .companyInfo ul li + li::before {content:''; display:block; position:absolute; left:0; top:4px; width:1px; height:10px; background-color:#666;}
+
+.introCompanyWrap .companyInfo .msg {display:-webkit-box; margin-top:5px; color:#666; font-size:14px; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:3; -webkit-box-orient:vertical;}
+/* .introCompanyWrap .companyInfo .msg.msg-tem {padding:0 17px; font-size:15px; font-weight:500; text-align:center;} */ /* 2021.01.26 곽현준 수정 - 슬라이더 정지 카피 */
+/* .introCompanyWrap .companyInfo .msg.msg-tem {padding:0; font-size:14px; font-weight:300; text-align:center;} */ /* 2021.03.26 곽현준 수정 - 볼드체 해제 */
+
+.introCompanyWrap .companyInfo .msg.msg-tem {padding:0; font-size:14px; color:#c9e1ff; font-weight:300; text-align:center;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.introCompanyWrap .companyInfo .msg.msg-tem .msg-left, .introCompanyWrap .companyInfo .msg.msg-tem .msg-right {color:#fff;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+.introCompanyWrap .companyInfo .msg.msg-tem .v-line {padding:0 5px; color:#84a0c3;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+.introCompanyWrap .companyInfo .msg.msg-tem + .msg.msg-tem {height:40px; overflow:hidden;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+/* .introCompanyWrap .companyInfo .msg-title {padding:0 17px; font-size:16px; color:#000; font-weight:500; text-align:center;} */ /* 2021.03.26 곽현준 수정 - 기업명 타이틀 추가 */
+.introCompanyWrap .companyInfo .msg-title {padding:0 17px; font-size:18px; color:#fff; font-weight:500; text-align:center;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .introCompanyWrap .companyInfo > .btn {
+	display:block;
+	margin:10px auto;
+	padding:0 10px;
+	width:50%;
+	height:25px;
+	line-height:26px;
+	font-size:12px;
+	color:#fff;
+	border-radius:5px;
+	background-color:#003894;
+} */
+/* .introCompanyWrap .companyInfo > .btn {
+	display:block;
+	margin:15px auto 0;
+	padding:0 10px;
+	width:50%;
+	height:25px;
+	line-height:26px;
+	font-size:12px;
+	color:#fff;
+	border-radius:5px;
+	background-color:#003894;
+} */  /* 2021.03.26 곽현준 수정 - 기업명 타이틀 추가로 마진 수정 */
+
+.introCompanyWrap .introCompany .btn {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:35px;
+	z-index:2;
+} /* 2022.01.12 곽현준 메인 리뉴얼 추가 * */
+.introCompanyWrap .introCompany .btn > a {
+	display:inline-block;
+	margin:0 auto;
+	width:155px;
+	height:35px;
+	line-height:35px;
+	vertical-align:middle;
+	text-align:center;
+	background-color:#0a1c32;
+	border-radius:0;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	font-size:12px;
+	color:#fff;
+	background-color:#0a1c32;
+} /* 2022.01.12 곽현준 메인 리뉴얼 추가 * */
+
+.introCompanyWrap .introCompany .btn > a + a{
+	margin-left:10px;
+}
+
+.introCompanyWrap .swiper-pagination {width:100%; bottom:8px;}
+.introCompanyWrap .swiper-pagination .swiper-pagination-bullet-active {background-color:#4380e0}
+
+/* 2023.11.14 김지안 메인 제품 서비스 안내 추가 * */
+.introCompanyWrap {display: flex; justify-content: center; max-width: 338px;}
+.introCompanyWrap > div {width: 50%; flex-shrink: 0; padding: 16px 15px 16px 18px; box-sizing: border-box;}
+    .introTitle {font-size: 14px; color: #fff; font-weight: 800; margin-bottom: 9px; height: 15px; line-height: 15px;}
+.introCompanyWrap .introServiceArea {background-color: #AF1313; border-radius: 13px 0px 0px 13px;}
+    .introServiceList {display: flex; flex-direction: column; align-items: flex-start; margin-top: 3px; height: 100%;}
+    .introServiceList li {width: 100%; background-color: #fff; min-height: 113px; border-radius: 10px; margin-bottom: 14px; text-align: center;}
+    .introServiceList li:last-of-type {margin-bottom: 0;}
+	.introServiceList li a {width: 100%; height: 100%; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+    .introServiceList li a span {display: inline-block; font-size: 32px; font-weight: 900; letter-spacing: -0.06em; position: relative; padding-left: 38px;}
+    .introCompanyWrap .companyInfo ul li + li::before {display: none;}
+	.introServiceList .b2c span::before {content: ""; position: absolute; top: 1px; left: -6px; display: inline-block; width: 36px; height: 36px; background-image: url(/startkosmes-preview/images/main/main_b2c.svg); background-repeat: no-repeat;}
+    .introServiceList .b2b span::before {content: ""; position: absolute; top: 2px; left: -6px; display: inline-block; width: 36px; height: 36px; background-image: url(/startkosmes-preview/images/main/main_b2b.svg); background-repeat: no-repeat;}
+
+.introCompanyWrap .introCompanyArea {background-color: #1a467e; border-radius: 0px 13px 13px 0px; height: 300px;}
+.introCompanyWrap .introCompany {width: 100%; background-color: unset;}
+.introCompanyWrap .companyInfo {height: auto; margin: 10px auto 14px;}
+.introCompanyWrap .companyInfo .msg {margin-top: 0;}
+.introCompanyWrap .companyInfo .msg-title {font-size: 16px; padding: 0; text-align: left; font-weight: 700; height: 17px; line-height: 17px; margin-bottom: 9px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.introCompanyWrap .companyInfo .msg.msg-tem {text-align: left;}
+.introCompanyWrap .companyInfo .msg.msg-tem > li {height: 14px; line-height: 14px; margin-bottom: 7px;}
+.introCompanyWrap .companyInfo .msg.msg-tem > li:last-of-type {padding-left: 0; margin: 0;}
+
+.introCompanyWrap .companyInfo .msg.msg-tem.title {padding:0; font-size:14px; color:#9BD4FF; font-weight:600; text-align: left; margin-bottom: 8px; height: 15px;}
+
+.introCompanyWrap .no-slide {padding: 0;}
+.introCompanyWrap .no-slide .logoTitle {height: 70px; line-height: 70px; border-radius: 5px;}
+.introCompanyWrap .no-slide .logoTitle .logo {display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100%;}
+.introCompanyWrap .no-slide .logoTitle .logo img {max-height: 68px; max-width: 134px;}
+.introCompanyWrap .introCompany .btn {position: relative; width:135px; height:30px;}
+.introCompanyWrap .introCompany .btn > a {margin:0 auto 5px; width:100%; height:30px; line-height:30px; border-radius: 5px; font-size:13px;}
+.introCompanyWrap .introCompany .btn > a + a{margin: 0px;}
+/* 2023.11.14 김지안 메인 제품 서비스 안내 추가 * */
+
+/* .noticeGroup {display:flex; position:relative; width:100%; margin:40px 0 0 0; padding:0; flex-direction:row; justify-content:space-between;} */
+.noticeGroup {display:flex; position:relative; width:100%; margin:126px 0 0 0; padding:0; flex-direction:row; justify-content:space-between;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.noticeGroup .tabWrap {width:580px;}
+.noticeGroup .list {display:block; position:relative; height:200px; margin:0; padding:0; overflow:hidden;}
+/* .noticeGroup .list li {display:block; position:relative; height:40px; margin:0; padding:0 100px 0 0; border-bottom:solid #ececec 1px;} */
+.noticeGroup .list li {display:block; position:relative; height:40px; margin:0; padding:0 100px 0 0;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+/* .noticeGroup .list li a {display:inline-block; position:relative; height:39px; line-height:39px; max-width:100%; margin:0; padding:0 0 0 12px; color:#222; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; box-sizing:border-box;} */ /*201229 박진우 수정/ color #666->#222*/
+
+/* 2021.01.18 곽현준 수정 */
+/* .noticeGroup .list li a {font-weight:400; display:inline-block; position:relative; height:39px; line-height:39px; max-width:100%; margin:0; padding:0 0 0 12px; color:#222; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; box-sizing:border-box;} */
+
+/* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+.noticeGroup .list li a {font-weight:300; display:inline-block; position:relative; height:39px; line-height:39px; max-width:100%; margin:0; padding:0; color:#222; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; box-sizing:border-box;}
+
+.noticeGroup .list li a:hover {color:#4380e0; text-decoration:underline;}  /* 2021.01.04 곽현준 추가 */
+
+/* .noticeGroup .list li a::before {content:''; display:block; position:absolute; left:0; top:calc(50% - 1px); width:2px; height:2px; background-color:#666;} */
+.noticeGroup .list li a::before {display:none;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.noticeGroup .list li span {display:inline-block; position:absolute; right:0; top:8px; font-size:14px; color:#666;}
+.noticeGroup .tabCont .moreBtn {display:inline-block; position:absolute; right:0; top:-58px; padding:0 20px 0 0; color:#999;}
+
+/* .noticeGroup .tabCont .moreBtn::before {content:''; display:block; position:absolute; width:14px; height:2px; right:0; top:calc(50% - 1px); background-color:#999;} */
+.noticeGroup .tabCont .moreBtn::before {content:''; display:block; position:absolute; width:14px; height:2px; right:0; top:calc(50% - 1px); background-color:#000;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.noticeGroup .tabCont .moreBtn > span {visibility:hidden;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+/* .noticeGroup .tabCont .moreBtn::after {content:''; display:block; position:absolute; width:2px; height:14px; right:6px; top:calc(50% - 7px); background-color:#999;} */
+.noticeGroup .tabCont .moreBtn::after {content:''; display:block; position:absolute; width:2px; height:14px; right:6px; top:calc(50% - 7px); background-color:#000;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap {display:block; position:relative; margin:40px 0 0 0; padding:0;} */
+.mainBannerWrap {display:block; position:relative; margin:0; padding:0;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.mainBannerWrap .mainBanner {display:flex; position:relative; margin:0; padding:0; flex-direction:row; justify-content:space-between;}
+.mainBannerWrap .mainBanner li {display:block; position:relative; margin:0; padding:0;}
+.mainBannerWrap .mainBanner li + li {margin-left:32px;}
+.mainBannerWrap .mainBanner li a {display:block; position:relative; margin:0; padding:0;}
+.mainBannerWrap .mainBanner li a > img {width:100%;} /* 2021.01.20 곽현준 추가 */
+
+/* .mainBannerWrap .mainBanner.banner-menu {display:block; margin-top:80px; height:140px;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu {display:block; margin-top:77px; padding:60px 0 80px 0; height:444px; background-color:#edf0f4;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li {display:block; margin:0; padding:0; width:20%; float:left;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li {display:table-cell; margin:0; padding:0 0 0 21px; width:231px;}  /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+.mainBannerWrap .mainBanner.banner-menu li:first-child {padding-left:0;}  /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li a {display:block; position:relative; margin:0; padding:0; text-align:center; border-left:1px dotted #737373;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a {display:block; position:relative; padding:0; width:231px; height:304px; border-radius:10px; background-color:#fff;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li:first-child a {border:none;} */ /* 2021.02.26 곽현준 추가 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li a span {display:block; height:93px; text-align:center;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a span {display:block; margin-bottom:22px; width:231px; height:128px; text-align:center;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li a span img {vertical-align:top;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a span img {width:231px; height:128px; vertical-align:top;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li a strong {font-size:17px; font-weight:500;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a strong {margin-left:18px; font-size:18px; font-weight:500;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+/* .mainBannerWrap .mainBanner.banner-menu li a p {margin-top:5px; font-size:14px;} */ /* 2021.02.26 곽현준 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a p {margin:18px; font-size:14px; color:#6f6f6f;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+
+.mainBannerWrap .mainBanner.banner-menu li a p.view-detail {font-size:14px; color:#0066cc;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+.mainBannerWrap .mainBanner.banner-menu li a p.view-detail img {margin-top:1px; vertical-align:top;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+.contentsWrap.mainCont {margin-bottom:0;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+@media screen and (max-width:768px){
+	/* .keyVisual.main {display:block; height:36rem !important; margin-top:6rem; font-size:1.6rem; background-image:url(/startkosmes-preview/images/common/moMain-visual.png); background-size:cover;} */	
+	/*.keyVisual.main {display:block; height:38rem !important; margin-top:6rem; font-size:1.6rem; background-image:url(/startkosmes-preview/images/common/moMain-visual.png); background-size:cover;} */ /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	 .keyVisual.main {display:block; height:38rem !important; margin-top:6rem; font-size:1.6rem; background-image:url(/startkosmes-preview/images/common/moMain-visual_230118.jpg); background-size:cover;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .keyVisual .quickBtn {flex-wrap:wrap; top:4.2rem; margin-top:4.2rem;} */
+	/* .keyVisual .quickBtn {flex-wrap:wrap; top:7.3rem; margin-top:4.2rem;} */ /* 2021.01.19 곽현준 수정 */
+	/* .keyVisual .quickBtn {flex-wrap:wrap; top:7.3rem; margin:4.2rem auto 0; width:332px;} */ /* 2021.02.03 곽현준 수정 - 모바일에서 3개씩 줄 바꿈 설정 */
+	.keyVisual .quickBtn {flex-wrap:wrap; top:5.3rem; margin:4.2rem auto 0; width:332px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .keyVisual .quickBtn .moB {display:flex; width:100%; padding:0 1.6rem; text-align:center; justify-content:center;} */
+	.keyVisual .quickBtn .moB {display:block; width:100%; padding:0; text-align:center; justify-content:center;} /* 2021.02.03 곽현준 수정 - 모바일에서 3개씩 줄 바꿈 설정 */
+	.keyVisual .quickBtn a:nth-child(4) {margin-left:0;} /* 2021.02.03 곽현준 수정 - 모바일에서 3개씩 줄 바꿈 설정 */
+	.keyVisual .quickBtn a:nth-child(4), .keyVisual .quickBtn a:nth-child(5), .keyVisual .quickBtn a:nth-child(6) {margin-top:0.8rem;} /* 2021.02.03 곽현준 수정 - 모바일에서 3개씩 줄 바꿈 설정 */
+	
+	.keyVisual .quickBtn .moB + .moB {margin-top:0.8rem; margin-left:0;}
+	.keyVisual .quickBtn a {width:100%; max-width:10rem;}
+	
+	/* .mainCont .mainSwiperWrap .swiper-container .swiper-wrapper .swiper-slide {width:25rem; height:25rem;} */
+	.mainCont .mainSwiperWrap .swiper-container .swiper-wrapper .swiper-slide {padding:22px; width:25rem; height:25rem;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainCont .contentBody:before {content:""; position:absolute; top:922px; left:0; width:100%; height:438vw; background-color:#edf0f4;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	.mainCont .contentBody .contentzone {display:flex; position:relative; margin:0; padding:0; flex-direction:row; flex-wrap:wrap;}
+	
+	/* .mainCont .contentBody .contentzone .mainSwiperWrap {order:1; width:100%; margin-left:1.6rem;} */
+	.mainCont .contentBody .contentzone .mainSwiperWrap {order:1; width:100%; margin-left:1.6rem; margin-top:-38px; padding-left:1.6rem;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainCont .contentBody .contentzone .mainSwiperWrap .mainSwiper {margin-left:-1.6rem;}
+	
+	/* .mainCont .contentBody .contentzone .introCompanyWrap {order:4; position:relative;} */
+	.mainCont .contentBody .contentzone .introCompanyWrap {order:2; position:relative; padding:0;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainCont .contentBody .contentzone .noticeGroup {order:2;} */
+	.mainCont .contentBody .contentzone .noticeGroup {order:2; margin:0; padding:38px 15px 15px 15px; background-color:#fff;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainCont .contentBody .contentzone .mainBannerWrap {order:3; width:100%;} */
+	.mainCont .contentBody .contentzone .mainBannerWrap {order:3; width:100%; background-color:#edf0f4;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainCont .contentBody:before {display:none;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+	/* .mainCont .contentBody {font-size:1.6rem;} */
+	.mainCont .contentBody {margin-top:-38px; font-size:1.6rem;} /* 2021.01.19 곽현준 수정 */
+	/* .mainCont .contentBody.mc_main_only {margin-top:15px; font-size:1.6rem;} */ /* 2021.01.25 곽현준 추가 - 퀵메뉴와 겹쳐서 모바일 간격 더 벌림 */
+	.mainCont .contentBody.mc_main_only {margin-top:0; font-size:1.6rem;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.contentsWrap.mainCont {background-color:#d1ecfd;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	.mainCont .mainSwiperWrap {overflow:visible;}
+	
+	.mainSwiperWrap .slideNavi {display:block; position:absolute; top:224px; left:15px; bottom:inherit; width:76px; height:26px; background-color:#92a5b1; border-radius:15px;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	.mainSwiperWrap .swiper-controls {display:block; position:absolute; top:227px; left:44px; bottom:inherit; width:20px; height:20px; background-color:#92a5b1; border-radius:15px;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+
+	/* .mainBannerWrap .mainBanner {flex-direction:column;}
+	.mainBannerWrap .mainBanner li + li {margin-top:8px; margin-left:0;}
+	.mainBannerWrap .mainBanner li img {width:100%;} */ /* 2021.02.26 곽현준 막음 */
+
+	.mainCont .introCompanyWrap {width:100%; margin-top:3.2rem;}
+	
+	/* .mainCont .introCompanyWrap .introCompany {width:100%; margin:0 auto;} */
+	.mainCont .introCompanyWrap .introCompany {width:100%; margin:0 auto; border-radius:0;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainCont .noticeGroup {flex-direction:column;}
+	.mainCont .noticeGroup .tabWrap {width:100%;}
+	.mainCont .noticeGroup .tabWrap + .tabWrap {margin-top:3.2rem;}
+	.mainCont .tabWrap .tabList {width:calc(100% - 2rem);}
+	.mainCont .tabWrap .tabList + .tabContents {margin-top:0;}
+
+	/* .mainCont .noticeGroup .tabCont .moreBtn {top:-3.8rem; padding:0 2.2rem 0 0; text-indent:-9999px;} */
+	.mainCont .noticeGroup .tabCont .moreBtn {position:relative; top:initial; display:block; text-align:right; margin:15px 0 47px 0;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainCont .noticeGroup .tabCont .moreBtn::before {top:calc(50% - 0.2rem); width:2.1rem; height:0.4rem;} */
+	.mainCont .noticeGroup .tabCont .moreBtn::before {top:calc(50% - 3px);} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainCont .noticeGroup .tabCont .moreBtn::after {top:calc(50% - 1rem); right:0.8rem; width:0.4rem; height:2.1rem;} */
+	.mainCont .noticeGroup .tabCont .moreBtn::after {top:calc(50% - 9px);} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainCont .noticeGroup .tabCont .moreBtn > span {visibility:visible; color:#000; font-weight:500;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	/* .mainCont .noticeGroup .tabWrap .tabList li button {padding:0 1rem;} */
+	
+	.mainCont .noticeGroup .tabWrap .tabList li {margin:0 0 12px 0} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	.mainCont .noticeGroup .tabWrap .tabList li button {padding:0; min-width:60px; border-radius:20px; border:none; background-color:#f4f4f4; color:#666;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	.mainCont .noticeGroup .tabWrap .tabList li button span {padding:0 5px; color:#666; font-size:14px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	.mainCont .noticeGroup .tabWrap .tabList li.current button {background-color:#0066cc; border-color:#0066cc;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	.mainCont .noticeGroup .tabWrap .tabList li.current button span {color:#fff;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+/* 	.mainSwiperWrap .swiper-container .swiper-wrapper .swiper-slide {width:25rem; height:25rem;} */
+
+	/* .mainBannerWrap .mainBanner.banner-menu {display:grid; grid-template-columns:1fr 1fr; grid-gap:38px 0; height:initial;} */ /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu {display:block; margin-top:38px; padding:15px 15px 38px; width:100%; height:initial; background-color:transparent;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainBannerWrap .mainBanner.banner-menu li {display:block; margin:0; padding:0; width:47vw; float:none;} */ /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu li {display:block; margin:0; padding:0; width:100%; float:none;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	/* .mainBannerWrap .mainBanner.banner-menu li a {display:block; position:relative; margin:0; padding:0; text-align:center; border-left:1px dotted #737373;} */ /* 2021.02.26 곽현준 추가 */
+	
+	/* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	.mainBannerWrap .mainBanner.banner-menu li a {display:block; position:relative; margin:0; padding:0; width:initial; height:initial;}
+	
+	.mainBannerWrap .mainBanner.banner-menu li:first-child a {border:none;} /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu li:nth-child(3) a {border:none;}
+	.mainBannerWrap .mainBanner.banner-menu li:nth-child(5) a {border:none;}
+	.mainBannerWrap .mainBanner.banner-menu li:first-child a {border:none;}
+	
+	/* .mainBannerWrap .mainBanner.banner-menu li a span {display:block; height:93px; text-align:center;} */ /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu li a span {display:block; width:initial; height:initial; text-align:center;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	
+	.mainBannerWrap .mainBanner.banner-menu li a span img {width:100%; height:inherit; vertical-align:top;} /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu li a strong {font-size:17px; font-weight:500;} /* 2021.02.26 곽현준 추가 */
+	
+	/* .mainBannerWrap .mainBanner.banner-menu li a p {margin-top:5px; font-size:14px;} */ /* 2021.02.26 곽현준 추가 */
+	.mainBannerWrap .mainBanner.banner-menu li a p {padding-bottom:18px; font-size:14px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+	
+	.mainBannerWrap .mainBanner.banner-menu li a p br {display:none;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	.mainBannerWrap .mainBanner.banner-menu li a p.view-detail {display:none;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+	.contentsWrap .contentBody {padding:0;} /* 2022.01.12 곽현준 메인 리뉴얼 추가 */
+	
+
+    /* 2023.11.14 김지안 메인 제품 서비스 안내 추가 * */
+	.mainCont .contentBody .contentzone .introCompanyWrap {padding: 0 15px 15px 15px; max-width: none;}
+	.mainCont .introCompanyWrap .introCompany {height: auto;}
+		.introCompanyWrap > div {padding: 16px 13px 16px 14px;}
+		.introCompanyWrap .companyInfo {margin: 10px auto 12px;}
+		.introCompanyWrap .companyInfo ul li {display: block;}
+		.introCompanyWrap .introCompany .btn {width: 100%; padding: 0;}
+	/* 2023.11.14 김지안 메인 제품 서비스 안내 추가 * */
+	
+}
+
+@media screen and (max-width:480px){
+	/* .mainBannerWrap .mainBanner.banner-menu li a p {padding:0 10px;} */
+	.mainBannerWrap .mainBanner.banner-menu li a p {padding-bottom:18px; font-size:14px;} /* 2022.01.12 곽현준 메인 리뉴얼 수정 */
+}
+
+@media screen and (max-width:380px){
+	.keyVisual .quickBtn a + a {margin-left:8px;} /* 2021.02.03 곽현준 수정 - 모바일 최소모드에서 퀵메뉴 좌우 간격 설정 */
+}
+
+
+
+/* 2023.05.26 이산아 메인 리뉴얼 추가(모바일 버전 추가) */
+.bg-fade3{display:block}
+.bg-fade2 {height:383px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background:url(/startkosmes-preview/images/common/vmain-img3.png) center;
+	animation: big-bgFade 1s infinite;
+	animation-duration: 12s;
+}
+
+@keyframes big-bgFade {
+	0% {
+		background:url(/startkosmes-preview/images/common/vmain-img3.png) center;
+	}
+	33% {
+		background:url(/startkosmes-preview/images/common/vmain-img3.png) center;
+	}
+	50% {
+		background:url(/startkosmes-preview/images/common/vmain-img2.png) center;
+	}
+	83% {
+		background:url(/startkosmes-preview/images/common/vmain-img2.png) center;
+	}
+}
+
+@media screen and (max-width:768px){
+	.keyVisual.main2 {display:block; height:38rem !important; margin-top:6rem; font-size:1.6rem; background-color: #d1ecfd;}
+	.bg-fade2{display:none !important}
+	.bg-fade3 {height:383px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background:url(/startkosmes-preview/images/common/vmain-img5.png) center;
+	animation: mo-bgFade 1s infinite;
+	animation-duration: 12s;
+}
+
+@keyframes mo-bgFade {
+		0% {
+			background:url(/startkosmes-preview/images/common/vmain-img5.png) center;
+		}
+		33% {
+			background:url(/startkosmes-preview/images/common/vmain-img5.png) center;
+		}
+		50% {
+			background:url(/startkosmes-preview/images/common/vmain-img4.png) no-repeat center;
+		}
+		83% {
+			background:url(/startkosmes-preview/images/common/vmain-img4.png) no-repeat center;
+		}
+	}
+}
+
+/* 추가23-06-20 */
+
+
+/*.mainCont .contentBody:before {height:650px !important}*/
+.mainBannerWrap .mainBanner.banner-menu {height:400px !important}
+.mainBannerWrap .mainBanner.banner-menu li {width:295px !important ;padding: 0 0 0 20px !important}
+.mainBannerWrap .mainBanner.banner-menu li:first-child {padding: 0 !important}
+.mainBannerWrap .mainBanner.banner-menu li a {width:295px !important}
+.mainBannerWrap .mainBanner.banner-menu li a span img {width:295px !important}
+
+.banner-edu {clear:both;background-color: #edf0f4;padding-bottom:50px;overflow:hidden;}
+.banner-edu ul {display: flex;	}
+.banner-edu ul li:first-child {margin-left:0}
+.banner-edu ul li {width:50%;margin-left:20px;background:#fafaf5;border-radius:10px;}
+.banner-edu ul li a span {margin-bottom: 22px}
+.banner-edu ul li a span img {width:295px;border-radius:10px;float:left;}
+.banner-edu ul li a strong {padding:18px 0 10px 310px;    font-size: 18px;    font-weight: 500;display:block}
+.banner-edu ul li a p {padding:0px 0 8px 310px;    font-size: 14px;    color: #6f6f6f;}
+.banner-edu ul li a p.view-detail {    font-size: 14px;    color: #0066cc;}
+
+
+@media screen and (max-width:768px){
+
+
+.mainBannerWrap .mainBanner {width:100%;}
+.mainBannerWrap .mainBanner.banner-menu {height:inherit !important}
+.mainBannerWrap .mainBanner.banner-menu li {width:100% !important;padding: 0 !important}
+.mainBannerWrap .mainBanner.banner-menu li a {width:100% !important}
+.mainBannerWrap .mainBanner.banner-menu li a span img {width:100% !important}
+
+.banner-edu {width:100%;}
+.banner-edu ul {display: block;margin:15px}
+.banner-edu ul li:first-child {margin-bottom:20px}
+.banner-edu ul li  {width:100%;margin-left:0}
+.banner-edu ul li a span img {width:100% !important;height: inherit;margin-bottom:20px}
+.banner-edu ul li a strong {padding:38px 0 10px 10px;    font-size: 17px;    font-weight: 500;}
+.banner-edu ul li a p {padding:0px 0 20px 10px;    font-size: 14px;    color: #6f6f6f;}
+.banner-edu ul li a p.view-detail {display: none}
+
+}
+
+
+/* 추가23-06-20 End */

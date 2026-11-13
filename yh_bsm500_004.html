@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>팝업-월간창업보고서 일괄수정 팝업 | KOSME 청년창업사관학교</title>
+
+		<!-- 공통스타일  -->
+		<link href="/startkosmes-preview/css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/swiper.min.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/ui.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/contents.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/main02.css" rel="stylesheet" type="text/css" />
+
+		<!-- 공통 jquery plugins  -->
+		<script src="/startkosmes-preview/js/libs/jquery-3.5.1.min.js"></script><script src="/startkosmes-preview/__preview/pages.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery-ui.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/swiper.min.js"></script>
+		<script src="/startkosmes-preview/js/common.js"></script>
+		<script src="/startkosmes-preview/js/contents.js"></script>
+
+		<!-- kakao talk 공유 -->
+		<script src="/startkosmes-preview/js/libs/kakao.min.js"></script>
+
+		<!-- 개발공통 -->
+		<script src="/startkosmes-preview/js/libs/jquery.validate.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery.form.js"></script>
+		<script src="/startkosmes-preview/js/commUtil.js"></script>
+
+		<script>
+			// pc,mobile 분기체크
+			function isMobile(){
+			    var UserAgent = navigator.userAgent;
+			    if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson|Mobile|Tablet/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+			    {
+			        return true;
+			    }else{
+			        return false;
+			    }
+			}
+
+
+			$(document).ready(function() {
+				/* 2026.11.04 수정(UI 미러) - 로그인 토큰 갱신 타이머 삭제 (9분마다 /login/refreshTokenReal.do 호출) */
+
+
+
+					 $('.quickBtn').show();
+				     $('.menu_setting').show();
+				     $('.quickBtn').css('display', 'flex');
+
+
+				 $('.menu_setting').hide();
+			});
+
+
+			function alertPopup(){
+
+				alert("서비스 준비 중입니다.");
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				window.parent.$("#iFramePop").attr("title", "월간창업보고서 일괄수정 팝업");
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" id="resultMsg" value="" />
+
+		<script type="text/javascript">
+
+				$(document).ready(function(){
+
+
+
+				});
+
+
+			//저장
+			function lfn_save(){
+
+				if(confirm("저장하시겠습니까?")){
+
+					var m99Val = new Array();	//입교전년도 실적
+					var m00Val = new Array();	//협약전당해년도 실적
+					var m03Val = new Array();
+					var m04Val = new Array();
+					var m05Val = new Array();
+					var m06Val = new Array();
+					var m07Val = new Array();
+					var m08Val = new Array();
+					var m09Val = new Array();
+					var m10Val = new Array();
+					var m11Val = new Array();
+
+					if($("[name='m99']").val() != ""){
+						$("[name='m99']").each(function(i) {
+							m99Val.push(removeComma($("[name='m99']:eq("+i+")").val()));
+						});
+						$("#m99List").val(m99Val);
+					}
+
+					if($("[name='m00']").val() != ""){
+						$("[name='m00']").each(function(i) {
+							m00Val.push(removeComma($("[name='m00']:eq("+i+")").val()));
+						});
+						$("#m00List").val(m00Val);
+					}
+
+					if($("[name='m03']").val() != ""){
+						$("[name='m03']").each(function(i) {
+							m03Val.push(removeComma($("[name='m03']:eq("+i+")").val()));
+						});
+						$("#m03List").val(m03Val);
+					}
+
+					if($("[name='m04']").val() != ""){
+						$("[name='m04']").each(function(i) {
+							m04Val.push(removeComma($("[name='m04']:eq("+i+")").val()));
+						});
+						$("#m04List").val(m04Val);
+					}
+
+					if($("[name='m05']").val() != ""){
+						$("[name='m05']").each(function(i) {
+							m05Val.push(removeComma($("[name='m05']:eq("+i+")").val()));
+						});
+						$("#m05List").val(m05Val);
+					}
+
+					if($("[name='m06']").val() != ""){
+						$("[name='m06']").each(function(i) {
+							m06Val.push(removeComma($("[name='m06']:eq("+i+")").val()));
+						});
+						$("#m06List").val(m06Val);
+					}
+
+					if($("[name='m07']").val() != ""){
+						$("[name='m07']").each(function(i) {
+							m07Val.push(removeComma($("[name='m07']:eq("+i+")").val()));
+						});
+						$("#m07List").val(m07Val);
+					}
+
+					if($("[name='m08']").val() != ""){
+						$("[name='m08']").each(function(i) {
+							m08Val.push(removeComma($("[name='m08']:eq("+i+")").val()));
+						});
+						$("#m08List").val(m08Val);
+					}
+
+					if($("[name='m09']").val() != ""){
+						$("[name='m09']").each(function(i) {
+							m09Val.push(removeComma($("[name='m09']:eq("+i+")").val()));
+						});
+						$("#m09List").val(m09Val);
+					}
+
+					if($("[name='m10']").val() != ""){
+						$("[name='m10']").each(function(i) {
+							m10Val.push(removeComma($("[name='m10']:eq("+i+")").val()));
+						});
+						$("#m10List").val(m10Val);
+					}
+
+					if($("[name='m11']").val() != ""){
+						$("[name='m11']").each(function(i) {
+							m11Val.push(removeComma($("[name='m11']:eq("+i+")").val()));
+						});
+						$("#m11List").val(m11Val);
+					}
+
+					var sendData = $("#searchFrm").serialize();
+
+					var url = "/startkosmes-preview/yh_bsm500_005.do";
+					$.ajax({
+						type:"post",
+						url:url,
+						data: sendData,
+						dataType:"json",
+						success:function(data){
+							if(data.resultSVO.resultCode != "") {
+								setAlertMsg(data.resultSVO.resultMsg);
+								return;
+							}
+							lpOpen('.submit02');		//레이어 팝업
+						},
+						error:function(request,status,error){
+							alert("월간 창업보고서 저장중 오류가 발생했습니다.\n(오류코드:"+error+")");
+						}
+					});
+
+
+				}
+
+			}
+		</script>
+
+		<!-- 본문 컨텐츠 시작 -->
+
+		※이 화면은 '월간 창업보고서 제출'메뉴 입력내용의 오류를 보정하기 위한 용도입니다.&nbsp;<span class="secon_txt02">(신규 입력은 '월간 창업보고서 제출'메뉴를 이용해 주시기 바랍니다)</span><br />
+
+		<form id="searchFrm" name="searchFrm" method="post" action="/startkosmes-preview/yh_bsm500_005.do">
+			<input type="hidden" name="m99List" id="m99List" value="" />
+			<input type="hidden" name="m00List" id="m00List" value="" />
+			<input type="hidden" name="m03List" id="m03List" value="" />
+			<input type="hidden" name="m04List" id="m04List" value="" />
+			<input type="hidden" name="m05List" id="m05List" value="" />
+			<input type="hidden" name="m06List" id="m06List" value="" />
+			<input type="hidden" name="m07List" id="m07List" value="" />
+			<input type="hidden" name="m08List" id="m08List" value="" />
+			<input type="hidden" name="m09List" id="m09List" value="" />
+			<input type="hidden" name="m10List" id="m10List" value="" />
+			<input type="hidden" name="m11List" id="m11List" value="" />
+
+			<div class="boardListWrap">
+				<div class="tableWrap01">
+					<table>
+						<caption>
+							월간 창업보고서 일괄수정
+						</caption>
+						<colgroup>
+							<col style="width:8%;" />
+							<col style="width:8%;" />
+							<col style="width:8%" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+							<col style="width:auto;" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" colspan="2">사업화 정량지표</th>
+								<th scope="col">입교전년도 실적</th>
+								<th scope="col">03</th>
+								<th scope="col">04</th>
+								<th scope="col">05</th>
+								<th scope="col">06</th>
+								<th scope="col">07</th>
+								<th scope="col">08</th>
+								<th scope="col">09</th>
+								<th scope="col">10</th>
+								<th scope="col">11</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td rowspan="5">산업재산권(건)</td>
+
+								<td>특허등록</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>특허출원</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>실용신안</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>상표등록</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>기타</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>고용</td>
+
+								<td>고용(정규직)</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td rowspan="2">매출</td>
+
+								<td>매출액(원)</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>수출액(원)</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+
+							<tr>
+								<td>투자유치</td>
+								<td>투자액(원)</td>
+
+								<td>
+									<input type="hidden" name="m00" id="m00" value="" /><!-- 협약전당해년도 실적을 hidden 으로 가져감 -->
+									<input type="text" name="m99" id="m99" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" />
+								</td>
+								<td><input type="text" name="m03" id="m03" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m04" id="m04" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m05" id="m05" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m06" id="m06" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<!-- 2026년 7월 보고서 강제 활성화 처리 - 올해 지나고 원복해야함 -->
+
+								<td><input type="text" name="m07" id="m07" class="align_r dfsize numberCommaOnly" value="" /></td>
+								<td><input type="text" name="m08" id="m08" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m09" id="m09" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m10" id="m10" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+								<td><input type="text" name="m11" id="m11" class="align_r dfsize numberCommaOnly" value="" readonly="readonly" /></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="btnWrap center">
+					<button type="button" name="" id="id001" class="btn lightblue" onclick="javascript:lfn_save();"><span>저장</span></button>
+					<button type="button" name="" class="btn darkgray" onclick="javascript:parent.lpClose('.inputPop');"><span>취소</span></button>
+				</div>
+
+				<!-- //결과 -->
+			</div>
+		</form>
+
+		<!-- 저장 모달02-->
+		<div class="lpContainer submit02">
+			<div class="lpWrap small">
+				<div class="lpContent">
+					<div class="cellin align_c">
+						<i class="icoSymbol ico_info"></i>
+						<p>저장 되었습니다.</p>
+					</div>
+				</div>
+				<div class="btnWrap center">
+					<a href="#" class="btn lightblue" onclick="javascript:parent.lpClose('.inputPop');parent.lfn_doList();"><span>확인</span></a>
+				</div>
+			</div>
+		</div>
+		<!-- //저장 모달02-->
+	</body>
+</html>

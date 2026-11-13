@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>팝업-온라인 매뉴얼 | KOSME 청년창업사관학교</title>
+
+		<!-- 공통스타일  -->
+		<link href="/startkosmes-preview/css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/swiper.min.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/layout.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/ui.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/contents.css" rel="stylesheet" type="text/css" />
+		<link href="/startkosmes-preview/css/main02.css" rel="stylesheet" type="text/css" />
+
+		<!-- 공통 jquery plugins  -->
+		<script src="/startkosmes-preview/js/libs/jquery-3.5.1.min.js"></script><script src="/startkosmes-preview/__preview/pages.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery-ui.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/swiper.min.js"></script>
+		<script src="/startkosmes-preview/js/common.js"></script>
+		<script src="/startkosmes-preview/js/contents.js"></script>
+
+		<!-- kakao talk 공유 -->
+		<script src="/startkosmes-preview/js/libs/kakao.min.js"></script>
+
+		<!-- 개발공통 -->
+		<script src="/startkosmes-preview/js/libs/jquery.validate.min.js"></script>
+		<script src="/startkosmes-preview/js/libs/jquery.form.js"></script>
+		<script src="/startkosmes-preview/js/commUtil.js"></script>
+
+		<script>
+			// pc,mobile 분기체크
+			function isMobile(){
+			    var UserAgent = navigator.userAgent;
+			    if (UserAgent.match(/iPhone|iPad|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson|Mobile|Tablet/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+			    {
+			        return true;
+			    }else{
+			        return false;
+			    }
+			}
+
+
+			$(document).ready(function() {
+				/* 2026.11.04 수정(UI 미러) - 로그인 토큰 갱신 타이머 삭제 (9분마다 /login/refreshTokenReal.do 호출) */
+
+
+
+					 $('.quickBtn').show();
+				     $('.menu_setting').show();
+				     $('.quickBtn').css('display', 'flex');
+
+
+				 $('.menu_setting').hide();
+			});
+
+
+			function alertPopup(){
+
+				alert("서비스 준비 중입니다.");
+			}
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				window.parent.$("#iFramePop").attr("title", "온라인 매뉴얼");
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="hidden" id="resultMsg" value="" />
+
+		<script>
+			(function(){
+				/* 2026.11.04 수정 - 정적 미러 : 운영 서버는 newtab=Y 로 열린 화면에 이 스크립트를 넣지 않으므로 같은 조건을 둠 (없으면 새 창이 끝없이 열림) */
+				if (location.search.indexOf('newtab=Y') > -1) return;
+				window.open(location.href + '?newtab=Y', '_blank');
+				history.back();
+			})();
+		</script>
+
+		<script>
+			var dvCd = "41";
+			var acss = "02";
+
+			const isToggle = true;
+		</script>
+
+		<script>
+			//파일 다운로드
+			function lfn_egov_downFile(atchFileId, fileSn){
+				window.open("/startkosmes-preview/cmm/fms/FileDownload.do?atchFileId="+atchFileId+"&fileSn="+fileSn+"");
+			}
+		</script>
+
+		<!doctype html>
+		<html lang="en">
+			<head>
+				<meta charset="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="stylesheet" href="/startkosmes-preview/css/fonts.css" />
+				<link rel="stylesheet" href="/startkosmes-preview/css/reset.css" />
+				<link rel="stylesheet" href="/startkosmes-preview/css/root.css" />
+				<link rel="stylesheet" href="/startkosmes-preview/css/onStyle.css" />
+				<link rel="stylesheet" href="/startkosmes-preview/css/onManual.css" />
+				<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+				<!-- <script src="/startkosmes-preview/data/onManual.json"></script> -->
+				<script src="/startkosmes-preview/js/jquery-4.0.0.min.js"></script>
+				<script src="/startkosmes-preview/js/onCommon.js"></script>
+				<script src="/startkosmes-preview/js/onManual.js"></script>
+				<title>청년창업사관학교 온라인 매뉴얼</title>
+			</head>
+			<body>
+				<div class="wrapper">
+					<div class="onDashBoard">
+						<nav class="onLeftNavBar">
+							<div class="onLeftNavBarTitle">
+								<button class="onCloseBtn"></button>
+								<h1>청년창업사관학교 온라인 매뉴얼</h1>
+							</div>
+
+							<div class="onToggleWrap">
+								<div class="onToggleBg">
+									<div class="onToggle-active" style="width : 50%;"></div>
+									<button class="onToggle-btn select" data-value="life" style="">입교생활</button>
+									<button class="onToggle-btn " data-value="cost">사업비</button>
+								</div>
+							</div>
+
+							<div class="onListBox">
+								<!-- 리스트 영역 -->
+								<ul></ul>
+							</div>
+						</nav>
+						<button class="onOpenBtn"></button>
+
+						<div class="onContents">
+							<div class="onContentHeader">
+								<h4>1. 청년창업사관학교 연간일정</h4>
+								<dl class="breadcrumb">
+									<dt>Ⅰ. 입교생활</dt>
+									<dd>1.청년창업사관학교 연간일정</dd>
+								</dl>
+							</div>
+							<!-- 컨텐츠 영역 -->
+							<div class="onContentInner"></div>
+						</div>
+					</div>
+				</div>
+			</body>
+		</html>
+	</body>
+</html>

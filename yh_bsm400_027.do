@@ -1,0 +1,1 @@
+{"resultSVO":{"cnsgnEntrps":{"reqYr":"2026","reqSlno":"1","rcpNo":"","calgTno":"","etrNm":"샘플기업(주)","bnrn":"123-45-67890","corpRegNo":"110111-1234567","bsnBeginDt":"2020-01-01","mainPdtMknm":"시제품 제작","befYrSllAmo":"100000000","totEmplCnt":"10","etrTno":"02-1234-5678","etrFxno":"02-1234-5679","ptno":"12345","ptnoAddr":"서울특별시 영등포구 은행로 30","dtlAddr":"1층","repKorNm":"홍길동"}}}
